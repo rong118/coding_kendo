@@ -4,7 +4,7 @@ Code questions summary based upon data structure and algorithm aspect
 ## Part I : Data Structure
 ### Linear Table
 - [Array](./data_structure/array.md)
-- [String]()
+- [String](./data_structure/string.md)
 - [Linkedlist]()
 - [Stack]()
 - [Queue]()
