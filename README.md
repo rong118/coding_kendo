@@ -11,10 +11,10 @@ Code questions summary based upon data structure and algorithm aspect
 - [Deque](./data_structure/deque.md)
 
 ### Hash Data Structure
-- [HashMap]()
-- [HashSet]()
-- [TreeMap]()
-- [TreeSet]()
+- [HashMap](./data_structure/hashmap.md)
+- [HashSet](./data_structure/hashset.md)
+- [TreeMap](./data_structure/treemap.md)
+- [TreeSet](./data_structure/treeset.md)
 
 ### Tree
 - [Tree]()
