@@ -1,5 +1,5 @@
 # Coding Dojo
-Code questions summary based upon data structure and algorithm aspect
+Code questions' summary based upon data structure and algorithm.
 
 ## Part I : Data Structure
 ### Linear Data Structure
@@ -27,7 +27,7 @@ Code questions summary based upon data structure and algorithm aspect
 - [Graph]()
 
 ### Others
-- [Disjoint-set(Union Find)]()
+- [Disjoint-set(Union Find)](./data_structure/unionfind.md)
 
 ## Part II : Algorithm
 
