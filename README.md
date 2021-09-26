@@ -2,15 +2,15 @@
 Code questions summary based upon data structure and algorithm aspect
 
 ## Part I : Data Structure
-### Linear Table
+### Linear Data Structure
 - [Array](./data_structure/array.md)
 - [String](./data_structure/string.md)
-- [Linkedlist]()
-- [Stack]()
-- [Queue]()
-- [Deque]()
+- [Linkedlist](./data_structure/linkedlist.md)
+- [Stack](./data_structure/stack.md)
+- [Queue](./data_structure/queue.md)
+- [Deque](./data_structure/deque.md)
 
-### Hash Table
+### Hash Data Structure
 - [HashMap]()
 - [HashSet]()
 - [TreeMap]()
@@ -27,7 +27,7 @@ Code questions summary based upon data structure and algorithm aspect
 - [Graph]()
 
 ### Others
-- [Disjoint-set(Union Find)]() 
+- [Disjoint-set(Union Find)]()
 
 ## Part II : Algorithm
 
