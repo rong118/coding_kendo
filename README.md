@@ -17,14 +17,14 @@ Code questions' summary based upon data structure and algorithm.
 - [TreeSet](./data_structure/treeset.md)
 
 ### Tree
-- [Tree]()
+- [Tree](./data_structure/tree.md)
 - [PriorityQueue (Heap)]()
 - [Trie]()
 - [Segment Tree(zkw Tre)]()
 - [Binary Index Tree(Fenwick Tree)]()
 
 ### Graph
-- [Graph]()
+- [Graph](./data_structure/graph.md)
 
 ### Others
 - [Disjoint-set(Union Find)](./data_structure/unionfind.md)
