@@ -12,13 +12,16 @@ Implement the WordDictionary class:
 - bool search(word) Returns true if there is any string in the data structure that matches word or false otherwise. word may contain dots '.' where dots can be matched with any letter.
 
 Example
-> Input
+> Input:
+>
 > ["WordDictionary","addWord","addWord","addWord","search","search","search","search"]
 > [[],["bad"],["dad"],["mad"],["pad"],["bad"],[".ad"],["b.."]]
-> Output
+>
+> Output:
+>
 > [null,null,null,null,false,true,true,true]
-
-> Explanation
+>
+> Explanation:
 > WordDictionary wordDictionary = new WordDictionary();
 > wordDictionary.addWord("bad");
 > wordDictionary.addWord("dad");
@@ -35,7 +38,9 @@ Constraints:
 - At most 50000 calls will be made to addWord and search.
 
 ## 分类 && 解题思路
-Trie
+- Trie
+- DFS
+- backtracking
 
 ## Code
 ```c++
@@ -78,11 +83,14 @@ public:
         if(pos == word.size()) { return node->isWord; }
         char ch = word[pos];
         if(ch != '.'){
-            return node->children[ch - 'a'] != NULL && helper(word, pos + 1, node->children[ch - 'a']);
-        }else{
+            return node->children[ch - 'a'] != NULL && 
+                helper(word, pos + 1, node->children[ch - 'a']);
+        }else{  // support match '.'
             for(int i = 0; i < 26; i++){
-                if( node->children[i] != NULL && helper(word, pos + 1, node->children[i]))
+                if( node->children[i] != NULL && 
+                helper(word, pos + 1, node->children[i])){
                     return true;
+                }
             }
         }
 
@@ -92,3 +100,7 @@ public:
 ```
 
 ## Time Complexity Analysis
+Input word length is n.
+Number of the nodes is v.
+- insert()  => O(n)
+- search()  => O(v)

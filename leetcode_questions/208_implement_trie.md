@@ -1,7 +1,7 @@
 # 208. Implement Trie
 
 ## Question link
-(link)
+(https://leetcode.com/problems/implement-trie-prefix-tree/)
 
 ## Question Description
 A trie (pronounced as "try") or prefix tree is a tree data structure used to efficiently store and retrieve keys in a dataset of strings. There are various applications of this data structure, such as autocomplete and spellchecker.
@@ -12,16 +12,17 @@ Implement the Trie class:
 - boolean search(String word) Returns true if the string word is in the trie (i.e., was inserted before), and false otherwise.
 - boolean startsWith(String prefix) Returns true if there is a previously inserted string word that has the prefix prefix, and false otherwise.
 
-Example
+Example:
 
-> Input
+> Input:
 > ["Trie", "insert", "search", "search", "startsWith", "insert", "search"]
 > [[], ["apple"], ["apple"], ["app"], ["app"], ["app"], ["app"]]
-
-> Output
+>
+> Output:
 > [null, null, true, false, true, null, true]
-
-> Explanation
+>
+> Explanation:
+>
 > Trie trie = new Trie();
 > trie.insert("apple");
 > trie.search("apple");   // return True
@@ -36,7 +37,7 @@ Constraints:
 - At most 3 * 10<sup>4</sup> calls in total will be made to insert, search, and startsWith.
 
 ## 分类 && 解题思路
-Trie
+- Trie
 
 ## Code
 ```c++
@@ -97,3 +98,7 @@ public:
 ```
 
 ## Time Complexity Analysis
+Input word length is n.
+- insert()  => O(n)
+- search()  => O(n)
+- startsWith() => O(n)

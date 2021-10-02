@@ -82,6 +82,8 @@ public:
 每个node有2个分支，存的是0，1，Bitwise Trie represents a binary form of a number in nums, for example, 0 -> 0 -> 0 -> 1 -> 1 is 3
 Bitwise Trie is a perfect way to see how different the binary forms of numbers are, for example, 3 and 2 share 4 bits
 
+<img src="../assets/bitwise_trie.png" width="400" />
+
 ## Big O analysis
 时间复杂度：
 - 构建： 假设 n 个 字符， 每个长度k =>O(nk)
