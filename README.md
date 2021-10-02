@@ -1,6 +1,8 @@
 # Coding Dojo
 Code questions' summary based upon data structure and algorithm.
 
+<img src="./assets/data_structure_and_algorithm.png" width="500" />
+
 ## Part I : Data Structure
 ### Linear Data Structure
 - [Array](./data_structure/array.md)
@@ -18,10 +20,10 @@ Code questions' summary based upon data structure and algorithm.
 
 ### Tree
 - [Tree](./data_structure/tree.md)
-- [PriorityQueue (Heap)]()
-- [Trie]()
-- [Segment Tree(zkw Tre)]()
-- [Binary Index Tree(Fenwick Tree)]()
+- [Heap](./data_structure/heap.md)
+- [Trie](./data_structure/trie.md)
+- [Segment Tree(zkw Tre)](./data_structure/segment_tree.md)
+- [Binary Index Tree(Fenwick Tree)](./data_structure/binary_index_tree.md)
 
 ### Graph
 - [Graph](./data_structure/graph.md)
