@@ -1,8 +1,6 @@
 # Coding Dojo
 Code questions' summary based upon data structure and algorithm.
 
-<img src="./assets/data_structure_and_algorithm.png" width="500" />
-
 ## Part I : Data Structure
 ### Linear Data Structure
 - [Array](./data_structure/array.md)
