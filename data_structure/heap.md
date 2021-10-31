@@ -26,7 +26,7 @@ pq应用和array手动实现heap
 HEAPIFY is an important subroutine for manipulating heaps. Its inputs are an array A and an index i into the array. When HEAPIFY is called, it is assumed that the binary trees rooted at LEFT(i) and RIGHT(i) are heaps, but that A[i] may be smaller than its children, thus violating the heap property (7.1). The function of HEAPIFY is to let the value at A[i] "float down" in the heap so that the subtree rooted at index i becomes a heap.
 
 For example, given an integer array, heapify it into min-heap array
-For a heap array A, A[0] is the root of heap, and for each A[i], A[i *2 + 1] is the left child and A[j* 2 + 2] is the right child of A[i].
+For a heap array A, A[0] is the root of heap, and for each A[i], A[i * 2 + 1] is the left child and A[j * 2 + 2] is the right child of A[i].
 
 ``` c++
 void buildheap(vector<int>& arr){
@@ -97,18 +97,17 @@ void heap_sort(vector<int>& arr){
     int len = arr.size();
 
     // Build heap
-    for(int i = n/2; i >= 0; i--){
-        heapify(arr, n, i);
+    for(int i = len/2; i >= 0; i--){
+        heapify(arr, len, i);
     }
 
     // One by one extract from heap
-    for(int i = n - 1; i > 0 ;i--){
+    for(int i = len - 1; i > 0 ;i--){
         int temp = arr[0];
         arr[0] = arr[i];
         arr[i] = temp;
+        heapify(arr, i, 0);
     }
-
-    heapify(arr, i, 0);
 }
 ```
 
@@ -191,3 +190,7 @@ Delete random would cause O(n), because search O(n) + delete O(logn)
 Build heap only takes O(n), we are doing heapify only for half of the element
 
 ## Leetcode questions
+- [23 Merge k Sorted Lists](../leetcode_questions/23_merge_k_sorted_lists.md)
+- [347 Top K Frequent Elements](../leetcode_questions/347_top_k_frequent_elements.md)
+- [912_sort_an_array](../leetcode_questions/912_sort_an_array.md)
+- [215_Kth_Largest_Element_in_an_Array](../leetcode_questions/215_Kth_Largest_Element_in_an_Array.md)
