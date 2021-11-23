@@ -26,3 +26,26 @@ int v = ptr->val;
 
 ## 适用场景
 需要频繁增加删除， 删除操作的场景
+
+## Leetcode question
+1.反转
+- [206 Reverse Linked List](../leetcode_questions/206_reverse_linked_list.md)
+- [92 Reverse Linked List II](../leetcode_questions/92_reverse_linked_list_II.md)
+- [25 Reverse Nodes in K-Group](../leetcode_questions/25_reverse_nodes_in_k_group.md)
+
+2.合并
+- [2 Add Two Numbers](../leetcode_questions/2_add_two_numbers.md)
+- [445 Add Two Numbers II](../leetcode_questions/445_add_two_numbers_II.md)
+- [21 Merge Two Sorted Lists](../leetcode_questions/21_merge_two_sorted_lists.md)
+- [23 Merge k sorted Lists](../leetcode_questions/23_merge_k_sorted_lists.md)
+
+3.找环
+- [141 Linked List Cycle](../leetcode_questions/141_linked_list_cycle.md)
+- [142 Linked List Cycle II](../leetcode_questions/142_linked_list_cycle.md)
+- [287 Find the Duplicate Number](../leetcode_questions/287_find_the_duplicate_number.md)
+
+4.删除
+
+5.复制
+
+6.结构转换

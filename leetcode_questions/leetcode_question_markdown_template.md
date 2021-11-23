@@ -5,6 +5,7 @@
 
 ## Question Description
 ![Image]()
+<img src="" width="400" />
 
 Example
 > example's description
