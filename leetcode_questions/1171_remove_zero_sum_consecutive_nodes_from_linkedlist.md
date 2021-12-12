@@ -34,6 +34,7 @@ Constraints:
 
 ## 分类
 - linkedlist
+- prefix
 
 
 ## 解题思路
