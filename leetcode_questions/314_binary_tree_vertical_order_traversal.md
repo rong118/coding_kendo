@@ -60,7 +60,7 @@ Example 3:
 class Solution {
 public:
     //dfs 
-    vector<vector<int>> levelOrderBottom(TreeNode* root) {
+    vector<vector<int>> verticalTraversal(TreeNode* root) {
         map<int, vector<vector<int>>> colToNodes;
         dfs(root, 0, 0, colToNodes);
         vector<vector<int>> ans;
