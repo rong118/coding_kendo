@@ -47,6 +47,7 @@ public:
         inorderedTraversal(root);
         head->left = pre;
         pre->right = head;
+        return head;
     }
 
     void inorderedTraversal(Node* root){
