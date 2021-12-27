@@ -58,6 +58,9 @@ Constraints:
  */
 class Solution {
 public:
+    // recusive
+    // check left and right subtree and return LCA
+    // divide and conquer
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
         if(root == NULL || root == p || root == q) return root;
         TreeNode* l = lowestCommonAncestor(root->left, p, q);
@@ -66,6 +69,28 @@ public:
         if(l == NULL && r != NULL) return r;
         if(l != NULL && r == NULL) return l;
         return NULL;
+    }
+
+    // iterative by build a parent map
+    unordered_map<TreeNode*, TreeNode*> parent;
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+        _dfs(null, root);
+        set<TreeNode*> ancestors;
+        while(p != NULL){
+            ancestors.push(p);
+            p = parent[p];
+        }
+        while(ancestors.find(q) == ancestors.end()){
+            q = parent[q]
+        }
+        return q;
+    } 
+
+    _dfs(TreeNode* parentNode, TreeNode* cur){
+        if(cur == nullptr) return;
+        parent.put(cur, parentNode);
+        dfs(cur, cur->left);
+        dfs(cur, cur->right);
     }
 };
 ```

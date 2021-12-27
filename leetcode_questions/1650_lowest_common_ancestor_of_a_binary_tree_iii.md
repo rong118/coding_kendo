@@ -44,7 +44,7 @@ Constraints:
 
 ## 分类 && 解题思路
 - tree
-- bst
+- linkedlist
 
 ## Code Implementation
 ```c++
@@ -61,6 +61,7 @@ public:
 
 class Solution {
 public:
+    // space O(1) linkedlist 链表找交点
     Node* lowestCommonAncestor(Node* p, Node * q) {
         Node* a = p, *b = q;
         while (a != b) {

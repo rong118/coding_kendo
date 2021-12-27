@@ -161,6 +161,11 @@ void helper(TreeNode* root, vector<int>& ans){
 }
 ```
 
+## LCA Problem
+Given a binary tree, find the lowest common ancestor of two (or more) given nodes in tree.
+- 倍增、Tarjan、树链剖分 (TODO)
+
+
 ## Leetcode questions
 1. 遍历
 - [144 Binary Tree Preorder Traversal](../leetcode_questions/144_binary_tree_preorder_traversal.md)
@@ -200,3 +205,4 @@ void helper(TreeNode* root, vector<int>& ans){
 - [1650 Lowest Common Ancestor of a Binary Tree III](../leetcode_questions/1650_lowest_common_ancestor_of_a_binary_tree_iii.md)
 - [1676 Lowest Common Ancestor of a Binary Tree IV](../leetcode_questions/1676_lowest_common_ancestor_of_a_binary_tree_iv.md)
 - [1123 Lowest Common Ancestor of Deepest Leaves](../leetcode_questions/1123_lowest_common_ancestor_of_deepest_leaves.md)
+- [865 Smallest Subtree with all the Deepest Nodes](../leetcode_questions/865_smallest_subtree_with_all_the_deepest_nodes.md)

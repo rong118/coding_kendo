@@ -58,18 +58,9 @@ class Solution {
         TreeNode* l = _lowestCommonAncestor(root->left, nodes_set);
         TreeNode* r = _lowestCommonAncestor(root->right, nodes_set);
     
-        if (l && r) {
-            return root;
-        }
-
-        if(!l && r){
-            return r;
-        }
-    
-
-        if(l && !r){
-            return l;
-        }
+        if (l && r) { return root;}
+        if(!l && r){ return r;}
+        if(l && !r){ return l;}
 
         return NULL;
     }

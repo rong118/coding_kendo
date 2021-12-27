@@ -66,12 +66,8 @@ n<sup>power</sup>
 ## Code Implementation
 ```c++
 class Solution {
-public:
-    int _height(TreeNode* root){
-        if(root == NULL) return 0;
-        return 1 + max(_height(root->left), _height(root->right));
-    }
-    
+public:    
+    // O(n^2)
     TreeNode* lcaDeepestLeaves(TreeNode* root) {
         if(root == NULL) return NULL;
         int lh = _height(root->left);
@@ -82,6 +78,25 @@ public:
         }else{
             return lcaDeepestLeaves(root->right);
         }   
+    }
+
+    int _height(TreeNode* root){
+        if(root == NULL) return 0;
+        return 1 + max(_height(root->left), _height(root->right));
+    }
+
+    // O(n)
+    TreeNode* lcaDeepestLeaves(TreeNode* root) {
+        pair<TreeNode*, int> p = _getLCA(root, 0);
+        return p.first;
+    }
+
+    pair<TreeNode*, int> _getLCA(TreeNode* root, int d){
+        if(root == NULL) return {NULL, d};
+        pair<TreeNode*, int> l = _getLCA(root->left, d + 1);
+        pair<TreeNode*, int> r = _getLCA(root->right, d + 1);
+        if(l.second == r.second) return l;
+        return l.second > r.second ? l : r;
     }
 };
 ```
