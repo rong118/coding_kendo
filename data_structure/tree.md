@@ -206,3 +206,12 @@ Given a binary tree, find the lowest common ancestor of two (or more) given node
 - [1676 Lowest Common Ancestor of a Binary Tree IV](../leetcode_questions/1676_lowest_common_ancestor_of_a_binary_tree_iv.md)
 - [1123 Lowest Common Ancestor of Deepest Leaves](../leetcode_questions/1123_lowest_common_ancestor_of_deepest_leaves.md)
 - [865 Smallest Subtree with all the Deepest Nodes](../leetcode_questions/865_smallest_subtree_with_all_the_deepest_nodes.md)
+
+4. Path (传递) => DFS (recursive)
+- [257 Binary Tree Paths](../leetcode_questions/257_binary_tree_paths.md)
+- [1448 Count Good Nodes in Binary Tree](../leetcode_questions/1448_count_good_nodes_in_binary_tree.md)
+- [124 Binary Tree Maximum Path Sum](../leetcode_questions/124_binary_tree_maximum_path_sum.md)
+- [1120 Maximum Average Subtree](../leetcode_questions/1120_maximum_average_subtree.md)
+- [1372 Longest ZigZag Path in a Binary Tree](../leetcode_questions/1372_longest_zigzag_path_in_a_binary_tree.md)
+- [1123 Lowest Common Ancestor of Deepest Leaves](../leetcode_questions/1123_lowest_common_ancestor_of_deepest_leaves.md)
+- [549 Binary Tree Longest Consecutive Sequence II](../leetcode_questions/549_binary_tree_longest_consecutive_sequence_ii.md)
