@@ -120,3 +120,4 @@ public:
 - [305 Number of Island II](../leetcode_questions/305_number_of_island_ii.md)
 - [547 Friend Circles](../leetcode_questions/547_friend_circles.md)
 - [128 Longest Consecutive Sequence](../leetcode_questions/128_longest_consecutive_sequence.md)
+- [261 Graph Valid Tree](../leetcode_questions/261_graph_valid_tree.md)

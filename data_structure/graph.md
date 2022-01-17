@@ -207,6 +207,23 @@ void _dfs(int u, unodered_map<int, vector<int>>& g){
 
 <br/>
 
+## 无向图召唤
+1. DFS + parent
+2. Union Find
+
+
 ## Leetcode questions
-1. Topological sort 拓扑排序
+1. Topological sort 拓扑排序 (有向图找环)
 - [207 Course Schedule](../leetcode_questions/207_course_schedule.md)
+- [210 Course Schedule II](../leetcode_questions/210_course_schedule_ii.md)
+- [269 Alien Dictionary](../leetcode_questions/269_alien_dictionary.md)
+- [2127 Maximum Employees to Be Invited to a Meeting](../leetcode_questions/2127_maximum_employees_to_be_invited_to_a_meeting.md)
+
+2. (无向图找环)  => union find / dfs with parent
+- [261 Graph Valid Tree](../leetcode_questions/261_graph_valid_tree.md)
+
+3. Minimum Spanning Tree
+
+4. Shortest Path (dijkstra)
+
+5. Strong Connect Components
