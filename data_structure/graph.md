@@ -5,7 +5,7 @@
 - edge 本身可以有权重
 - 不考虑重边和自回路
 
-<img src="../assets/graph.png" width="300" />
+> <img src="../assets/graph.png" width="300" />
 
 <br/>
 
@@ -15,12 +15,12 @@
 <br/>
 
 ## 3. undirected vs directed
-<img src="../assets/directed_vs_undirected.png" width="400" />
+> <img src="../assets/directed_vs_undirected.png" width="400" />
 
 <br/>
 
 ## 4. cyclic vs acyclic
-<img src="../assets/cyclic_vs_acyclic.png" width="400" />
+> <img src="../assets/cyclic_vs_acyclic.png" width="400" />
 
 <br/>
 
@@ -77,7 +77,7 @@
   ```
 <br/>
 
-## Topological sort 拓扑排序
+## 6. Topological Sort 拓扑排序
 在图论中，拓扑排序（Topological Sorting）是一个有向无环图（DAG, Directed Acyclic Graph）的所有顶点的线性序列。且该序列必须满足下面:
 - 每个顶点出现且只出现一次。
 - 若存在一条从顶点 A 到顶点 B 的路径，那么在序列中顶点 A 出现在顶点 B 的前面。
@@ -207,10 +207,35 @@ void _dfs(int u, unodered_map<int, vector<int>>& g){
 
 <br/>
 
-## 无向图召唤
+## 7. 无向图找环
 1. DFS + parent
 2. Union Find
 
+<br/>
+
+## 8. Minimum Spanning Tree
+<img src="../assets/mst.png" width="450" />
+
+The cost of the spanning tree is the sum of the weights of all the edges in the tree. There can be many spanning trees. Minimum spanning tree is the spanning tree where the cost is minimum among all the spanning trees. There also can be many minimum spanning trees.
+
+### MST 算法
+- Prim Native implementation O(V^2)  --> 稠密图
+- Prim PQ implementation O((V+E)logV)    --> 稀疏图
+- kruskal uf implementation O(ElogV) --> 稀疏图
+
+### Prim PQ
+1. 以某一个点开始， 寻找当前该点可以访问所有的边
+2. 发现最小边并且这个边的target还没有访问过，将还没有访问过的点加入集合，记录添加的边。
+3. 重复2，直到没有新的点可以加入
+4. 此时所有的边构成即为最小生成树
+
+### Prim Naive 
+> <img src="../assets/prim_native.png" width="450" />
+
+### Kruskal
+1. 按照边的权重从小到大进行排序
+2. 依次将每条边的两端点不属于同一集合，那就将他们合并（并查集）
+3. 直到所有点都进入一个集合中
 
 ## Leetcode questions
 1. Topological sort 拓扑排序 (有向图找环)
@@ -219,11 +244,15 @@ void _dfs(int u, unodered_map<int, vector<int>>& g){
 - [269 Alien Dictionary](../leetcode_questions/269_alien_dictionary.md)
 - [2127 Maximum Employees to Be Invited to a Meeting](../leetcode_questions/2127_maximum_employees_to_be_invited_to_a_meeting.md)
 
-2. (无向图找环)  => union find / dfs with parent
+2. (无向图找环)  => Union find / DFS with parent
 - [261 Graph Valid Tree](../leetcode_questions/261_graph_valid_tree.md)
 
 3. Minimum Spanning Tree
+- [1168 Optimize Water Distribution in a Village](../leetcode_questions/1168_optimize_water_distribution_in_a_village.md)
+- [1135 Connecting Cities With Minimum Cost](../leetcode_questions/1135_connecting_cities_with_minimum_cost.md)
+- [1584 Min Cost to Connect All Points](../leetcode_questions/1584_min_cost_to_connect_all_points.md)
+- [1489 Find Critical and Pseudo-Critical Edges in Minimum Spanning Tree](../leetcode_questions/1489_find_critical_and_pseudo_critical_edges_in_minimum_spanning_tree.md)
 
-4. Shortest Path (dijkstra)
+4. Shortest Path
 
 5. Strong Connect Components
