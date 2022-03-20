@@ -237,6 +237,42 @@ The cost of the spanning tree is the sum of the weights of all the edges in the 
 2. 依次将每条边的两端点不属于同一集合，那就将他们合并（并查集）
 3. 直到所有点都进入一个集合中
 
+## 9. Shortest Path
+### Single Source Shortest Path
+1. Dijkstra
+
+<img src="../assets/dijkstra.png" width="450" />
+
+2. Bellman-Ford
+
+Bellman-Ford 算法是一种用于计算带权有向图中单源最短路径（SSSP：Single-Source Shortest Path）的算法。
+
+流程如下：
+创建源顶点 v 到图中所有顶点的距离的集合 distSet，为图中的所有顶点指定一个距离值，初始均为 Infinite，源顶点距离为 0；
+
+计算最短路径，执行 V - 1 次遍历；
+
+对于图中的每条边：如果起点 u 的距离 d 加上边的权值 w 小于终点 v 的距离 d，则更新终点 v 的距离值 d；
+
+检测图中是否有负权边形成了环，遍历图中的所有边，计算 u 至 v 的距离，如果对于 v 存在更小的距离，则说明存在环；
+
+
+### Multiple-Source Shortest Path
+
+## 10. 强连通分量 SCC:Strongly Connected Component
+
+### Tarjan 算法
+遍历一个点，指定唯一时间戳DFN[i]；指定改点向前追溯可追溯到最老时间戳LOW[i];
+
+枚举当前点的所有边，若DFN[j]=0表明未被搜索过（这儿0、-1等都是可以的，只要是自我约定好的，正常不使用的就可以，如下面算法中使用的NO_VISIT），递归搜索；
+
+当DFN[i]不为0，则j被搜索过，这时判断是否在我们存储新建的栈中，且j的时间戳DFN[j]小于当前时间戳DFN[i]，可判定成环，将LOW[i]设定为DFN[j]；
+
+若这个点LOW[i]和DFN[i]相等，则这个点是目前强连通分量的元素中在栈中的最早的节点；
+
+出栈，将这个强连通分量全部弹出，保存。
+
+
 ## Leetcode questions
 1. Topological sort 拓扑排序 (有向图找环)
 - [207 Course Schedule](../leetcode_questions/207_course_schedule.md)
@@ -254,5 +290,7 @@ The cost of the spanning tree is the sum of the weights of all the edges in the 
 - [1489 Find Critical and Pseudo-Critical Edges in Minimum Spanning Tree](../leetcode_questions/1489_find_critical_and_pseudo_critical_edges_in_minimum_spanning_tree.md)
 
 4. Shortest Path
+- [787 Cheapest Flights Within K Stops](../leetcode_questions/787_cheapest_flights_within_k_stops.md)
 
 5. Strong Connect Components
+- [1192 Critical Connections in a Network](../leetcode_questions/1192_critical_connections_in_a_network.md)
