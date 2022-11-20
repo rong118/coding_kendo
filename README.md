@@ -10,19 +10,22 @@ A data structure is a specialized format for organizing, processing, retrieving 
 * [Linkedlist](./data_structure/linkedlist.md)
 * [Stack](./data_structure/stack.md)
 * [Queue](./data_structure/queue.md)
-* [Deque](./data_structure/deque.md)
-* [HashMap](./data_structure/hashmap.md)
 * [HashSet](./data_structure/hashset.md)
-* [TreeMap](./data_structure/treemap.md)
 * [TreeSet](./data_structure/treeset.md)
+* [HashMap](./data_structure/hashmap.md)
+* [TreeMap](./data_structure/treemap.md)
 * [Tree](./data_structure/tree.md)
-* [Heap](./data_structure/heap.md)
-* [Trie](./data_structure/trie.md)
-* [Segment Tree(zkw Tre)](./data_structure/segment_tree.md)
-* [Binary Index Tree(Fenwick Tree)](./data_structure/binary_index_tree.md)
+    * [Segment Tree(zkw Tree)](./data_structure/segment_tree.md)
+    * [Binary Index Tree(Fenwick Tree)](./data_structure/binary_index_tree.md)
+    * [Trie](./data_structure/trie.md)
+* [Heap (PriorityQueue)](./data_structure/heap.md)
 * [Graph](./data_structure/graph.md)
 * [Disjoint-set(Union Find)](./data_structure/unionfind.md)
 
 ## Algorithm
 
 An algorithm is a procedure used for solving a problem or performing a computation.
+
+## Complexities
+
+* [Big O Notation](BigONotation.md)
