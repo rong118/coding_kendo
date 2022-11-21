@@ -10,6 +10,7 @@ A dynamic array is an array with a big improvement: **automatic resizing**. One 
 using namespace std;
 
 int main() {
+  // STL vector<T>
   vector<int> numbers = {7, 5, 6, 12, 35};
 
   cout << "The numbers are: ";
@@ -33,6 +34,7 @@ int main() {
 ```
 
 ```go
+// Go Implementation
 package main
 
 import (

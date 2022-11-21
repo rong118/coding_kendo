@@ -1,33 +1,46 @@
 # Linked List
-## 定义
-链表是非连续，非顺序储存结构， 每个node包含数据和指针两部分
-<img src="../assets/linkedlist.png" width="600" />
 
+A linked list is a linear data structure that includes a series of connected nodes. 
+Here, each node stores the data and the address of the next node.
+
+<img src="../assets/single_linked_list.png" width="300" />
+
+## Implementation
 ```c++
-// c++ Implementation
+ // c++ Implementation
+#include <iostream>
+using namespace std;
+
 struct {
     Node* ptr;
     int val;
 } Node;
 
-Node * ptr = new Node(1);
-ptr->next = new Node(2);
-int v = ptr->val;
+int main(){
+    Node * ptr = new Node(1);
+    ptr->next = new Node(2);
+
+    cout<<ptr->val<<endl;
+
+    return 0;
+}
 ```
-赋值取值时间复杂度O(1)
 
-优点：
-- 可以随意添加减元素。
-- 添加删除元素只需要改变前后节点指针
+```go
+// Go Implementation
+package main
 
-缺点
-- 占用空间大
-- 查找需要遍历
+import "fmt"
 
-## 适用场景
-需要频繁增加删除， 删除操作的场景
+// Node represents a node of linked list
+```
 
-## Leetcode question
+## Features
+* Easy to add/remove elements, good for frequenet add/remove case
+* More memory space
+* Search needs travesal
+
+## Leetcode question (TODO: move to alg topic)
 1.反转
 - [206 Reverse Linked List](../leetcode_questions/206_reverse_linked_list.md)
 - [92 Reverse Linked List II](../leetcode_questions/92_reverse_linked_list_II.md)
