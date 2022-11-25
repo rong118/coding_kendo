@@ -12,15 +12,26 @@ Here, each node stores the data and the address of the next node.
 using namespace std;
 
 struct {
-    Node* ptr;
     int val;
+    Node* next;
 } Node;
 
 int main(){
-    Node * ptr = new Node(1);
-    ptr->next = new Node(2);
+    Node* head = new Node(0);
+    Node* tail = head;
 
-    cout<<ptr->val<<endl;
+    for(int i = 1; i < 5; i++){
+      Node* node = new Node(i);
+      tail->next = node; 
+      tail = node;
+    }
+
+    Node* ptr = head;
+
+    while(ptr != NULL){
+      cout<<ptr->val<<endl;
+      ptr = ptr->next;
+    }
 
     return 0;
 }
@@ -33,6 +44,30 @@ package main
 import "fmt"
 
 // Node represents a node of linked list
+func main(){
+    type ListNode struct {
+      Val int
+      Next *ListNode
+    }
+
+    head := &ListNode{0, nil}
+    tail := head;
+
+    // Looping linkedlist
+    for i := 1; i < 5; i++ {
+        node := &ListNode{i, nil}
+        tail.Next = node
+        tail = node
+    }
+	
+	ptr := head;
+	
+	for ptr != nil {
+		fmt.Println(ptr.Val)
+		ptr = ptr.Next
+	}
+}
+
 ```
 
 ## Features
