@@ -12,6 +12,7 @@ A data structure is a specialized format for organizing, processing, retrieving 
     * [Doubly Linked List](./data_structure/doublylinkedlist.md)
 * [Stack](./data_structure/stack.md)
 * [Queue](./data_structure/queue.md)
+    * [Deque](./data_structure/deque.md)
 * [HashSet](./data_structure/hashset.md)
 * [TreeSet](./data_structure/treeset.md)
 * [HashMap](./data_structure/hashmap.md)

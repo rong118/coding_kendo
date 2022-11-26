@@ -1,25 +1,61 @@
 # Stack
-## 定义
-栈是一种特殊的线性表，仅能在线性表的一端操 作，栈顶允许操作，栈底不允许操作。先进后出，或者说是后进先出，从栈顶放入元 素的操作叫入栈，取出元素叫出栈
 
-<img src="../assets/stack.png" width="250" />
+In computer science, a stack is an abstract data type that serves as a collection of elements, with two main operations:
 
-Last In First Out (LIFO) or First In Last Out (FILO)
+Push, which adds an element to the collection, and
+Pop, which removes the most recently added element that was not yet removed.
 
+Additionally, a peek operation can, without modifying the stack, return the value of the last element added. Calling this structure a stack is by analogy to a set of physical items stacked one atop another, such as a stack of plates.
 
-```c++
+<img src="../assets/stack.png" width="300" />
+
+## Implementation
+```c
 // c++ Implementation
 #include <stack>
+#include <iostream>
 
-stack<int> stk; // 常用method,时间复杂度均为O(1) 
-stack.push(5)
-stack.top()
-stack.pop()
-stack.isempty() //查看栈是否为空
+using namespace std;
+
+int main(){
+  stack<int> stk;           // 常用method,时间复杂度均为O(1) 
+  stk.push(5);              // {5}
+  stk.push(3);              // {3, 5}
+  cout<<stk.top()<<endl;    // 3
+  stk.pop();                // {5}
+  cout<<stk.top()<<endl;    // 5
+  stk.pop();                // {}
+  stk.isempty();            // empty stack 
+
+  return 0;
+}
 ```
 
-## 应用
-栈常应用于实现递归功能方面的场景，DFS均可以使用栈来实现
+```go
+// go Implementation with using gods
+package main
+
+import "github.com/emirpasic/gods/stacks/arraystack"
+
+func main() {
+	stack := arraystack.New() // empty
+	stack.Push(1)             // 1
+	stack.Push(2)             // 1, 2
+	stack.Values()            // 2, 1 (LIFO order)
+	_, _ = stack.Peek()       // 2,true
+	_, _ = stack.Pop()        // 2, true
+	_, _ = stack.Pop()        // 1, true
+	_, _ = stack.Pop()        // nil, false (nothing to pop)
+	stack.Push(1)             // 1
+	stack.Clear()             // empty
+	stack.Empty()             // true
+	stack.Size()              // 0
+}
+```
+
+## Features
+* Last In First Out (LIFO) or First In Last Out (FILO)
+* A stack is needed to implement depth-first search.
 
 ## Leetcode questions
 - [155 Min Stack](../leetcode_questions/23_merge_k_sorted_lists.md)

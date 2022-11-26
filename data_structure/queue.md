@@ -1,40 +1,57 @@
 # Queue
-## 定义
-队列与栈一样，也是一种线性表，不同的是，队列可以在 一端添加元素，在另一端取出元素，也就是:先进先出。
+
+A queue is a collection of entities that are maintained in a sequence and can be modified by the addition of entities at one end of the sequence and the removal of entities from the other end of the sequence. By convention, the end of the sequence at which elements are added is called the back, tail, or rear of the queue, and the end at which elements are removed is called the head or front of the queue, analogously to the words used when people line up to wait for goods or services.
 
 <img src="../assets/queue.png" width="350" />
 
-First In First Out (FIFO)
-
-
-# Deque (Double ended queue)
-
-## 定义
-如果把条件放松一下，允许两头都进，两头都出，这种队列叫双 端队列(Double Ended Queue)，学名Deque (deck)。
-
-```c++
+## Implementation
+```c
 // c++ Implementation
-#include <deque>
+#include <queue>
+#include <iostream>
 
-std::deque<int> q;
-q.push_back(5);
-q.push_front(1);
-q.pop_back();
-q.pop_front();
+int main (){
+  std::queue<int> q;                 // empty queue
+  
+  for(int i = 0; i < 5; i++){
+    q.push(100 + i);
+  }
+
+  std::cout << q.front() << std::endl;
+  std::cout << q.back() << std::endl;
+
+  q.pop();
+
+  return 0;
+}
 ```
 
-```c++
-// c++ Implementation
-#include <stack>
+```go
+// go Implementation with GoDs
+package main
 
-std::queue<int> q;
-q.push(5);
-q.pop();
-int f = q.front();
+import llq "github.com/emirpasic/gods/queues/linkedlistqueue"
+
+// LinkedListQueueExample to demonstrate basic usage of LinkedListQueue
+func main() {
+    q := llq.New()     // empty
+    q.Enqueue(1)       // 1
+    q.Enqueue(2)       // 1, 2
+    _ = q.Values()     // 1, 2 (FIFO order)
+    _, _ = q.Peek()    // 1,true
+    _, _ = q.Dequeue() // 1, true
+    _, _ = q.Dequeue() // 2, true
+    _, _ = q.Dequeue() // nil, false (nothing to deque)
+    q.Enqueue(1)       // 1
+    q.Clear()          // empty
+    q.Empty()          // true
+    _ = q.Size()       // 0
+}
 ```
 
-##
-常用来实现BFS 宽度优先搜索的遍历
+## Features
+* First In First Out (FIFO)
+* A queue is needed to implement breath-first search.
 
 ## Leetcode questions
 - [225 Implement Stack using Queues](../leetcode_questions/225_implement_stack_using_queue.md)
