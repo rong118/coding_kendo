@@ -4,5 +4,5 @@ In computer science, a set is an abstract data type that can store unique values
 
 A multiset is a special kind of set in which an element can appear multiple times in the set.
 
-* [HashSet](./data_structure/hashset.md)
-* [TreeSet](./data_structure/treeset.md)
+* [HashSet](./hashset.md)
+* [TreeSet](./treeset.md)
