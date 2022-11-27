@@ -1,8 +1,8 @@
 # TreeSet
-## 定义
-几乎和hashSet一样，唯一区别是element现在有顺序
-TreeSet are stored in a sorted and ascending order. TreeSet does not preserve the insertion order of elements but elements are sorted by keys.
 
+TreeSet provides an implementation of the Set interface that uses a tree for storage. Objects are stored by keys in a sorted and ascending order.
+
+## Implementation
 ```c++
 // c++ Implementation
 #include <set>;
