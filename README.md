@@ -1,4 +1,4 @@
-# Coding Dojo
+# Coding Kenjutsu (けんどう)
 This repository summarizes data structure and algorithm with collected interview coding questions.
 
 ## Data Structures
