@@ -1,4 +1,4 @@
-# Coding Kenjutsu (けんどう)
+# Coding Kendo (けんどう)
 This repository summarizes data structure and algorithm with collected interview coding questions.
 
 ## Data Structures
