@@ -6,13 +6,10 @@ This repository summarizes data structure and algorithm with collected interview
 A data structure is a specialized format for organizing, processing, retrieving and storing data in computer science world.
 
 * [Array](./data_structure/array.md)
-    * [Dynamic Array](./data_structure/dynamic_array.md)
 * [String](./data_structure/string.md)
 * [Linked List](./data_structure/linkedlist.md)
-    * [Doubly Linked List](./data_structure/doublylinkedlist.md)
 * [Stack](./data_structure/stack.md)
 * [Queue](./data_structure/queue.md)
-    * [Deque](./data_structure/deque.md)
 * [Set](./data_structure/set.md)
     * [HashSet](./data_structure/hashset.md)
     * [TreeSet](./data_structure/treeset.md)
@@ -30,6 +27,15 @@ A data structure is a specialized format for organizing, processing, retrieving 
 ## Algorithm
 
 An algorithm is a procedure used for solving a problem or performing a computation.
+
+* [Recursive]()
+* [BFS]()
+* [DFS]()
+* [Sliding Windows]()
+* [Divide and Conque]()
+* [Greedy]()
+* [DP]()
+* [...]
 
 ## Complexities
 
