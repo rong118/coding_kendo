@@ -28,6 +28,7 @@ A data structure is a specialized format for organizing, processing, retrieving 
 
 An algorithm is a procedure used for solving a problem or performing a computation.
 
+* [Sort]()
 * [Recursive]()
 * [BFS]()
 * [DFS]()
@@ -35,7 +36,7 @@ An algorithm is a procedure used for solving a problem or performing a computati
 * [Divide and Conque]()
 * [Greedy]()
 * [DP]()
-* [...]
+* [Binary Search]()
 
 ## Complexities
 
