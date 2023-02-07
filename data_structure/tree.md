@@ -1,22 +1,26 @@
 # Tree
 
-## 定义
-树是一种数据结构:
-每个节点有零个或多个子节点; 没有父节点的节点称为根节点;
-每一个非根节点有且只有一个父节点; 
-除了根节点外，每个子节点可以分为多个不相交的子树;
 
-Binary Tree二叉树是树的特殊一种，具 有如下特点:
-- 每个结点最多有两颗子树
+<img src="../assets/tree.png" width="300" />
 
-<img src="../assets/binarytree.png" width="300" />
+Tree is a widely used abstract data type that represents a hierarchical structure with a set of connected nodes.
+Each node in the tree can be connected to many children (depending on the type of tree), but must be connected to exactly one parent, except for the root node, which has no parent.
+No node can be its own ancestor (no loop).
+Each child can be treated like the root node of its own subtree.
 
-```c++
+
+## Binary Tree
+Binary trees are a commonly used type, which constrain the number of children for each parent to exactly two.
+
+<img src="../assets/binarytree.svg.png" width="300" />
+
+```c
 // c++ Implementation
 class TreeNode {
 public:
     TreeNode* left;
     TreeNode* right;
+    
     int val;
     TreeNode(int n){
         val = n;
@@ -25,92 +29,20 @@ public:
     }
 }
 
-TreeNode* root = new TreeNode(0); 
-root->left  = new TreeNode(1); 
-root->right = new TreeNode(2);
+int main(){
+  TreeNode* root = new TreeNode(0); 
+  root->left  = new TreeNode(1); 
+  root->right = new TreeNode(2);
+  
+  std::cout<< root->val << std::endl;
+  std::cout<< root->left->val << std::endl;
+  return 0;
+}
 ```
-
-## Binary Search Tree :
-- Binary Tree
-- 左子树和右子树是有顺序的 
-- 查找元素时间复杂度：lg(N)
-
-<img src="../assets/bst.png" width="150" />
-
-- BST 性质
-
-<img src="../assets/bst_attribute.png" width="1200" />
 
 ## Perfect Binary Tree /  Full Binary Tree / Complete Binary Tree
 
 <img src="../assets/perfectBinaryTree.png" width="600" />
-
-- BST 查找
-```c++
-// recursive
-TreeNode* search(TreeNode* root, int target){
-    if(root == NULL || root->val == target) return root;
-    if(root->val < target) return search(root->right, target);
-
-    return search(root->left, target);
-}
-
-// iterative
-TreeNode* search(TreeNode* root, int target){
-    TreeNode* cur = root;
-
-    while(true){
-        if(cur == NULL) return NULL;
-        if(cur->val == target) return cur;
-        if(cur->val < target) cur = cur->left;
-        else cur = cur->right;
-    }
-    
-    return NULL;
-}
-```
-
-- BST 添加
-```c++
-// recursive
-TreeNode* insert(TreeNode* root, int target){
-    if(root == NULL){
-        root = new TreeNode(target);
-        return root;
-    }
-
-    if(target < root->val) root->left = insert(root->left, target);
-    else if(target > root->val) root->right = insert(root->right, target);
-
-    return root;
-}
-
-// iterative
-TreeNode* insert(TreeNode* root, int target){
-    TreeNode* cur = root;
-    TreeNode* newNode = new TreeNode(target);
-    if(cur == NULL){
-        cur = newNode;
-        return cur;
-    }
-
-    TreeNode* prev = NULL;
-    while(cur != NULL){
-        prev = cur;
-        if(cur->val < target) cur = cur.right;
-        else cur = cur->left;
-    }
-
-    if(prev->val < target) prev->right = newNode;
-    else prev->left = newNode;
-
-    return root;
-}
-
-```
-
-- BST 删减
-=> leetcode 450
 
 ## Balanced Binary Tree
 左右两个子树的高度绝对值布超过1， 并且左右两个子树都是一个平衡树， 平衡二叉树必定是平衡搜索树。
@@ -123,11 +55,11 @@ TreeNode* insert(TreeNode* root, int target){
 - inorder   (左根右) 
 - postorder (左右根)
 
-<img src="../assets/treeTraversal.png" width="400" />
+<img src="../assets/treetraversal.png" width="400" />
 <img src="../assets/treeTraversalResult.png" width="400" />
 
 
-```c++
+```c
 // c++ Implementation
 // Resusive
 vector<int> treeTraversal(TreeNode* root){
@@ -186,17 +118,6 @@ Given a binary tree, find the lowest common ancestor of two (or more) given node
 - [106 Construct Binary Tree from Inorder and Postorder Traversal](../leetcode_questions/106_construct_binary_tree_from_inorder_and_postorder_traversal.md)
 - [889 Construct Binary Tree from Preorder and Postorder Traversal](../leetcode_questions/889_construct_binary_tree_from_preorder_and_postorder_traversal.md)
 - [426 Convert Binary Search Tree to Sorted Doubly Linked List](../leetcode_questions/426_convert_binary_search_tree_to_sorted_doubly_linked_list.md)
-
-3. BST
-- [270 Closest Binary Search Tree Value](../leetcode_questions/270_closest_binary_search_tree_value.md)
-- [450 Delete Node in BST](../leetcode_questions/450_delete_node_in_BST.md)
-- [98 Validate Binary Search Tree](../leetcode_questions/98_validate_binary_search_tree.md)
-- [173 Binary Search Tree Iterator](../leetcode_questions/173_binary_search_tree_iterator.md)
-- [99 Recover Binary Search Tree](../leetcode_questions/99_recover_binary_search_tree.md)
-- [108 Convert Sorted Array to Binary Search Tree](../leetcode_questions/108_convert_sorted_array_to_binary_search_tree.md)
-- [1382 Balance a Binary Search Tree](../leetcode_questions/1382_balance_a_binary_search_tree.md)
-- [96 Unique Binary Search Trees](../leetcode_questions/96_unique_binary_search_trees.md)
-- [95 Unique Binary Search Trees II](../leetcode_questions/95_unique_binary_search_trees_ii.md)
 
 4. LCA
 - [235 Lowest Common Ancestor of a Binary Search Tree](../leetcode_questions/235_lowest_common_ancestor_of_a_binary_search_tree.md)

@@ -1,7 +1,6 @@
 # Tree Map
 ##
 TreeMap is implemented based on red-black tree structure, and it is ordered by the key.
-和hashmap几乎一样的用法，但是提供了key本身有顺序了
 
 ```c
 // c++ Implementation
