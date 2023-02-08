@@ -71,3 +71,5 @@ int main() {
 
 ## Leetcode questions
 - [1 Two Sum](../leetcode_questions/1_two_sum.md)
+- [4 Median of Two Sorted Arrays](../leetcode_questions/4_median_of_two_sorted_arrays.md)
+- [26 Remove Duplicates From Sorted Array ](../leetcode_questions/26_remove_duplicates_from_sorted_array.md)
