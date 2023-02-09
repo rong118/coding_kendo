@@ -29,13 +29,52 @@ Constraints:
 * 1 <= m + n <= 2000
 * -10^6 <= nums1[i], nums2[i] <= 10^6
 
-## 分类 && 解题思路
-- Array
+## 分类
+- array
+- divide and conque
+- binary search
 
 
 ## Code Implementation
-```c++
+```java
+class Solution {
+    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        int m = nums1.length;
+        int n = nums2.length;
+        
+        if((m+n)%2==0){
+            return (findMedian(nums1, m, nums2, n, (m+n)/2) + findMedian(nums1, m, nums2, n, (m+n)/2+1))/2.0; 
+        }else{
+            return findMedian(nums1, m, nums2, n, (m+n)/2+1);
+        }
+    }
+    
+    //O(lg(m+n))
+    int findMedian(int[] a, int m, int[] b,  int n, int k){
+        if (m <= 0) return b[k-1];  
+        if (n <= 0) return a[k-1];  
+        if (k <= 1) return Math.min(a[0], b[0]);   
+        
+        if (b[n/2] >= a[m/2]){  
+             if ((n/2 + 1 + m/2) >= k)  
+                  return findMedian(a, m, b, n/2, k);  
+             else {
+                  int[] copy_a = new int[m - (m/2 + 1)];
+                  System.arraycopy( a, m/2 + 1, copy_a, 0, m - (m/2 + 1) );
+                  return findMedian(copy_a, m - (m/2 + 1), b, n, k - (m/2 + 1));  
+             }
+        }else{  
+             if ((m/2 + 1 + n/2) >= k)  
+                  return findMedian( a, m/2,b, n, k);  
+             else  {
+                  int[] copy_b = new int[n - (n/2 + 1)];
+                  System.arraycopy( b, n/2 + 1, copy_b, 0, n - (n/2 + 1) );
+                  return findMedian( a, m, copy_b, n - (n/2 + 1), k - (n/2 + 1));
+             }
+        }
+    }
 
+}
 ```
 
 ## Time Complexity Analysis

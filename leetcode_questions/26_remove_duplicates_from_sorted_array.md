@@ -1,7 +1,7 @@
 # 26. Remove Duplicates from Sorted Array
 
 ## Question link
-(https://leetcode.com/problems/median-of-two-sorted-arrays/)
+(https://leetcode.com/problems/remove-duplicates-from-sorted-array/)
 
 ## Question Description
 Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same.
@@ -53,8 +53,8 @@ Constraints:
 - -100 <= nums[i] <= 100
 - nums is sorted in non-decreasing order.
 
-## 分类 && 解题思路
-- Array
+## 分类
+- array
 
 
 ## Code Implementation
@@ -73,6 +73,6 @@ public:
 ```
 
 ## Time Complexity Analysis
-> Time complexity  : 
+> Time complexity  : O(n)
 >
 > Space complexity : O(1)
