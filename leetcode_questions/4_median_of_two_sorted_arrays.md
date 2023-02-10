@@ -36,6 +36,35 @@ Constraints:
 
 
 ## Code Implementation
+```c++
+class solution {
+public:
+  double findMedianSortedArrays(vector<int> nums1, vector<int> nums2) {
+    int m = nums1.size();
+    int n = nums2.size();
+    int l = (m + n + 1) / 2;
+    int r = (m + n + 2) / 2;
+    return (getkth(nums1, 0, nums2, 0, l) + getkth(nums1, 0, nums2, 0, r))) / 2.0;
+  }
+  
+  double getkth(vector<int> nums1, int aStart, vector<int> nums2, int bStart, int k){
+    if(aStart == nums1.size()) { return B[bStart + k - 1]; }
+    if(bStart == nums2.size()) { return A[aStart + k - 1]; }
+    if(k == 1) return min(nums1[aStart], nums2[bStart]);
+    
+    int aMid = INT_MAX;
+    int bMid = INT_MAX;
+    if(aStart + k/2 - 1 < nums1.size()) aMid = nums1[aStart + k/2 - 1];
+    if(bStart + k/2 - 1 < nums2.size()) bMid = nums2[bStart + k/2 - 1];
+    
+    if(aMid < bMid){
+      return getkth(nums1, aStart + k/2, nums2, bStart, k - k/2);
+    }else{
+      return getkth(nums1, aStart,       nums2, bStart + k/2, k - k/2);
+    }
+  }
+};
+```
 ```java
 class Solution {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
