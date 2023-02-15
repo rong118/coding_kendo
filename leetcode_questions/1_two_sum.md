@@ -31,7 +31,7 @@ Constraints:
 * -10^9 <= target <= 10^9
 * Only one valid answer exists.
 
-## 分类 && 解题思路
+## 分类
 - Array
 - Sort
 - HashMap
@@ -42,7 +42,7 @@ class Solution{
 public:
     vector<int> twoSum(vector<int> &numbers, int target){
         vector<int> output;
-        map<int,int> m;
+        unordered_map<int,int> m;
         int findValue;
         for(int i = 0; i < numbers.size(); i++){
             findValue = target - numbers[i];

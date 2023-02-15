@@ -70,7 +70,17 @@ int main() {
 ```
 
 ## Leetcode questions
-- [1 Two Sum](../leetcode_questions/1_two_sum.md)
-- [4 Median of Two Sorted Arrays](../leetcode_questions/4_median_of_two_sorted_arrays.md)
-- [26 Remove Duplicates From Sorted Array](../leetcode_questions/26_remove_duplicates_from_sorted_array.md)
-- [27 Remove Element](../leetcode_questions/27_remove_element.md)
+- [1. Two Sum](../leetcode_questions/1_two_sum.md)
+- [4. Median of Two Sorted Arrays](../leetcode_questions/4_median_of_two_sorted_arrays.md)
+- [11. Container With Most Water]()
+- [15. 3Sum]()
+- [26. Remove Duplicates From Sorted Array](../leetcode_questions/26_remove_duplicates_from_sorted_array.md)
+- [27. Remove Element](../leetcode_questions/27_remove_element.md)
+- [39. Combination Sum]()
+- [56. Merge Intervals]()
+- [57. Insert Interval]()
+- [75. Sort Colors]()
+- [121. Best Time to Buy and Sell Stock]()
+- [169. Majority Element]()
+- [217. Contains Duplicate]()
+- [238. Product of Array Except Self]()
