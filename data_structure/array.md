@@ -79,7 +79,7 @@ int main() {
 - [39. Combination Sum]()
 - [56. Merge Intervals](../leetcode_questions/56_merge_intervals.md)
 - [57. Insert Interval](../leetcode_questions/57_insert_interval.md)
-- [75. Sort Colors]()
+- [75. Sort Colors](../leetcode_questions/75_sort_colors.md)
 - [121. Best Time to Buy and Sell Stock]()
 - [169. Majority Element]()
 - [217. Contains Duplicate]()
