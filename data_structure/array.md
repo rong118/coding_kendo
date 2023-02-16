@@ -82,5 +82,5 @@ int main() {
 - [75. Sort Colors](../leetcode_questions/75_sort_colors.md)
 - [121. Best Time to Buy and Sell Stock]()
 - [169. Majority Element]()
-- [217. Contains Duplicate]()
+- [217. Contains Duplicate](../leetcode_questions/217_contain_duplicate.md)
 - [238. Product of Array Except Self]()
