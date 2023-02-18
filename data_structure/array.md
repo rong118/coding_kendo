@@ -81,6 +81,6 @@ int main() {
 - [57. Insert Interval](../leetcode_questions/57_insert_interval.md)
 - [75. Sort Colors](../leetcode_questions/75_sort_colors.md)
 - [121. Best Time to Buy and Sell Stock]()
-- [169. Majority Element]()
+- [169. Majority Element](../leetcode_questions/169_majority_element.md)
 - [217. Contains Duplicate](../leetcode_questions/217_contain_duplicate.md)
 - [238. Product of Array Except Self]()
