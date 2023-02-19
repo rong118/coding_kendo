@@ -6,7 +6,7 @@ This repository provides a summary of data structures and algorithms along with 
 A data structure is a specialized format for organizing, processing, retrieving and storing data in computer science world.
 
 * [Array](./data_structure/array.md)
-* [String]()
+* [String](./data_structure/string.md)
 * [Linked List]()
 * [Stack]()
 * [Queue]()
