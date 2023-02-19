@@ -37,7 +37,14 @@ std::size_t found = a.find("abc");
 if (found != std::string::npos){
     // Do somthing in here
 }
+
+// convert string to lowcase
+std::tolower(s[l++]);
+
+// check string if is alphanumeric
+isalnum(s[l]);
 ```
 
 ## Leetcode questions
-- [125. Valid Palindrome]()
+- [125. Valid Palindrome](../leetcode_questions/125_valid_palindrone.md)
+- [242. Valid Anagram](../leetcode_questions/242_valid_anagram.md)
