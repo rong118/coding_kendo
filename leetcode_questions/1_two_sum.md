@@ -32,9 +32,9 @@ Constraints:
 * Only one valid answer exists.
 
 ## 分类
-- Array
-- Sort
-- HashMap
+- array
+- sort
+- hashMap
 
 ## Code Implementation
 ```c++
