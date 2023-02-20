@@ -45,12 +45,12 @@ Example 3:
 Constraints:
 
 * 3 <= nums.length <= 3000
-* -105 <= nums[i] <= 105
+* -10^5 <= nums[i] <= 10^5
 
 ## 分类
 - array
 - sort
-- hashMap
+- two pointers
 
 ## Code Implementation
 ```c++
