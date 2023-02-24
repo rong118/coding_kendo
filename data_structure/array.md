@@ -76,7 +76,7 @@ int main() {
 - [15. 3Sum](../leetcode_questions/15_three_sum.md)
 - [26. Remove Duplicates From Sorted Array](../leetcode_questions/26_remove_duplicates_from_sorted_array.md)
 - [27. Remove Element](../leetcode_questions/27_remove_element.md)
-- [39. Combination Sum]()
+- [39. Combination Sum](../leetcode_questions/39_combination_sum.md)
 - [56. Merge Intervals](../leetcode_questions/56_merge_intervals.md)
 - [57. Insert Interval](../leetcode_questions/57_insert_interval.md)
 - [75. Sort Colors](../leetcode_questions/75_sort_colors.md)
