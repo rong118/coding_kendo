@@ -46,6 +46,7 @@ isalnum(s[l]);
 ```
 
 ## Leetcode questions
+- [3. Longest Substring Without Repeating Characters](../leetcode_questions/3_longest_substring_without_repeating_characters.md)
 - [125. Valid Palindrome](../leetcode_questions/125_valid_palindrome.md)
 - [242. Valid Anagram](../leetcode_questions/242_valid_anagram.md)
 - [409. Longest Palindrome](../leetcode_questions/409_longest_palindrome.md)
