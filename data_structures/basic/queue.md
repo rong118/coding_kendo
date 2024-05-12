@@ -54,13 +54,11 @@ func main() {
 * A queue is needed to implement breath-first search.
 
 ## Leetcode questions
-- [225 Implement Stack using Queues](../leetcode_questions/225_implement_stack_using_queue.md)
-- [622 Design Circular Queue](../leetcode_questions/622_design_circular_queue.md)
-- [641 Design Circular Deque](../leetcode_questions/641_design_circular_deque.md)
-
+- [225 Implement Stack using Queues](../../leetcode_questions/225_implement_stack_using_queue.md)
+- [622 Design Circular Queue](../../leetcode_questions/622_design_circular_queue.md)
+- [641 Design Circular Deque](../../leetcode_questions/641_design_circular_deque.md)
 
 # Deque (Double ended queue)
-
 
 In computer science, a double-ended queue (abbreviated to deque) is an abstract data type that generalizes a queue, for which elements can be added to or removed from either the front (head) or back (tail).
 
