@@ -7,22 +7,22 @@ This repository provides a summary of data structures and algorithms along with 
 A data structure is a specialized format for organizing, processing, retrieving, and storing data in computer science.
 
 ### Basic Data Structures
-- [Array](./data_structure/array.md)
-- [String](./data_structure/string.md)
-- [Linked List]()
-- [Stack]()
-- [Queue]()
-- [Heap (PriorityQueue)]()
-- [HashTable]()
-  - [Set]()
-    - [HashSet]()
-    - [TreeSet]()
-  - [Map]()
-    - [HashMap]()
-    - [TreeMap]()
+- [Array](./data_structures/basic/array.md)
+- [String](./data_structures/basic/string.md)
+- [Linked List](./data_structures/basic/linkedlist.md)
+- [Stack](./data_structures/basic/stack.md)
+- [Queue](./data_structures/basic/queue.md)
+- [Heap (PriorityQueue)](./data_structures/basic/heap.md)
+- HashTable
+  - [Set](./data_structures/basic/set.md)
+    - [HashSet](./data_structures/basic/hashset.md)
+    - [TreeSet](./data_structures/basic/treeset.md)
+  - [Map](./data_structures/basic/map.md)
+    - [HashMap](./data_structures/basic/hashmap.md)
+    - [TreeMap](./data_structures/basic/treemap.md)
 
 ### Tree Data Structures && Algorithms
-- [Tree]()
+- [Tree](./data_structures/tree/tree.md)
   - [Binary Tree]()
   - [Binary Search Tree]()
   - [AVL Tree]()
@@ -70,7 +70,7 @@ An algorithm is a procedure used for solving a problem or performing a computati
   - [Linear Search]()
   - [Binary Search]()
 
-## Other Algorithms
+### Other Algorithms
 
 - [Brute Force]()
 - [Backingtracking]()
