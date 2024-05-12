@@ -1,6 +1,6 @@
 # Array
 
-In computer science, an array is a data structure **consisting of a collection of elements** (values or variables), each identified by at least one array index or key.
+In computer science, an array is a data structure **comprising a collection of elements** (values or variables), each identified by at least one array index or key.
 
 ## Implementation
 ```c++
@@ -30,13 +30,13 @@ int main() {
 ```
 
 ## Features
-- Access data by index O(1)
-- Array size cannot be changed
-- Add/Delete operatings are slow due to re-malloc memory
+- Access data by index: O(1)
+- Array size remains fixed
+- Adding or deleting elements is slow due to memory reallocation
 
 ## Dynamic Array
 
-A dynamic array is an array with a big improvement: **automatic resizing**. One limitation of arrays is that they're fixed size, meaning you need to specify the number of elements your array will hold ahead of time. A dynamic array expands as you add more elements. So you don't need to determine the size ahead of time.
+A dynamic array is an array with a significant improvement: **automatic resizing**. One limitation of arrays is their fixed size, meaning you must specify the number of elements ahead of time. A dynamic array expands as you add more elements, eliminating the need to determine size beforehand.
 
 ## Implementation
 ```c++

@@ -7,7 +7,7 @@ This repository provides a summary of data structures and algorithms along with 
 A data structure is a specialized format for organizing, processing, retrieving, and storing data in computer science.
 
 ### Basic Data Structures
-- [Array](./data_structures/basic/array.md)
+- [Array](./data_structures/basic/array.md) ✅
 - [String](./data_structures/basic/string.md)
 - [Linked List](./data_structures/basic/linkedlist.md)
 - [Stack](./data_structures/basic/stack.md)
@@ -23,8 +23,8 @@ A data structure is a specialized format for organizing, processing, retrieving,
 
 ### Tree Data Structures && Algorithms
 - [Tree](./data_structures/tree/tree.md)
-  - [Binary Tree]()
-  - [Binary Search Tree]()
+  - [Binary Tree](./data_structures/tree/tree.md)
+  - [Binary Search Tree](./data_structures/tree/binary_search_tree.md)
   - [AVL Tree]()
   - [B-Tree]()
 - [Tree Traversal]()
@@ -36,6 +36,7 @@ A data structure is a specialized format for organizing, processing, retrieving,
   - [Depth First Search]()
 
 ### Graph Data Structures && Algorithms
+- [Graph]()
 - [Graph Search]()
   - [Breadth First Search]()
   - [Depth First Search]()
@@ -52,14 +53,13 @@ A data structure is a specialized format for organizing, processing, retrieving,
 - [Binary Index Tree (Fenwick Tree)]()
 - [Trie (Prefix Tree)]()
 
-
 ## Algorithms
 
 An algorithm is a procedure used for solving a problem or performing a computation.
 
 ### Basic Algorithms
 
-- [Sort]
+- Sort
   - [Bubble Sort]()
   - [Select Sort]()
   - [Merge Sort]()
@@ -85,4 +85,4 @@ An algorithm is a procedure used for solving a problem or performing a computati
 ## Complexity Analysis
 
 - [Big O Notation](BigONotation.md)
-- [Common Runtimes]()
+- [Common Runtimes Cheetsheet]()
