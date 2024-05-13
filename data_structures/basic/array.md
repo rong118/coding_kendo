@@ -1,75 +1,131 @@
 # Array
 
-In computer science, an array is a data structure **comprising a collection of elements** (values or variables), each identified by at least one array index or key.
+Array is a fundamental data structure that stores elements of the same data type in contiguous memory locations, allowing efficient random access to its elements by index.
 
 ## Implementation
+-  C++ Implementation
 ```c++
-// C++ Implementation
 #include <iostream>
 using namespace std;
 
 int main() {
-  int numbers[5] = {7, 5, 6, 12, 35};
+    // Declaring and initializing an array of integers in C++
+    int arr[5] = {1, 2, 3, 4, 5};
 
-  cout << "The numbers are: ";
-  //  Printing array elements
-  // using range based for loop
-  for (const int &n : numbers) {
-    cout << n << "  ";
-  }
+    // Accessing and printing array elements
+    cout << "Array elements in C++: ";
+    for (int i = 0; i < 5; ++i) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
 
-  cout << "\nThe numbers are: ";
-  //  Printing array elements
-  // using traditional for loop
-  for (int i = 0; i < 5; ++i) {
-    cout << numbers[i] << "  ";
-  }
-
-  return 0;
+    return 0;
 }
 ```
 
-## Features
-- Access data by index: O(1)
-- Array size remains fixed
-- Adding or deleting elements is slow due to memory reallocation
+- Golang Implementation
+```golang
+package main
+
+import "fmt"
+
+func main() {
+    // Declaring and initializing an array of integers in Go
+    arr := [5]int{1, 2, 3, 4, 5}
+
+    // Accessing and printing array elements
+    fmt.Print("Array elements in Go: ")
+    for _, v := range arr {
+        fmt.Printf("%d ", v)
+    }
+    fmt.Println()
+}
+```
+
+- JavaScript Implementation
+```javascript
+let arr = [1, 2, 3, 4, 5];
+
+// Accessing and printing array elements
+console.log("Array elements in JavaScript:", arr.join(" "));
+```
+
+## Runtime Complexity
+- **Access Time**: Accessing an element by index in an array typically has constant time complexity, O(1), because it involves simple arithmetic to calculate the memory address of the desired element based on its index.
+
+- **Insertion/Deletion Time**: Insertion and deletion operations in arrays can have a higher time complexity, O(n), especially if they require shifting elements to maintain the array's contiguous structure. However, if the insertion/deletion happens at the end of the array, it can be done in constant time.
 
 ## Dynamic Array
 
-A dynamic array is an array with a significant improvement: **automatic resizing**. One limitation of arrays is their fixed size, meaning you must specify the number of elements ahead of time. A dynamic array expands as you add more elements, eliminating the need to determine size beforehand.
+A dynamic array, also known as a resizable array or a growable array, is a data structure that allows for **dynamic resizing** while maintaining the characteristics of an array, such as random access to elements and contiguous memory allocation.
+
+Unlike static arrays, which have a fixed size determined at compile time, dynamic arrays can dynamically adjust their size during runtime to accommodate the number of elements being stored.
+
+The key feature of dynamic arrays is their ability to automatically resize themselves when the number of elements exceeds the current capacity. When a dynamic array is full and a new element needs to be added, it typically allocates a larger chunk of memory, copies the existing elements to the new memory location, and then adds the new element.
 
 ## Implementation
+- C++ Example using std::vector:
 ```c++
-// C++ Implementation
 #include <iostream>
 #include <vector>
 using namespace std;
 
 int main() {
-  // STL vector<T>
-  vector<int> numbers = {7, 5, 6, 12, 35};
+    // Creating a dynamic array using std::vector in C++
+    vector<int> dynamicArray;
 
-  cout << "The numbers are: ";
-  // Printing array elements
-  // Using range based for loop
-  for (const int &n : numbers) {
-    cout << n << "  ";
-  }
+    // Adding elements to the dynamic array
+    dynamicArray.push_back(1);
+    dynamicArray.push_back(2);
+    dynamicArray.push_back(3);
 
-  numbers.push_back(46); // {7, 5, 6, 12, 35, 46}
+    // Accessing and printing elements of the dynamic array
+    cout << "Dynamic array elements in C++: ";
+    for (int i = 0; i < dynamicArray.size(); ++i) {
+        cout << dynamicArray[i] << " ";
+    }
+    cout << endl;
 
-  // pop_back
-  numbers.pop_back() // {7, 5, 6, 12, 35}
-
-  cout << "\nThe numbers are: ";
-  //  Printing array elements
-  // using traditional for loop
-  for (int i = 0; i < numbers.size(); ++i) {
-    cout << numbers[i] << "  ";
-  }
-
-  return 0;
+    return 0;
 }
+```
+
+- Go Example using Slices:
+```golang
+package main
+
+import "fmt"
+
+func main() {
+    // Creating a dynamic array using slices in Go
+    dynamicArray := []int{}
+
+    // Adding elements to the dynamic array
+    dynamicArray = append(dynamicArray, 1)
+    dynamicArray = append(dynamicArray, 2)
+    dynamicArray = append(dynamicArray, 3)
+
+    // Accessing and printing elements of the dynamic array
+    fmt.Print("Dynamic array elements in Go: ")
+    for _, v := range dynamicArray {
+        fmt.Printf("%d ", v)
+    }
+    fmt.Println()
+}
+```
+
+- JavaScript Example using Arrays:
+```javascript
+// Creating a dynamic array using JavaScript arrays
+let dynamicArray = [];
+
+// Adding elements to the dynamic array
+dynamicArray.push(1);
+dynamicArray.push(2);
+dynamicArray.push(3);
+
+// Accessing and printing elements of the dynamic array
+console.log("Dynamic array elements in JavaScript:", dynamicArray.join(" "));
 ```
 
 ## Leetcode questions

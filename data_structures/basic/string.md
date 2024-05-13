@@ -1,10 +1,11 @@
 # String
 
-String is traditionally a sequence of characters, it may allow its elements to be mutated and the length changed, or it may be fixed (after creation). A string is generally considered as a data type and is often implemented as an array data structure of bytes (or words) that stores a sequence of elements, typically characters, using some character encoding. 
+In computer science, a string is a sequence of characters, typically used to represent text. Strings are a fundamental data type in most programming languages and are often treated as a built-in data structure.
 
 String may also denote more general arrays or other sequence (or list) data types and structures.
 
 ## Implementation
+- C++ Example using std::string:
 ```c++
 // c++ Implementation
 #include <string>
@@ -43,6 +44,30 @@ std::tolower(s[l++]);
 
 // check string if is alphanumeric
 isalnum(s[l]);
+```
+
+- Go Example using string type:
+```golang
+package main
+
+import "fmt"
+
+func main() {
+    // Creating and initializing a string in Go
+    str := "Hello, world!"
+
+    // Accessing and printing the string
+    fmt.Println("String in Go:", str)
+}
+```
+
+- JavaScript Example using string type:
+```javascript
+// Creating and initializing a string in JavaScript
+let str = "Hello, world!";
+
+// Accessing and printing the string
+console.log("String in JavaScript:", str);
 ```
 
 ## Leetcode questions

@@ -8,7 +8,7 @@ A data structure is a specialized format for organizing, processing, retrieving,
 
 ### Basic Data Structures
 - [Array](./data_structures/basic/array.md) ✅
-- [String](./data_structures/basic/string.md)
+- [String](./data_structures/basic/string.md) ✅
 - [Linked List](./data_structures/basic/linkedlist.md)
 - [Stack](./data_structures/basic/stack.md)
 - [Queue](./data_structures/basic/queue.md)
