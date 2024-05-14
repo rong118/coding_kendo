@@ -1,4 +1,4 @@
-# Coding Kendo (けんどう)
+# Coding Kendo (剣道)
 
 This repository provides a summary of data structures and algorithms along with a collection of interview coding questions related to these topics.
 
@@ -11,7 +11,7 @@ A data structure is a specialized format for organizing, processing, retrieving,
 - [String](./data_structures/basic/string.md) ✅
 - [Linked List](./data_structures/basic/linkedlist.md) ✅
 - [Stack](./data_structures/basic/stack.md) ✅
-- [Queue](./data_structures/basic/queue.md)
+- [Queue](./data_structures/basic/queue.md) ✅
 - [Heap (PriorityQueue)](./data_structures/basic/heap.md)
 - HashTable
   - [Set](./data_structures/basic/set.md)
