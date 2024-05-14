@@ -1,29 +1,31 @@
-# PriorityQueue (Heap)
-## 定义
-堆分为两种:最大堆和最小堆，两者的差别在于节点的排序方式。
-在最大堆中，父节点的值比每一个子节点的值都要大。 在最小堆中，父节点的值比每一个子节点的值都要小。 这就是所谓的“堆属性”，并且这个属性对堆中的每一个 节点都成立。
+# Heap
+
+A heap is a specialized tree-based data structure that satisfies the following properties:
+- Complete: The heap is either a full binary tree or a complete binary tree.
+- Ordered: The elements in the heap are ordered according to a certain criterion, such as maximum or minimum values.
+
+## Characteristics
+
+- Parent-child relationships: Each node has at most two children (left and right).
+- Heap property: The parent node is either greater than both child nodes (in a max-heap) or less than both child nodes (in a min-heap).
+
+## Binary Heap
 
 (Binary) Heap is a special case of balanced binary tree data structure where the root-node key is compared with its children and arranged accordingly.
 Min-Heap − Where the value of the root node is less than or equal to either of its children.
 Max-Heap − Where the value of the root node is greater than or equal to either of its children.
 
+## Implementation
 
-<img src="../assets/heap.png" width="300" />
-
-```c++
-std::priority_queue<int> pq;
-pq.push(5);
-pq.push(1);
-
-int f = pq.top();  // 1
-pq.pop();          // pop 1
-```
-
-## 应用
-pq应用和array手动实现heap
+Heaps can be implemented using various data structures, such as:
+- Arrays: Heaps can be represented using arrays, where the heap property is maintained by swapping elements.
+- Linked lists: Heaps can also be implemented using linked lists, where each node has a parent-child relationship.
+- Trees: Heaps can be viewed as a special type of tree, where the root node represents the maximum or minimum value.
 
 ## Heapify
-HEAPIFY is an important subroutine for manipulating heaps. Its inputs are an array A and an index i into the array. When HEAPIFY is called, it is assumed that the binary trees rooted at LEFT(i) and RIGHT(i) are heaps, but that A[i] may be smaller than its children, thus violating the heap property (7.1). The function of HEAPIFY is to let the value at A[i] "float down" in the heap so that the subtree rooted at index i becomes a heap.
+HEAPIFY is an important process for manipulating heaps. Ensuring that it remains a valid heap. It's an essential step in various algorithms, such as heapsort and priority queue operations.
+
+Its inputs are an array A and an index i into the array. When HEAPIFY is called, it is assumed that the binary trees rooted at LEFT(i) and RIGHT(i) are heaps, but that A[i] may be smaller than its children, thus violating the heap property. The function of HEAPIFY is to let the value at A[i] "float down" in the heap so that the subtree rooted at index i becomes a heap.
 
 For example, given an integer array, heapify it into min-heap array
 For a heap array A, A[0] is the root of heap, and for each A[i], A[i * 2 + 1] is the left child and A[j * 2 + 2] is the right child of A[i].
@@ -76,7 +78,7 @@ void iterativeHeapify (vector<int>& arr, int i) {
             largest = r;
         }
 
-        //Once condition is met, exit loop
+        //Once the condition is met, exits loop
         if(i == largest){
             break;
         }
@@ -87,11 +89,7 @@ void iterativeHeapify (vector<int>& arr, int i) {
 }
 ```
 
-## Heapify Run Time
-T(n) =  O(n/4) + O(n/8 * 2) + O(n/16 * 3) ...
-     =  O(n)
-
-## HeapSort
+### HeapSort
 ```c++
 void heap_sort(vector<int>& arr){
     int len = arr.size();
@@ -111,12 +109,33 @@ void heap_sort(vector<int>& arr){
 }
 ```
 
-## Priority Queue
-Method:
-offer() => add element in queue
-pull()  => get and remove top element from queue
-peek()  => return top element
+## Runtime Complexity
+- Insertion (Enqueue): **O(log n)**<br> 
+  Inserting an element into a binary heap involves adding it to the end of the heap (maintaining the heap shape property) and then performing a "heapify up" operation to restore the heap property, which takes O(log n) time.
 
+- Deletion (Dequeue): **O(log n)**<br> 
+  Removing the root element (highest priority element in a max heap or lowest priority element in a min-heap) involves replacing it with the last element in the heap, then performing a "heapify down" operation to restore the heap property, which takes O(log n) time.
+
+- Peeking: **O(1)**<br> 
+    Accessing the root element of the heap (highest priority element) takes constant time, as it's always the first element in the underlying array representation of the heap.
+
+- Building a Heap from an Array (Heapify): **O(n)**<br>
+  Converting an array of elements into a heap (heapify operation) can be done in linear time complexity by starting from the last non-leaf node and performing a "heapify down" operation for each node. Since there are n/2 nodes in a binary heap, where n is the number of elements, building the heap takes O(n) time. T(n) =  O(n/4) + O(n/8 * 2) + O(n/16 * 3) ...
+     =  O(n)
+
+- Heap Sort: **O(n log n)**<br>
+  Sorting elements using heap sort involves building a max heap from the array (O(n)), then repeatedly removing the root element and restoring the heap property (O(log n) per removal), resulting in a time complexity of O(n log n) for the entire sorting process.
+
+# Priority Queue
+Priority Queue (also known as Ordered Queue or Sorted Queue) is a data structure that allows you to insert elements with associated priorities, and then retrieve the element with the highest or lowest priority.
+
+Operations:
+- offer() => add element in queue
+- pull()  => get and remove top element from queue
+- peek()  => return top element
+
+## Implementation
+### C++ Implementation with heap
 ```c++
 class priority_queue {
 public:
@@ -182,15 +201,105 @@ private:
     }
 }
 ```
+### C++ stl::queue
+```c++
+#include <queue>
+#include <iostream>
 
-## Heap time complexity
-peekMax() or peekMin(): depends on which heap you implement, takes O(1)
-add()/remove(): a new number to heap would do logn times heapify, so time complexity is O(logn)
-Delete random would cause O(n), because search O(n) + delete O(logn)
-Build heap only takes O(n), we are doing heapify only for half of the element
+int main() {
+    // Create a max-heap priority queue (highest priority first)
+    std::priority_queue<int, std::vector<int>, std::greater<int>> pq;
+
+    // Insert some elements with priorities
+    pq.push(3);
+    pq.push(1);
+    pq.push(5);
+    pq.push(2);
+
+    // Retrieve the highest-priority element (max-heap property)
+    while (!pq.empty()) {
+        std::cout << "Priority: " << pq.top() << std::endl;
+        pq.pop();
+    }
+
+    return 0;
+}
+```
+
+### Golang Implementation
+```golang
+package main
+
+import "fmt"
+
+type PQElement struct {
+    value int
+    prio  int // priority
+}
+
+func (e *PQElement) Less(other *PQElement) bool {
+    return e.prio < other.prio
+}
+
+func main() {
+    // Create a new priority queue
+    pq := []PQElement{}
+
+    // Enqueue some elements with priorities
+    pq = append(pq, PQElement{value: 1, prio: 3})
+    pq = append(pq, PQElement{value: 2, prio: 2})
+    pq = append(pq, PQElement{value: 3, prio: 1})
+
+    // Dequeue and print the highest-priority element
+    for len(pq) > 0 {
+        fmt.Println("Highest priority:", pq[0].value)
+        pq = pq[1:]
+    }
+}
+```
+
+### Javascript Implementation
+```javascript
+class PriorityQueue {
+  constructor() {
+    this.queue = [];
+  }
+
+  enqueue(item, priority) {
+    this.queue.push({ item, priority });
+    this.queue.sort((a, b) => b.priority - a.priority);
+  }
+
+  dequeue() {
+    if (!this.isEmpty()) {
+      return this.queue.shift().item;
+    }
+  }
+
+  isEmpty() {
+    return this.queue.length === 0;
+  }
+}
+
+// Example usage
+const pq = new PriorityQueue();
+
+pq.enqueue('Task A', 3);
+pq.enqueue('Task B', 1);
+pq.enqueue('Task C', 5);
+pq.enqueue('Task D', 2);
+
+console.log(pq.dequeue()); // Task C (highest priority)
+console.log(pq.dequeue()); // Task D
+console.log(pq.dequeue()); // Task A
+console.log(pq.dequeue()); // Task B
+
+console.log(pq.isEmpty()); // true
+```
 
 ## Leetcode questions
 - [23 Merge k Sorted Lists](../../leetcode_questions/23_merge_k_sorted_lists.md)
 - [347 Top K Frequent Elements](../../leetcode_questions/347_top_k_frequent_elements.md)
 - [912 Sort_an_array](../../leetcode_questions/912_sort_an_array.md)
 - [215 Kth_Largest_Element_in_an_Array](../../leetcode_questions/215_Kth_Largest_Element_in_an_Array.md)
+- 
