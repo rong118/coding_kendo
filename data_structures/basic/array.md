@@ -3,7 +3,7 @@
 Array is a fundamental data structure that stores elements of the same data type in contiguous memory locations, allowing efficient random access to its elements by index.
 
 ## Implementation
--  C++ Implementation
+### C++ Implementation
 ```c++
 #include <iostream>
 using namespace std;
@@ -23,7 +23,7 @@ int main() {
 }
 ```
 
-- Golang Implementation
+### Golang Implementation
 ```golang
 package main
 
@@ -42,7 +42,7 @@ func main() {
 }
 ```
 
-- JavaScript Implementation
+### JavaScript Implementation
 ```javascript
 let arr = [1, 2, 3, 4, 5];
 
@@ -64,7 +64,7 @@ Unlike static arrays, which have a fixed size determined at compile time, dynami
 The key feature of dynamic arrays is their ability to automatically resize themselves when the number of elements exceeds the current capacity. When a dynamic array is full and a new element needs to be added, it typically allocates a larger chunk of memory, copies the existing elements to the new memory location, and then adds the new element.
 
 ## Implementation
-- C++ Example using std::vector:
+### C++ Example using std::vector:
 ```c++
 #include <iostream>
 #include <vector>
@@ -90,7 +90,7 @@ int main() {
 }
 ```
 
-- Go Example using Slices:
+### Go Example using Slices:
 ```golang
 package main
 
@@ -114,7 +114,7 @@ func main() {
 }
 ```
 
-- JavaScript Example using Arrays:
+### JavaScript Example using Arrays:
 ```javascript
 // Creating a dynamic array using JavaScript arrays
 let dynamicArray = [];
