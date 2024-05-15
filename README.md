@@ -1,8 +1,8 @@
-# Coding Kendo (剣道)
+# Coding Kendo (コーディングの剣道)
 
 This repository provides a summary of data structures and algorithms along with a collection of interview coding questions related to these topics.
 
-## Data Structures
+## I. Data Structures
 
 A data structure is a specialized format for organizing, processing, retrieving, and storing data in computer science.
 
@@ -13,13 +13,10 @@ A data structure is a specialized format for organizing, processing, retrieving,
 - [Stack](./data_structures/basic/stack.md) ✅
 - [Queue](./data_structures/basic/queue.md) ✅
 - [Heap (PriorityQueue)](./data_structures/basic/heap.md) ✅
-- HashTable
-  - [Set](./data_structures/basic/set.md)
-    - [HashSet](./data_structures/basic/hashset.md)
-    - [TreeSet](./data_structures/basic/treeset.md)
-  - [Map](./data_structures/basic/map.md)
-    - [HashMap](./data_structures/basic/hashmap.md)
-    - [TreeMap](./data_structures/basic/treemap.md)
+- [HashTable](./data_structures/basic/hashtable.md) ✅
+  - [HashSet](./data_structures/basic/hashset.md)
+  - [HashMap](./data_structures/basic/hashmap.md)
+- [TreeMap & TreeSet](./data_structures/basic/treemap.md)
 
 ### Tree Data Structures & Algorithms
 - [Tree](./data_structures/tree/tree.md)
@@ -53,13 +50,13 @@ A data structure is a specialized format for organizing, processing, retrieving,
 - [Binary Index Tree (Fenwick Tree)]()
 - [Trie (Prefix Tree)]()
 
-## Algorithms
+## II. Algorithms
 
 An algorithm is a procedure used for solving a problem or performing a computation.
 
 ### Basic Algorithms
 
-- Sort
+- [Sort]()
   - [Bubble Sort]()
   - [Select Sort]()
   - [Merge Sort]()
@@ -82,7 +79,7 @@ An algorithm is a procedure used for solving a problem or performing a computati
 - [Dynamic Programming (DP)]()
 - [Math]()
 
-## Complexity Analysis
+## III. Complexity Analysis
 
 - [Big O Notation](BigONotation.md)
-- [Common Runtimes Cheetsheet]()
+- [Runtime Complexity Cheetsheet]()
