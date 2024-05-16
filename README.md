@@ -14,8 +14,8 @@ A data structure is a specialized format for organizing, processing, retrieving,
 - [Queue](./data_structures/basic/queue.md) ✅
 - [Heap (PriorityQueue)](./data_structures/basic/heap.md) ✅
 - [HashTable](./data_structures/basic/hashtable.md) ✅
-  - [HashSet](./data_structures/basic/hashset.md)
   - [HashMap](./data_structures/basic/hashmap.md)
+  - [HashSet](./data_structures/basic/hashset.md)
 - [TreeMap & TreeSet](./data_structures/basic/treemap.md)
 
 ### Tree Data Structures & Algorithms
@@ -55,7 +55,6 @@ A data structure is a specialized format for organizing, processing, retrieving,
 An algorithm is a procedure used for solving a problem or performing a computation.
 
 ### Basic Algorithms
-
 - [Sort]()
   - [Bubble Sort]()
   - [Select Sort]()
@@ -68,7 +67,6 @@ An algorithm is a procedure used for solving a problem or performing a computati
   - [Binary Search]()
 
 ### Other Algorithms
-
 - [Brute Force]()
 - [Backingtracking]()
 - [Recursion]()
@@ -80,6 +78,5 @@ An algorithm is a procedure used for solving a problem or performing a computati
 - [Math]()
 
 ## III. Complexity Analysis
-
-- [Big O Notation](BigONotation.md)
+- [Big O Notation](./algorithms/BigONotation.md) ✅
 - [Runtime Complexity Cheetsheet]()
