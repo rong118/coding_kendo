@@ -16,8 +16,8 @@ A hash collision occurs when two or more different keys hash to the same index i
 
 ## Runtime Complexity
 There are some common operations and their average-case time complexities for a hash table:
-- Lookup (get): O(1) - This is the most common operation, where you look up a value by its key.
+- Lookup: O(1) - This is the most common operation, where you look up a value by its key.
 - Insert: O(1) - When inserting a new key-value pair, the hash function generates the index, and the insertion takes constant time on average.
-- Delete: O(n) - Deleting a key-value pair requires iterating through the array to find and remove the corresponding entry. The number of elements n affects the runtime complexity.
+- Delete: O(1) - Deleting a key-value pair also takes constant time on average.
 - Iteration (iterate over all entries): O(n) - When you need to iterate over all key-value pairs, the hash table must traverse the entire array, which takes linear time proportional to the number of elements n.
 - Collision resolution: O(1), O(k), or O(log n) - Hash tables use various techniques (e.g., chaining, open addressing) to handle collisions (when two keys hash to the same index). The specific collision resolution method affects the runtime complexity.

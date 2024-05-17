@@ -1,51 +1,68 @@
-# HashMap
+# Hash Map
 
 In computing, hash map is a data structure that implements an associative array or dictionary. It is an abstract data type that maps keys to values. A hash table uses a hash function to compute an index, also called a hash code, into an array of buckets or slots, from which the desired value can be found.
 
-slot_index = hash(key)
-
-During lookup, the key is hashed and the resulting hash indicates where the corresponding value is stored.
-
-<img src="../assets/hashmap.png" width="400"/>
+A hash map typically uses a single array or linked list to store values.
 
 ## Implementation
-```c
-// c++ Implementation
+### C++ using std::unordered_map
+```c++
 #include <iostream>
-#include <map>
-
-using namespace std;
+#include <string>
+#include <unordered_map>
 
 int main() {
-  std::unordered_map<int, int> m;
-  
-  m[44] = 11;
-  m[11] = 33;
+    std::unordered_map<std::string, int> myMap;
 
-  int r = m.at(11);  // 33
-  m.erase(44);
-  m.insert({22, 66});
+    // Insert some key-value pairs
+    myMap["foo"] = 1;
+    myMap["bar"] = 2;
+    myMap["baz"] = 3;
 
-  return 0;
+    // Look up a value
+    if (myMap.find("foo") != myMap.end()) {
+        std::cout << "Value for 'foo' is: " << myMap["foo"] << std::endl;
+    }
+
+    return 0;
+}
+```
+### Golang using map
+```go
+package main
+
+import (
+    "fmt"
+)
+
+func main() {
+    m := map[string]int{"foo": 1, "bar": 2, "baz": 3}
+
+    // Look up a value
+    if val, ok := m["foo"]; ok {
+        fmt.Println("Value for 'foo' is:", val)
+    }
 }
 ```
 
-```go
+### Javascript using object
+```javascript
+const myMap = {
+  foo: 1,
+  bar: 2,
+  baz: 3,
+};
 
+// Look up a value
+console.log(`Value for 'foo' is ${myMap.foo}`);
 ```
 
 ## O(1) search and insert 
-
-## Collision resolution
-
-* Separate chaining
-* Open addressing
-
-
-
-如果2个不同的string input作为key在hashmap中index 出现了冲突如何处理?
-一般使用两种方法
-1. 挂链表 Separate Chaining
-2. 开放地址法 open addressing
-
-好处:查找比纯链表快，插入删除比纯数组快
+- Insertion (put(key, value)): O(1) <br>
+In a well-implemented HashMap, insertion is typically done in constant time, as it only requires calculating the hash code for the key and updating the bucket array.
+- Lookup (get(key)): O(1) <br>
+Looking up a value by its key is also typically done in constant time, as it only requires hashing the key and finding the corresponding bucket.
+- Deletion (remove(key)): O(1) <br>
+Deleting an entry from the HashMap is often done in constant time, as it simply involves updating the bucket array and removing any necessary links.
+- Contains Key (containsKey(key)): O(1) <br>
+Checking if a key exists in the HashMap is typically done in constant time, as it only requires hashing the key and finding the corresponding bucket.
