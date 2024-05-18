@@ -1,102 +1,33 @@
 # Tree
 
-
-<img src="../assets/tree.png" width="300" />
-
 Tree is a widely used abstract data type that represents a hierarchical structure with a set of connected nodes.
 Each node in the tree can be connected to many children (depending on the type of tree), but must be connected to exactly one parent, except for the root node, which has no parent.
-No node can be its own ancestor (no loop).
-Each child can be treated like the root node of its own subtree.
+- No node can be its own ancestor (no loop).
+- Each child can be treated like the root node of its own subtree.
 
+## Types of Trees:
+- Binary Tree: Each node has at most two child nodes (left and right).
+- B-Tree: A self-balancing tree used in databases to manage disk storage.
+- AVL Tree: A self-balancing binary search tree that ensures the height of the left and right subtrees differs by at most one.
 
-## Binary Tree
-Binary trees are a commonly used type, which constrain the number of children for each parent to exactly two.
+## Balancing
 
-<img src="../assets/binarytree.svg.png" width="300" />
+In the context of trees, balancing refers to a process that maintains the structural properties of the tree while performing insertion or deletion operations. The goal is to keep the tree approximately balanced, so that search, insertion, and deletion operations remain efficient (typically O(log n) in the average case).
 
-```c
-// c++ Implementation
-class TreeNode {
-public:
-    TreeNode* left;
-    TreeNode* right;
-    
-    int val;
-    TreeNode(int n){
-        val = n;
-        left = NULL;
-        right = NULL;
-    }
-}
+## Tree Runtime Complexity
+- Search: O(log n), where n is the number of nodes in the tree. This is because trees can be searched efficiently using algorithms like binary search.
+- Insertion: O(log n) to O(n), depending on the type of tree and the insertion algorithm used. For example, inserting a node into a balanced binary search tree takes O(log n) time, while inserting a node into an unbalanced tree can take O(n) time.
+- Deletion: O(log n) to O(n), depending on the type of tree and the deletion algorithm used.
+- Traversal: O(n), where n is the number of nodes in the tree. This is because traversing a tree involves visiting each node, which takes constant time per node.
 
-int main(){
-  TreeNode* root = new TreeNode(0); 
-  root->left  = new TreeNode(1); 
-  root->right = new TreeNode(2);
-  
-  std::cout<< root->val << std::endl;
-  std::cout<< root->left->val << std::endl;
-  return 0;
-}
-```
+## Tree's Traversal
+- Preorder  (root-left-right)
+- Inorder   (left-root-right) 
+- Postorder (let-right-root)
 
-## Perfect Binary Tree /  Full Binary Tree / Complete Binary Tree
-
-<img src="../assets/perfectBinaryTree.png" width="600" />
-
-## Balanced Binary Tree
-左右两个子树的高度绝对值布超过1， 并且左右两个子树都是一个平衡树， 平衡二叉树必定是平衡搜索树。
-- AVL tree
-- red-black tree
-- B, B-, B+ tree
-
-## 树的遍历
-- preorder  (根左右)
-- inorder   (左根右) 
-- postorder (左右根)
-
-<img src="../assets/treetraversal.png" width="400" />
-<img src="../assets/treeTraversalResult.png" width="400" />
-
-
-```c
-// c++ Implementation
-// Resusive
-vector<int> treeTraversal(TreeNode* root){
-    vector<int> ans;
-    helper(root, ans);
-    return ans;
-}
-
-// preorder
-void helper(TreeNode* root, vector<int>& ans){
-    if(root == NULL) return;
-    ans.push_back(root->val);
-    helper(root->left, ans);
-    helper(root->right, ans);
-}
-
-// inorder
-void helper(TreeNode* root, vector<int>& ans){
-    if(root == NULL) return;
-    helper(root->left, ans);
-    ans.push_back(root->val);
-    helper(root->right, ans);
-}
-
-// postorder
-void helper(TreeNode* root, vector<int>& ans){
-    if(root == NULL) return;
-    helper(root->left, ans);
-    helper(root->right, ans);
-    ans.push_back(root->val);
-}
-```
-
-## LCA Problem
-Given a binary tree, find the lowest common ancestor of two (or more) given nodes in tree.
-- 倍增、Tarjan、树链剖分 (TODO)
-
+## Search on the Tree
+- Breadth First Search
+- Depth First Search
 
 ## Leetcode questions
 1. 遍历
@@ -119,16 +50,7 @@ Given a binary tree, find the lowest common ancestor of two (or more) given node
 - [889 Construct Binary Tree from Preorder and Postorder Traversal](../leetcode_questions/889_construct_binary_tree_from_preorder_and_postorder_traversal.md)
 - [426 Convert Binary Search Tree to Sorted Doubly Linked List](../leetcode_questions/426_convert_binary_search_tree_to_sorted_doubly_linked_list.md)
 
-4. LCA
-- [235 Lowest Common Ancestor of a Binary Search Tree](../leetcode_questions/235_lowest_common_ancestor_of_a_binary_search_tree.md)
-- [236 Lowest Common Ancestor of a Binary Tree](../leetcode_questions/236_lowest_common_ancestor_of_a_binary_tree.md)
-- [1644 Lowest Common Ancestor of a Binary Tree II](../leetcode_questions/1644_lowest_common_ancestor_of_a_binary_tree_ii.md)
-- [1650 Lowest Common Ancestor of a Binary Tree III](../leetcode_questions/1650_lowest_common_ancestor_of_a_binary_tree_iii.md)
-- [1676 Lowest Common Ancestor of a Binary Tree IV](../leetcode_questions/1676_lowest_common_ancestor_of_a_binary_tree_iv.md)
-- [1123 Lowest Common Ancestor of Deepest Leaves](../leetcode_questions/1123_lowest_common_ancestor_of_deepest_leaves.md)
-- [865 Smallest Subtree with all the Deepest Nodes](../leetcode_questions/865_smallest_subtree_with_all_the_deepest_nodes.md)
-
-4. Path (传递) => DFS (recursive)
+3. Path (传递) => DFS (recursive)
 - [257 Binary Tree Paths](../leetcode_questions/257_binary_tree_paths.md)
 - [1448 Count Good Nodes in Binary Tree](../leetcode_questions/1448_count_good_nodes_in_binary_tree.md)
 - [124 Binary Tree Maximum Path Sum](../leetcode_questions/124_binary_tree_maximum_path_sum.md)

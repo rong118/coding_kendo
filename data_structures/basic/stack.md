@@ -145,5 +145,5 @@ console.log("Popped:", popped);
 - [155 Min Stack](../../leetcode_questions/23_merge_k_sorted_lists.md)
 - [232 Implement Stack Using Queues](../../leetcode_questions/232_implement_stack_using_queues.md)
 - [716 Max Stack](../../leetcode_questions/716_max_stack.md)
-- [1381 Design a Stack With Increment Operation](../../leetcode_questions/1381_design_a_stack_with_increment_operation.md)
 - [895 Maximum Frequency Stack](../../leetcode_questions/895_maximum_frequency_stack.md)
+- [1381 Design a Stack With Increment Operation](../../leetcode_questions/1381_design_a_stack_with_increment_operation.md)
