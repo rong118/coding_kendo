@@ -1,23 +1,70 @@
 # HashSet
 
-The HashSet implements the Set interface using a hash table so that add, remove, and contains each execute in constant or O(1) time assuming reasonable distribution of elements by their hashCode values.
+A HashSet is a fundamental data structure that represents an unordered collection of unique elements, typically stored in a hash table. It allows for efficient insertion, deletion, and lookup operations.
 
-<img src="../assets/hashset.png" width="350"/>
+## Characteristics
+- Each element is associated with a unique key or identifier.
+- The set does not allow duplicate elements; if you try to add a duplicate, it will be ignored.
+- Lookup, insertion, and deletion operations are typically O(1) in the average case.
 
 ## Implementation
+### C++ (using std::unordered_set):
 ```c++
-// c++ Implementation
-std::unordered_set<std::string> q;
+#include <iostream>
+#include <unordered_set>
 
-q.insert(5);
-q.erase(5);
+int main() {
+    std::unordered_set<int> mySet;
+
+    // Insert some elements
+    mySet.insert(1);
+    mySet.insert(2);
+    mySet.insert(3);
+
+    // Check if an element is in the set
+    if (mySet.find(2) != mySet.end()) {
+        std::cout << "2 is in the set!" << std::endl;
+    }
+
+    // Remove an element from the set
+    mySet.erase(1);
+
+    return 0;
+}
+```
+### Golang
+```golang
+package main
+
+import (
+    "fmt"
+)
+
+func main() {
+    mySet := make(map[int]bool)
+    // Insert some elements
+    mySet[1] = true
+    mySet[2] = true
+    mySet[3] = true
+
+    // Check if an element is in the set
+    if _, ok := mySet[2]; !ok {
+        fmt.Println("2 is not in the set!")
+    }
+
+    // Remove an element from the set
+    delete(mySet, 1)
+}
 ```
 
-## 定义
-它不允许出现重复元素, 不保证和集合中元素的顺序, 允许包含值为null的元素，但最多只能有一个null元素
+```javascript using a Set object
+let mySet = new Set([1, 2, 3]);
 
-它是基于HashMap实现的，HashSet底层 使用HashMap来保存所有元素，因此 HashSet 的实现比较简单，相关HashSet 的操作，基本上都是直接调用底层 HashMap的相关方法来完成
+// Check if an element is in the set
+if (mySet.has(2)) {
+    console.log("2 is in the set!");
+}
 
-
-
-## 时间复杂度 O(1)
+// Remove an element from the set
+mySet.delete(1);
+```
