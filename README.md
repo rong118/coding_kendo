@@ -23,13 +23,8 @@ A data structure is a specialized format for organizing, processing, retrieving,
   - [Binary Tree & Binary Search Tree](./data_structures/tree/binary_tree.md) ✅
   - [AVL Tree]()
   - [B-Tree]()
-- [Tree Traversal]()
-  - [In-Order Traversal]()
-  - [Pre-Order Traversal]()
-  - [Post-Order Traversal]()
-- [Tree Search]()
-  - [Breadth First Search]()
-  - [Depth First Search]()
+- [Tree Traversal](./data_structures/tree/tree_traversal.md) ✅
+- [Tree Search](./data_structures/tree/tree_search.md) ✅
 
 ### Graph Data Structures & Algorithms
 - [Graph]()
@@ -54,7 +49,7 @@ A data structure is a specialized format for organizing, processing, retrieving,
 An algorithm is a procedure used for solving a problem or performing a computation.
 
 ### Basic Algorithms
-- [Sort]()
+- [Sort Algorithms]()
   - [Bubble Sort]()
   - [Select Sort]()
   - [Merge Sort]()
