@@ -21,13 +21,13 @@ A data structure is a specialized format for organizing, processing, retrieving,
 ### Tree Data Structures & Algorithms
 - [Tree](./data_structures/tree/tree.md) ✅
   - [Binary Tree & Binary Search Tree](./data_structures/tree/binary_tree.md) ✅
-  - [AVL Tree]()
-  - [B-Tree]()
+  - [AVL Tree](./data_structures/tree/avl_tree.md) ✅
+  - [B-Tree](./data_structures/tree/b_tree.md) ✅
 - [Tree Traversal](./data_structures/tree/tree_traversal.md) ✅
 - [Tree Search](./data_structures/tree/tree_search.md) ✅
 
 ### Graph Data Structures & Algorithms
-- [Graph]()
+- [Graph](./data_structures/graph/graph.md) ✅
 - [Graph Search]()
   - [Breadth First Search]()
   - [Depth First Search]()
