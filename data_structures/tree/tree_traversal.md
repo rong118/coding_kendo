@@ -2,7 +2,7 @@
 
 There are several ways to traverse a tree data structure, depending on the order in which you want to visit the nodes
 
-## Pre-order traversal
+## I. Pre-order traversal
 Visit the current node first, then recursively traverse the left subtree, and finally traverse the right subtree.
 
 Example: In a binary tree, visit the root node, then the left child, then the right child.
@@ -89,7 +89,7 @@ func main() {
 }
 ```
 
-## In-order traversal
+## II. In-order traversal
 Traverse the left subtree, then visit the current node, and finally traverse the right subtree.
 
 Example: In a binary tree, visit the left child of the root, then the root itself, then the right child.
@@ -178,7 +178,7 @@ func main() {
 }
 ```
 
-## Post-order traversal
+## III. Post-order traversal
 Traverse the left subtree, then traverse the right subtree, and finally visit the current node.
 
 Example: In a binary tree, visit the left child of the root, then the right child, then the root itself.
@@ -267,7 +267,7 @@ func main() {
 }
 ```
 
-## Runtime Complexity
+## IV. Runtime Complexity
 The runtime complexity of traversing a binary tree (pre-order, in-order, or post-order) is **O(n)**, where n is the number of nodes in the tree. 
 
 This is because, in each traversal method, every node in the tree is visited exactly once
