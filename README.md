@@ -1,6 +1,6 @@
 # Coding Kendo (コーディングの剣道)
 
-This repository provides a summary of data structures and algorithms along with a collection of interview coding questions related to these topics.
+Explore the fundamentals of computer science with this repository, covering data structures, algorithms, and complexity analysis, plus a curated set of interview coding questions.
 
 ## I. Data Structures
 
@@ -45,10 +45,10 @@ A data structure is a specialized format for organizing, processing, retrieving,
   - [Kruskal's Algorithm]()
 
 ### Advance Data Structures
+- [Trie (Prefix Tree)]()
 - [Disjoint-set (Union Find)]()
 - [Segment Tree (ZKW Tree)]()
 - [Binary Index Tree (Fenwick Tree)]()
-- [Trie (Prefix Tree)]()
 
 ## II. Algorithms
 
