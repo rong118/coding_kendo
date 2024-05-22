@@ -24,9 +24,9 @@ A data structure is a specialized format for organizing, processing, retrieving,
   - [AVL Tree](./data_structures/tree/avl_tree.md) ✅
   - [B-Tree](./data_structures/tree/b_tree.md) ✅
 - [Tree Traversal](./data_structures/tree/tree_traversal.md) ✅
-  - [Pre-order traversal](./data_structures/tree/tree_traversal.md#i-pre-order-traversal) ✅
-  - [In-order traversal](./data_structures/tree/tree_traversal.md#ii-in-order-traversal) ✅
-  - [Post-order traversal](./data_structures/tree/tree_traversal.md#iii-post-order-traversal) ✅
+  - [Pre-order Traversal](./data_structures/tree/tree_traversal.md#i-pre-order-traversal) ✅
+  - [In-order Traversal](./data_structures/tree/tree_traversal.md#ii-in-order-traversal) ✅
+  - [Post-order Traversal](./data_structures/tree/tree_traversal.md#iii-post-order-traversal) ✅
 - [Tree Search](./data_structures/tree/tree_search.md) ✅
   - [Depth First Search](./data_structures/tree/tree_search.md#depth-first-search-dfs) ✅
   - [Breadth First Search](./data_structures/tree/tree_search.md#breadth-first-search-bfs) ✅
@@ -36,7 +36,7 @@ A data structure is a specialized format for organizing, processing, retrieving,
 - [Graph Search](./data_structures/graph/graph_search.md#graph_search.md) ✅
   - [Breadth First Search](./data_structures/graph/graph_search.md#i-breadth-first-search-bfs) ✅
   - [Depth First Search](./data_structures/graph/graph_search.md#ii-depth-first-search-dfs) ✅
-- [Topological Sort]()
+- [Topological Sort](./data_structures/graph/topological_sort.md) ✅
 - [Shortest Path]() 
   - [Dijkstra's Alg]()
   - [Bellman-Ford]()
