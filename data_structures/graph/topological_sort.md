@@ -20,9 +20,9 @@ TS may not always produce a unique ordering for a given graph. This is because t
 
 One of the most common applications of Topological Sort is in scheduling, where it can be used to schedule tasks or jobs based on their dependencies.
 
-## Implementation
+## Using Depth-First Search (DFS) 
 
-### Using Depth-First Search (DFS):
+### Implementation
 
 ```c++
 #include <iostream>
@@ -188,6 +188,96 @@ func main() {
 }
 ```
 
+## Kahn's algorithm
+
+Kahn's algorithm is a method for performing topological sorting on a directed acyclic graph (DAG) by using Breath First Search (BFS).
+
+### C++ Implementation
+```c++
+#include <iostream>
+#include <vector>
+#include <queue>
+#include <unordered_map>
+
+using namespace std;
+
+// Function to perform topological sort using Kahn's algorithm
+vector<int> kahnTopologicalSort(int numVertices, const unordered_map<int, vector<int>>& graph) {
+    vector<int> inDegree(numVertices, 0);
+    vector<int> topologicalOrder;
+    queue<int> zeroInDegreeQueue;
+
+    // Calculate in-degree of each vertex
+    for (const auto& pair : graph) {
+        for (int neighbor : pair.second) {
+            inDegree[neighbor]++;
+        }
+    }
+
+    // Add all vertices with in-degree 0 to the queue
+    for (int i = 0; i < numVertices; ++i) {
+        if (inDegree[i] == 0) {
+            zeroInDegreeQueue.push(i);
+        }
+    }
+
+    // Process vertices with in-degree 0
+    while (!zeroInDegreeQueue.empty()) {
+        int vertex = zeroInDegreeQueue.front();
+        zeroInDegreeQueue.pop();
+        topologicalOrder.push_back(vertex);
+
+        // Decrease in-degree of neighboring vertices
+        if (graph.find(vertex) != graph.end()) {
+            for (int neighbor : graph.at(vertex)) {
+                inDegree[neighbor]--;
+                if (inDegree[neighbor] == 0) {
+                    zeroInDegreeQueue.push(neighbor);
+                }
+            }
+        }
+    }
+
+    // Check for cycles (if topologicalOrder doesn't contain all vertices)
+    if (topologicalOrder.size() != numVertices) {
+        throw runtime_error("Graph has at least one cycle, topological sort not possible");
+    }
+
+    return topologicalOrder;
+}
+
+int main() {
+    // Define the graph
+    unordered_map<int, vector<int>> graph = {
+        {0, {2}},
+        {1, {2, 3}},
+        {2, {4}},
+        {3, {5}},
+        {4, {7, 5}},
+        {5, {6}},
+        {6, {}},
+        {7, {}}
+    };
+    
+    int numVertices = 8;
+
+    try {
+        vector<int> result = kahnTopologicalSort(numVertices, graph);
+
+        cout << "Topological Order: ";
+        for (int vertex : result) {
+            cout << vertex << " ";
+        }
+        cout << endl;
+    } catch (const runtime_error& e) {
+        cout << e.what() << endl;
+    }
+
+    return 0;
+}
+
+```
+
 ## Runtime Complexity:
 
 ### - Depth-First Search (DFS) Based Topological Sort
@@ -195,3 +285,9 @@ func main() {
 Each vertex is visited exactly once, marking it as visited. This contributes **O(V)** to the complexity.
 For each vertex, all its adjacent vertices (edges) are explored. This traversal of all edges contributes **O(E)** to the complexity.
 Thus, the total complexity for the DFS-based topological sort is **O(V+E)**.
+
+### - Kahn's algorithm
+
+The time complexity of Kahn's algorithm is **O(V+E)**, where V is the number of vertices and E is the number of edges in the graph. 
+
+This is because each vertex and each edge is processed exactly once.
