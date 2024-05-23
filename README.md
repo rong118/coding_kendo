@@ -37,9 +37,10 @@ A data structure is a specialized format for organizing, processing, retrieving,
   - [Breadth First Search](./data_structures/graph/graph_search.md#i-breadth-first-search-bfs) ✅
   - [Depth First Search](./data_structures/graph/graph_search.md#ii-depth-first-search-dfs) ✅
 - [Topological Sort](./data_structures/graph/topological_sort.md) ✅
-- [Shortest Path]() 
-  - [Dijkstra's Alg]()
-  - [Bellman-Ford]()
+  - [Kahn's Algorithm](./data_structures/graph/topological_sort.md#kahns-algorithm)  ✅
+- [Shortest Path](./data_structures/graph/shortest_path.md) ✅
+  - [Dijkstra's Algorithm]()
+  - [Bellman-Ford Algorithm]()
 - [Minimum Spanning Tree]()
   - [Prim's Algorithm]()
   - [Kruskal's Algorithm]()
