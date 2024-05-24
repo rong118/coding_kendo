@@ -41,15 +41,15 @@ A data structure is a specialized format for organizing, processing, retrieving,
 - [Shortest Path](./data_structures/graph/shortest_path.md) ✅
   - [Dijkstra's Algorithm](./data_structures/graph/shortest_path.md#dijkstras-algorithm) ✅
   - [Bellman-Ford Algorithm](./data_structures/graph/shortest_path.md#bellman-ford-algorithm) ✅
-- [Minimum Spanning Tree](./data_structures/graph/minimum_spanning_tree.md)
-  - [Prim's Algorithm]()
-  - [Kruskal's Algorithm]()
+- [Minimum Spanning Tree](./data_structures/graph/minimum_spanning_tree.md) ✅
+  - [Prim's Algorithm](./data_structures/graph/minimum_spanning_tree.md#prims-algorithm) ✅
+  - [Kruskal's Algorithm](./data_structures/graph/minimum_spanning_tree.md#kruskals-algorithm) ✅
 
 ### Advance Data Structures
-- [Trie (Prefix Tree)]()
-- [Disjoint-set (Union Find)]()
-- [Segment Tree (ZKW Tree)]()
+- [Trie (Prefix Tree)](./data_structures/advance/trie.md)
+- [Disjoint-set (Union Find)](./data_structures/advance/union_find.md)
 - [Binary Index Tree (Fenwick Tree)]()
+- [Segment Tree (ZKW Tree)]()
 
 ## II. Algorithms
 
