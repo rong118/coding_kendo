@@ -1,6 +1,6 @@
 # Coding Kendo (コーディングの剣道)
 
-Explore the fundamentals of computer science with this repository, covering data structures, algorithms, and complexity analysis, plus a curated set of interview coding questions.
+Explore data structures, algorithms, and complexity analysis. Plus a curated set of interview coding questions.
 
 ## I. Data Structures
 
@@ -39,9 +39,9 @@ A data structure is a specialized format for organizing, processing, retrieving,
 - [Topological Sort](./data_structures/graph/topological_sort.md) ✅
   - [Kahn's Algorithm](./data_structures/graph/topological_sort.md#kahns-algorithm)  ✅
 - [Shortest Path](./data_structures/graph/shortest_path.md) ✅
-  - [Dijkstra's Algorithm]()
-  - [Bellman-Ford Algorithm]()
-- [Minimum Spanning Tree]()
+  - [Dijkstra's Algorithm](./data_structures/graph/shortest_path.md#dijkstras-algorithm) ✅
+  - [Bellman-Ford Algorithm](./data_structures/graph/shortest_path.md#bellman-ford-algorithm) ✅
+- [Minimum Spanning Tree](./data_structures/graph/minimum_spanning_tree.md)
   - [Prim's Algorithm]()
   - [Kruskal's Algorithm]()
 
