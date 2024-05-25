@@ -207,3 +207,6 @@ int main() {
 - The algorithm can handle negative weight edges, which Dijkstra' s Algorithm cannot.
 - It uses the same priority queue operations as Dijkstra' s Algorithm.
 - The time complexity is **O(|E| * |V|)**, where |E| is the number of edges and |V| is the number of vertices.
+
+## Leetcode Questions
+- [787 Cheapest Flights Within K Stops](../leetcode_questions/787_cheapest_flights_within_k_stops.md)

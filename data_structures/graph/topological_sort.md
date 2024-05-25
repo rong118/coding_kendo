@@ -291,3 +291,9 @@ Thus, the total complexity for the DFS-based topological sort is **O(V+E)**.
 The time complexity of Kahn's algorithm is **O(V+E)**, where V is the number of vertices and E is the number of edges in the graph. 
 
 This is because each vertex and each edge is processed exactly once.
+
+## Leetcode Questions
+- [207 Course Schedule](../../leetcode_questions/207_course_schedule.md)
+- [210 Course Schedule II](../../leetcode_questions/210_course_schedule_ii.md)
+- [269 Alien Dictionary](../../leetcode_questions/269_alien_dictionary.md)
+- [2127 Maximum Employees to Be Invited to a Meeting](../../leetcode_questions/2127_maximum_employees_to_be_invited_to_a_meeting.md)
