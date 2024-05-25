@@ -46,9 +46,9 @@ A data structure is a specialized format for organizing, processing, retrieving,
   - [Kruskal's Algorithm](./data_structures/graph/minimum_spanning_tree.md#kruskals-algorithm) ✅
 
 ### Advance Data Structures
-- [Trie (Prefix Tree)](./data_structures/advance/trie.md)
-- [Disjoint-set (Union Find)](./data_structures/advance/union_find.md)
-- [Binary Index Tree (Fenwick Tree)]()
+- [Trie (Prefix Tree)](./data_structures/advance/trie.md)  ✅
+- [Disjoint-set (Union Find)](./data_structures/advance/union_find.md) ✅
+- [Binary Index Tree (Fenwick Tree)](./data_structures/advance/binary_index_tree.md) ✅
 - [Segment Tree (ZKW Tree)]()
 
 ## II. Algorithms
