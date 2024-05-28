@@ -60,8 +60,8 @@ An algorithm is a procedure used for solving a problem or performing a computati
   - [Bubble Sort]() 
   - [Select Sort]() 
   - [Merge Sort]()
-  - [Merge Sort]()
-  - [Merge Sort]()
+  - [Quick Sort]()
+  - [Heap Sort]()
   
 ###
 - [Search Algorithms]()
