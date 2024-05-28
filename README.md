@@ -49,7 +49,7 @@ A data structure is a specialized format for organizing, processing, retrieving,
 - [Trie (Prefix Tree)](./data_structures/advance/trie.md)  ✅
 - [Disjoint-set (Union Find)](./data_structures/advance/union_find.md) ✅
 - [Binary Index Tree (Fenwick Tree)](./data_structures/advance/binary_index_tree.md) ✅
-- [Segment Tree (ZKW Tree)]()
+- [Segment Tree (ZKW Tree)](./data_structures/advance/segment_tree.md) ✅
 
 ## II. Algorithms
 
