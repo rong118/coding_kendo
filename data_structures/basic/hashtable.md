@@ -21,3 +21,12 @@ There are some common operations and their average-case time complexities for a 
 - Delete: O(1) - Deleting a key-value pair also takes constant time on average.
 - Iteration (iterate over all entries): O(n) - When you need to iterate over all key-value pairs, the hash table must traverse the entire array, which takes linear time proportional to the number of elements n.
 - Collision resolution: O(1), O(k), or O(log n) - Hash tables use various techniques (e.g., chaining, open addressing) to handle collisions (when two keys hash to the same index). The specific collision resolution method affects the runtime complexity.
+
+## Leetcode Questions
+- [1. Two Sum](../../leetcode_questions/1_two_sum.md)
+- [3. Longest Substring Without Repeating Characters]()
+- [49. Group Anagrams]()
+- [217. Contains Duplicate](../../leetcode_questions/217_contain_duplicate.md)
+- [242. Valid Anagram]()
+- [347. Top K Frequent Elements]()
+- [350. Intersection of Two Arrays II]()
