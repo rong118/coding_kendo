@@ -117,3 +117,10 @@ The update operation has an average-case time complexity of O(log n), where n is
 ### - Query
 
 The query operation has an average-case time complexity of O(log n) as well, since we need to traverse the BIT from the highest bit set in the start index down to the lowest bit set in the end index.
+
+## LeetCode Questions
+- [307. Range Sum Query - Mutable]()
+- [308. Range Sum Query 2D]()
+- [315. Count of Smaller Numbers After Self]()
+- [327. Count of Range Sum]()
+- [440. K-th Smallest in Lexicographical Order]()
