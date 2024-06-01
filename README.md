@@ -56,17 +56,17 @@ A data structure is a specialized format for organizing, processing, retrieving,
 An algorithm is a procedure used for solving a problem or performing a computation.
 
 ### Basic Algorithms
-- [Sort Algorithms]() 
-  - [Bubble Sort]() 
-  - [Select Sort]() 
-  - [Merge Sort]()
+- [Sort Algorithms](./algorithms/basic/sort_algorithms.md) ✅
+  - [Bubble Sort](./algorithms/basic/sort_algorithms.md#i-bubble-sort) ✅
+  - [Selection Sort](./algorithms/basic/sort_algorithms.md#ii-selection-sort) ✅
+  - [Merge Sort](./algorithms/basic/sort_algorithms.md#iii-merge-sort) ✅
   - [Quick Sort]()
   - [Heap Sort]()
   
 ###
-- [Search Algorithms]()
-  - [Linear Search]()
-  - [Binary Search]()
+- [Search Algorithms](./algorithms/basic/search_algorithms.md) ✅
+  - [Linear Search](./algorithms/basic/search_algorithms.md#i-linear-search) ✅
+  - [Binary Search](./algorithms/basic/search_algorithms.md#ii-binary-search) ✅
 
 ### Other Algorithms
 - [Brute Force]()
