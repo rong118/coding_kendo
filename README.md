@@ -60,9 +60,8 @@ An algorithm is a procedure used for solving a problem or performing a computati
   - [Bubble Sort](./algorithms/basic/sort_algorithms.md#i-bubble-sort) ✅
   - [Selection Sort](./algorithms/basic/sort_algorithms.md#ii-selection-sort) ✅
   - [Merge Sort](./algorithms/basic/sort_algorithms.md#iii-merge-sort) ✅
-  - [Quick Sort]()
-  - [Heap Sort]()
-  
+  - [Quick Sort](./algorithms/basic/sort_algorithms.md#iv-quick-sort) ✅
+ 
 ###
 - [Search Algorithms](./algorithms/basic/search_algorithms.md) ✅
   - [Linear Search](./algorithms/basic/search_algorithms.md#i-linear-search) ✅
