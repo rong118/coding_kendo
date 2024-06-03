@@ -272,3 +272,10 @@ The runtime complexity of Quicksort depends on the pivot selection and partition
 - Average-Case Time Complexity: **O(n log n)** - This is the most common case where the pivot element is chosen in a way that the partitioning step takes linear time.
 - Best-Case Time Complexity: **O(n)** - This occurs when the pivot element is the median of the array, and all elements are either less than or greater than the pivot. In this case, the partitioning step can be done in constant time.
 - Worst-Case Time Complexity: **O(n^2)** - This occurs when the pivot element is chosen poorly, such as being the smallest or largest element in the array. In this case, one of the recursive calls will have a very small input size (n/2), leading to an exponential increase in the number of function calls.
+
+### Factors Affecting Runtime Complexity:
+- **Pivot Selection**: The choice of pivot affects the runtime complexity. Choosing a random or median-based pivot can lead to better average-case performance.
+- **Partitioning Scheme**: The partitioning scheme used also impacts the runtime complexity. For example, using a "left-to-right" partitioning scheme (like in the original Quicksort algorithm) can lead to worse worst-case performance than using a "right-to-left" or "median-of-three" partitioning scheme.
+- **Array Structure**: The structure of the input array can also affect the runtime complexity. For example, if the array is highly unbalanced (i.e., one side is much larger than the other), Quicksort's performance may degrade.
+
+In general, while Quicksort has a good average-case time complexity, its worst-case time complexity can be quite poor.
