@@ -68,9 +68,9 @@ An algorithm is a procedure used for solving a problem or performing a computati
   - [Binary Search](./algorithms/basic/search_algorithms.md#ii-binary-search) ✅
 
 ### Other Algorithms
-- [Brute Force]()
-- [Backingtracking]()
-- [Recursion]()
+- [Brute Force](./algorithms/others/bruteforce.md) ✅
+- [Backingtracking](./algorithms/others/backtracking.md) ✅
+- [Recursion](./algorithms/others/recursion.md) ✅
 - [Divide and Conquer]()
 - [Two Pointers]()
 - [Sliding Windows]()
