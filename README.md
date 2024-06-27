@@ -75,7 +75,7 @@ An algorithm is a procedure used for solving a problem or performing a computati
 - [Two Pointers](./algorithms/others/two_pointers.md) ✅
 - [Sliding Window](./algorithms/others/sliding_window.md) ✅
 - [Greedy](./algorithms/others/greedy.md) ✅
-- [Dynamic Programming (DP)]()
+- [Dynamic Programming (DP)](./algorithms/others/dynamic_programming.md)
 - [Math](./algorithms/others/math.md)
 
 ## III. Complexity Analysis
