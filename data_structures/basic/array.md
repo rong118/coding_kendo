@@ -42,14 +42,6 @@ func main() {
 }
 ```
 
-### JavaScript Implementation
-```javascript
-let arr = [1, 2, 3, 4, 5];
-
-// Accessing and printing array elements
-console.log("Array elements in JavaScript:", arr.join(" "));
-```
-
 ## Runtime Complexity
 - **Access Time**: Accessing an element by index in an array typically has constant time complexity, O(1), because it involves simple arithmetic to calculate the memory address of the desired element based on its index.
 
@@ -114,18 +106,18 @@ func main() {
 }
 ```
 
-### JavaScript Example using Arrays:
-```javascript
-// Creating a dynamic array using JavaScript arrays
-let dynamicArray = [];
+### Python Example using List:
+```python
+# Creating a dynamic array using Python's list
+dynamic_array = []
 
-// Adding elements to the dynamic array
-dynamicArray.push(1);
-dynamicArray.push(2);
-dynamicArray.push(3);
+# Adding elements to the dynamic array
+dynamic_array.append(1)
+dynamic_array.append(2)
+dynamic_array.append(3)
 
-// Accessing and printing elements of the dynamic array
-console.log("Dynamic array elements in JavaScript:", dynamicArray.join(" "));
+# Accessing and printing elements of the dynamic array
+print("Dynamic array elements in Python:", " ".join(map(str, dynamic_array)))
 ```
 
 ## Leetcode questions

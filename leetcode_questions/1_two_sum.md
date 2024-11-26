@@ -37,25 +37,22 @@ Constraints:
 - hashMap
 
 ## Code Implementation
-```c++
-class Solution{
-public:
-    vector<int> twoSum(vector<int> &numbers, int target){
-        vector<int> output;
-        unordered_map<int,int> m;
-        int findValue;
-        for(int i = 0; i < numbers.size(); i++){
-            findValue = target - numbers[i];
-            if(m.find(findValue) == m.end()){
-                m[numbers[i]] = i;
-            }else{
-                output.push_back(m[findValue]);
-                output.push_back(i);
-            }
-        }
-        return output;
-    }
-};
+```python
+class Solution:
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
+        # Dictionary to store number and its index
+        num_to_index = {}
+        
+        for i, num in enumerate(nums):
+            # Calculate the complement
+            complement = target - num
+            
+            # Check if the complement exists in the dictionary
+            if complement in num_to_index:
+                return [num_to_index[complement], i]
+            
+            # Store the number with its index in the dictionary
+            num_to_index[num] = i
 ```
 
 ## Time Complexity Analysis
