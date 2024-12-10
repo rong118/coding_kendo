@@ -60,6 +60,7 @@ int main() {
     return 0;
 }
 ```
+
 ### Go Implementation
 ```go
 package main
@@ -117,50 +118,93 @@ func main() {
     fmt.Println(ll.String()) // Output: 1 2 3
 }
 ```
-### Javascript Implementation
-```javascript
-class Node {
-    constructor(value) {
-        this.value = value;
-        this.next = null;
-    }
-}
 
-class LinkedList {
-    constructor() {
-        this.head = null;
-    }
+### Python Implementation
+```python
+class Node:
+    def __init__(self, data):
+        self.data = data  # Data stored in the node
+        self.next = None  # Pointer to the next node
 
-    append(value) {
-        const newNode = new Node(value);
-        if (!this.head) {
-            this.head = newNode;
-        } else {
-            let current = this.head;
-            while (current.next) {
-                current = current.next;
-            }
-            current.next = newNode;
-        }
-    }
+class LinkedList:
+    def __init__(self):
+        self.head = None  # The head of the linked list
 
-    toString() {
-        let result = "";
-        let current = this.head;
-        while (current) {
-            result += `${current.value} `;
-            current = current.next;
-        }
-        return result.trim();
-    }
-}
+    # Add a new node at the end
+    def append(self, data):
+        new_node = Node(data)
+        if not self.head:  # If the list is empty
+            self.head = new_node
+            return
+        current = self.head
+        while current.next:  # Traverse to the last node
+            current = current.next
+        current.next = new_node
 
-const ll = new LinkedList();
-ll.append(1);
-ll.append(2);
-ll.append(3);
+    # Display the list
+    def display(self):
+        current = self.head
+        while current:
+            print(current.data, end=" -> ")
+            current = current.next
+        print("None")
 
-console.log(ll.toString()); // Output: 1 2 3
+    # Search for an element
+    def search(self, key):
+        current = self.head
+        while current:
+            if current.data == key:
+                return True
+            current = current.next
+        return False
+
+    # Delete a node by value
+    def delete(self, key):
+        current = self.head
+
+        # If the head node is to be deleted
+        if current and current.data == key:
+            self.head = current.next
+            current = None
+            return
+
+        # Search for the node to delete
+        prev = None
+        while current and current.data != key:
+            prev = current
+            current = current.next
+
+        # If the node was not found
+        if not current:
+            return
+
+        # Unlink the node
+        prev.next = current.next
+        current = None
+    
+# Create a linked list
+ll = LinkedList()
+
+# Append elements
+ll.append(10)
+ll.append(20)
+ll.append(30)
+
+# Display the linked list
+ll.display()  # Output: 10 -> 20 -> 30 -> None
+
+# Search for an element
+print(ll.search(20))  # Output: True
+print(ll.search(40))  # Output: False
+
+# Delete an element
+ll.delete(20)
+ll.display()  # Output: 10 -> 30 -> None
+
+# Add more elements
+ll.append(40)
+ll.append(50)
+ll.display()  # Output: 10 -> 30 -> 40 -> 50 -> None
 ```
 
 ## Runtime Complexity

@@ -70,34 +70,29 @@ func main() {
 }
 
 ```
+### Python Example
+```python
+from collections import deque
 
-### Javascript Implementation
-```javascript
-class Queue {
-    constructor() {
-        this.items = [];
-    }
+# Create a Queue
+queue = deque()
 
-    enqueue(item) {
-        this.items.push(item);
-    }
+# Enqueue Elements
+queue.append(10)
+queue.append(20)
+queue.append(30)
+print("Queue after enqueuing:", queue)  # Output: deque([10, 20, 30])
 
-    dequeue() {
-        if (this.items.length === 0) {
-            return -1; // or any appropriate error handling
-        }
-        return this.items.shift();
-    }
-}
+# Dequeue Elements
+print("Dequeued:", queue.popleft())  # Output: 10
+print("Queue after dequeuing:", queue)  # Output: deque([20, 30])
 
-const queue = new Queue();
-queue.enqueue(10);
-queue.enqueue(20);
-queue.enqueue(30);
+# Peek at the Front Element
+print("Front element:", queue[0])  # Output: 20
 
-console.log(queue.dequeue()); // Output: 10
-console.log(queue.dequeue()); // Output: 20
-console.log(queue.dequeue()); // Output: 30
+# Check if the Queue is Empty
+print("Is queue empty?", len(queue) == 0)  # Output: False
+
 ```
 
 ## Runtime Complexity
@@ -194,61 +189,61 @@ func main() {
 }
 ```
 
-### Javascript Implementation
-```javascript
-class Deque {
-    constructor() {
-        this.items = [];
-    }
+### Python Implementation
+```python
+from collections import deque
 
-    pushFront(item) {
-        this.items.unshift(item);
-    }
+# 1. Basic Operations
+# Creating a Deque
+dq = deque()  # Empty deque
+dq = deque([10, 20, 30])  # Initialize with elements
+print("Deque:", dq)  # Output: deque([10, 20, 30])
 
-    pushBack(item) {
-        this.items.push(item);
-    }
+# Adding Elements
+dq.append(40)  # Add to the right
+dq.appendleft(5)  # Add to the left
+print("After appending:", dq)  # Output: deque([5, 10, 20, 30, 40])
 
-    popFront() {
-        if (this.isEmpty()) {
-            return -1; // or any appropriate error handling
-        }
-        return this.items.shift();
-    }
+# Removing Elements
+dq.pop()  # Remove from the right
+print("After popping right:", dq)  # Output: deque([5, 10, 20, 30])
+dq.popleft()  # Remove from the left
+print("After popping left:", dq)  # Output: deque([10, 20, 30])
 
-    popBack() {
-        if (this.isEmpty()) {
-            return -1; // or any appropriate error handling
-        }
-        return this.items.pop();
-    }
+# 2. Iterating Through a Deque
+# Forward Iteration
+print("Forward iteration:", end=" ")
+for item in dq:
+    print(item, end=" ")  # Output: 10 20 30
+print()
 
-    isEmpty() {
-        return this.items.length === 0;
-    }
+# Reverse Iteration
+print("Reverse iteration:", end=" ")
+for item in reversed(dq):
+    print(item, end=" ")  # Output: 30 20 10
+print()
 
-    size() {
-        return this.items.length;
-    }
+# 3. Other Useful Methods
+# Checking Length
+print("Length of deque:", len(dq))  # Output: 3
 
-    peekFront() {
-        return this.items[0];
-    }
+# 4. Clearing the Deque
+dq.clear()
+print("After clearing:", dq)  # Output: deque([])
 
-    peekBack() {
-        return this.items[this.items.length - 1];
-    }
-}
+# 5. Rotating Elements
+dq = deque([1, 2, 3, 4, 5])
+dq.rotate(2)  # Rotate right by 2 positions
+print("After rotating right:", dq)  # Output: deque([4, 5, 1, 2, 3])
+dq.rotate(-1)  # Rotate left by 1 position
+print("After rotating left:", dq)  # Output: deque([5, 1, 2, 3, 4])
 
-// Example usage:
-const deque = new Deque();
-deque.pushBack(10);
-deque.pushBack(20);
-deque.pushFront(5);
-
-console.log(deque.popFront()); // Output: 5
-console.log(deque.popBack());  // Output: 20
-console.log(deque.popFront()); // Output: 10
+# 6. Extending a Deque
+dq = deque([1, 2])
+dq.extend([3, 4, 5])  # Extend from the right
+print("After extending right:", dq)  # Output: deque([1, 2, 3, 4, 5])
+dq.extendleft([0, -1])  # Extend from the left
+print("After extending left:", dq)  # Output: deque([-1, 0, 1, 2, 3, 4, 5])
 ```
 
 ## Leetcode questions

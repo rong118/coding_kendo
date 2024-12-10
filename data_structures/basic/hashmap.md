@@ -45,16 +45,48 @@ func main() {
 }
 ```
 
-### Javascript using object
-```javascript
-const myMap = {
-  foo: 1,
-  bar: 2,
-  baz: 3,
-};
+### python using dictionary
+```python
+# Creating a hashmap (dictionary)
+hashmap = {}
 
-// Look up a value
-console.log(`Value for 'foo' is ${myMap.foo}`);
+# Inserting key-value pairs
+hashmap["apple"] = 5
+hashmap["banana"] = 3
+hashmap["orange"] = 8
+hashmap["grape"] = 2
+
+# Accessing values using keys
+print("Value for 'apple':", hashmap["apple"])  # Output: 5
+print("Value for 'banana':", hashmap["banana"])  # Output: 3
+
+# Checking if a key exists
+if "orange" in hashmap:
+    print("'orange' is present in the hashmap")
+
+# Modifying values
+hashmap["banana"] = 10
+print("Updated value for 'banana':", hashmap["banana"])  # Output: 10
+
+# Deleting a key-value pair
+del hashmap["grape"]
+print("Hashmap after deleting 'grape':", hashmap)
+
+# Iterating through all key-value pairs
+print("\nIterating through the hashmap:")
+for key, value in hashmap.items():
+    print(f"{key}: {value}")
+
+# Using get() to access values (without throwing an error if the key doesn't exist)
+print("\nValue for 'pear' (using get):", hashmap.get("pear", "Not Found"))  # Output: Not Found
+
+# Checking the size of the hashmap
+print("\nSize of the hashmap:", len(hashmap))  # Output: 3
+
+# Clearing the entire hashmap
+hashmap.clear()
+print("Hashmap after clearing:", hashmap)  # Output: {}
+
 ```
 
 ## O(1) search and insert 

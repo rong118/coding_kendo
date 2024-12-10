@@ -88,52 +88,26 @@ func main() {
 }
 ```
 
-### Javascript Implementation
-```javascript
-class Stack {
-  constructor(size) {
-    this.array = new Array(size);
-    this.top = -1; // Initialize top index as -1 (empty stack)
-  }
+### Python Implementation
+```python
+# Stack Implementation Using List
+stack = []
 
-  push(element) {
-    if (this.top >= this.array.length - 1) {
-      console.log("Stack is full!");
-      return;
-    }
-    this.array[++this.top] = element;
-  }
+# Push Elements onto the Stack
+stack.append(10)
+stack.append(20)
+stack.append(30)
+print("Stack after pushing:", stack)  # Output: [10, 20, 30]
 
-  pop() {
-    if (this.top < 0) {
-      console.log("Stack is empty!");
-      return null; // or some other sentinel value
-    }
-    let result = this.array[this.top--];
-    this.array[top + 1] = null; // Reset the top index
-    return result;
-  }
+# Pop Elements from the Stack
+print("Popped:", stack.pop())  # Output: 30
+print("Stack after popping:", stack)  # Output: [10, 20]
 
-  peek() {
-    if (this.top < 0) {
-      console.log("Stack is empty!");
-      return null; // or some other sentinel value
-    }
-    return this.array[this.top];
-  }
-}
+# Peek at the Top Element
+print("Top element:", stack[-1])  # Output: 20
 
-// Example usage:
-let stack = new Stack(5); // Create a stack of size 5
-
-stack.push(1);
-stack.push(2);
-stack.push(3);
-
-console.log("Peek:", stack.peek());
-
-let popped = stack.pop();
-console.log("Popped:", popped);
+# Check if the Stack is Empty
+print("Is stack empty?", len(stack) == 0)  # Output: False
 ```
 
 ## Run Time Complexity:

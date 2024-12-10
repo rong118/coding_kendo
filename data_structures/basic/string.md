@@ -61,13 +61,50 @@ func main() {
 }
 ```
 
-- JavaScript Example using string type:
-```javascript
-// Creating and initializing a string in JavaScript
-let str = "Hello, world!";
+- Python Example:
+```python
+# 1. Concatenating Strings
+str1 = "Hello"
+str2 = "World"
+result = str1 + " " + str2
+print(result)  # Output: Hello World
 
-// Accessing and printing the string
-console.log("String in JavaScript:", str);
+# 2. String Slicing
+text = "PythonProgramming"
+print(text[0:6])  # Output: Python
+print(text[-11:]) # Output: Programming
+
+# 3. Changing Case
+text = "hello, World!"
+print(text.upper())       # Output: HELLO, WORLD!
+print(text.lower())       # Output: hello, world!
+print(text.capitalize())  # Output: Hello, world!
+
+# 4. Finding and Replacing
+text = "I love programming in Python."
+print(text.find("Python"))                     # Output: 23
+print(text.replace("Python", "JavaScript"))    # Output: I love programming in JavaScript.
+
+# 5. Splitting and Joining
+text = "apple,banana,cherry"
+fruits = text.split(",")
+print(fruits)  # Output: ['apple', 'banana', 'cherry']
+
+joined_text = "-".join(fruits)
+print(joined_text)  # Output: apple-banana-cherry
+
+# 6. Checking Content
+text = "Python123"
+print(text.isalpha())  # Output: False
+print(text.isalnum())  # Output: True
+print(text.isdigit())  # Output: False
+
+# 7. Formatting Strings
+name = "Alice"
+age = 25
+print(f"My name is {name} and I am {age} years old.")
+# Output: My name is Alice and I am 25 years old.
+
 ```
 
 ## Leetcode questions

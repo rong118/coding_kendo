@@ -30,30 +30,29 @@ int main(){
   return 0;
 }
 ```
-### Golang using map and sort
-```go
-package main
+### Python using SortedDict
+```python
+from sortedcontainers import SortedDict
 
-import (
-    "fmt"
-)
+# Create a SortedDict
+treemap = SortedDict()
 
-func main() {
-    m := make(map[int]int)
-    m[1] = 10
-    m[2] = 20
-    m[3] = 30
+# Insert elements
+treemap['c'] = 3
+treemap['a'] = 1
+treemap['b'] = 2
 
-    // Find an element in the map
-    for k, v := range m {
-        if k == 2 {
-            fmt.Println("2 is in the map with value", v)
-            break
-        }
-    }
+# Access elements by key
+print(treemap['a'])  # Output: 1
 
-    // Remove an element from the map
-    delete(m, 1)
+# Iterate through keys in sorted order
+for key in treemap:
+    print(key, treemap[key])  # Output: a 1, b 2, c 3
 
-}
+# Check if a key exists
+print('b' in treemap)  # Output: True
+
+# Delete a key
+del treemap['a']
+print(treemap)  # Output: SortedDict({'b': 2, 'c': 3})
 ```

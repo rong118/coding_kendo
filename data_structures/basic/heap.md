@@ -201,6 +201,7 @@ private:
     }
 }
 ```
+
 ### C++ stl::queue
 ```c++
 #include <queue>
@@ -258,43 +259,62 @@ func main() {
 }
 ```
 
-### Javascript Implementation
-```javascript
-class PriorityQueue {
-  constructor() {
-    this.queue = [];
-  }
+### Python: Using queue.PriorityQueue
+```python
+# Using queue.PriorityQueue
+from queue import PriorityQueue
 
-  enqueue(item, priority) {
-    this.queue.push({ item, priority });
-    this.queue.sort((a, b) => b.priority - a.priority);
-  }
+# Create a Priority Queue
+pq = PriorityQueue()
 
-  dequeue() {
-    if (!this.isEmpty()) {
-      return this.queue.shift().item;
-    }
-  }
+# Enqueue elements with priorities
+pq.put((2, "Task 2"))  # Priority 2
+pq.put((1, "Task 1"))  # Priority 1
+pq.put((3, "Task 3"))  # Priority 3
 
-  isEmpty() {
-    return this.queue.length === 0;
-  }
-}
+# Dequeue elements
+while not pq.empty():
+    print(pq.get())
 
-// Example usage
-const pq = new PriorityQueue();
+```
 
-pq.enqueue('Task A', 3);
-pq.enqueue('Task B', 1);
-pq.enqueue('Task C', 5);
-pq.enqueue('Task D', 2);
+# Python: Using queue.PriorityQueue with Custom Comparison
+```python
+class Task:
+    def __init__(self, priority, deadline, description):
+        self.priority = priority  # Lower values mean higher priority
+        self.deadline = deadline  # Lower values mean earlier deadline
+        self.description = description
+    
+    def __lt__(self, other):
+        # Custom comparison: first by priority, then by deadline
+        if self.priority == other.priority:
+            return self.deadline < other.deadline  # earlier deadline gets higher priority
+        return self.priority < other.priority  # lower priority number means higher priority
+    
+    def __repr__(self):
+        return f"Task({self.priority}, {self.deadline}, '{self.description}')"
 
-console.log(pq.dequeue()); // Task C (highest priority)
-console.log(pq.dequeue()); // Task D
-console.log(pq.dequeue()); // Task A
-console.log(pq.dequeue()); // Task B
+# Create a list of tasks
+tasks = [
+    Task(3, 5, "Write report"),
+    Task(1, 2, "Fix critical bug"),
+    Task(2, 3, "Review pull requests"),
+    Task(1, 1, "Meet with manager"),  # Same priority as Task(1, 2), but earlier deadline
+]
 
-console.log(pq.isEmpty()); // true
+# Create a Priority Queue (min-heap)
+pq = PriorityQueue()
+
+# Enqueue tasks into the priority queue
+for task in tasks:
+    pq.put(task)
+
+# Process tasks in order of priority and deadline
+while not pq.empty():
+    task = pq.get()  # Get the highest priority task (lowest priority number)
+    print(f"Processing: {task.description} (Priority: {task.priority}, Deadline: {task.deadline})")
+
 ```
 
 ## Leetcode questions

@@ -42,6 +42,41 @@ func main() {
 }
 ```
 
+### Python Example
+```python
+# Creating an Array (List)
+numbers = [10, 20, 30, 40, 50]
+
+# Accessing Elements
+print(numbers[0])  # Output: 10
+print(numbers[-1]) # Output: 50
+
+# Modifying Elements
+numbers[2] = 35
+print(numbers)  # Output: [10, 20, 35, 40, 50]
+
+# Using a For Loop
+for num in numbers:
+    print(num)
+
+numbers = [3, 6, 1, 8, 2]
+
+# Sorting
+numbers.sort()
+print(numbers)  # Output: [1, 2, 3, 6, 8]
+
+# Reversing
+numbers.reverse()
+print(numbers)  # Output: [8, 6, 3, 2, 1]
+
+# Finding Maximum and Minimum
+print(max(numbers))  # Output: 8
+print(min(numbers))  # Output: 1
+
+# Summing Elements
+print(sum(numbers))  # Output: 20
+```
+
 ## Runtime Complexity
 - **Access Time**: Accessing an element by index in an array typically has constant time complexity, O(1), because it involves simple arithmetic to calculate the memory address of the desired element based on its index.
 
@@ -115,6 +150,13 @@ dynamic_array = []
 dynamic_array.append(1)
 dynamic_array.append(2)
 dynamic_array.append(3)
+
+# Removing Elements
+dynamic_array.remove(2)
+print(dynamic_array)
+
+# Checking Length
+print(len(dynamic_array))  # Output: 2
 
 # Accessing and printing elements of the dynamic array
 print("Dynamic array elements in Python:", " ".join(map(str, dynamic_array)))
