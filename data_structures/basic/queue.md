@@ -246,7 +246,7 @@ dq.extendleft([0, -1])  # Extend from the left
 print("After extending left:", dq)  # Output: deque([-1, 0, 1, 2, 3, 4, 5])
 ```
 
-## Leetcode questions
+## Leetcode Questions
 - [225 Implement Stack using Queues](../../leetcode_questions/225_implement_stack_using_queue.md)
 - [622 Design Circular Queue](../../leetcode_questions/622_design_circular_queue.md)
 - [641 Design Circular Deque](../../leetcode_questions/641_design_circular_deque.md)

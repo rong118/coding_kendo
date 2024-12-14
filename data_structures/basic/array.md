@@ -162,7 +162,7 @@ print(len(dynamic_array))  # Output: 2
 print("Dynamic array elements in Python:", " ".join(map(str, dynamic_array)))
 ```
 
-## Leetcode questions
+## Leetcode Questions
 - [1. Two Sum](../../leetcode_questions/1_two_sum.md)
 - [4. Median of Two Sorted Arrays](../../leetcode_questions/4_median_of_two_sorted_arrays.md)
 - [11. Container With Most Water](../../leetcode_questions/11_container_with_most_water.md)

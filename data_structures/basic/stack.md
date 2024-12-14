@@ -115,7 +115,7 @@ print("Is stack empty?", len(stack) == 0)  # Output: False
 - Pop operation: O(1) (constant time)
 - Peek operation: O(1) (constant time)
 
-## Leetcode questions
+## Leetcode Questions
 - [155 Min Stack](../../leetcode_questions/23_merge_k_sorted_lists.md)
 - [232 Implement Stack Using Queues](../../leetcode_questions/232_implement_stack_using_queues.md)
 - [716 Max Stack](../../leetcode_questions/716_max_stack.md)

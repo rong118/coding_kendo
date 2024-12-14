@@ -317,7 +317,7 @@ while not pq.empty():
 
 ```
 
-## Leetcode questions
+## Leetcode Questions
 - [23 Merge k Sorted Lists](../../leetcode_questions/23_merge_k_sorted_lists.md)
 - [347 Top K Frequent Elements](../../leetcode_questions/347_top_k_frequent_elements.md)
 - [912 Sort_an_array](../../leetcode_questions/912_sort_an_array.md)

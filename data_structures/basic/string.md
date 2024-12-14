@@ -2,8 +2,6 @@
 
 In computer science, a string is a sequence of characters, typically used to represent text. Strings are a fundamental data type in most programming languages and are often treated as a built-in data structure.
 
-String may also denote more general arrays or other sequence (or list) data types and structures.
-
 ## Implementation
 - C++ Example using std::string:
 ```c++
@@ -107,7 +105,7 @@ print(f"My name is {name} and I am {age} years old.")
 
 ```
 
-## Leetcode questions
+## Leetcode Questions
 - [3. Longest Substring Without Repeating Characters](../../leetcode_questions/3_longest_substring_without_repeating_characters.md)
 - [5. Longest Palindromic Substring](../../leetcode_questions/5_longest_palindromic_substring.md)
 - [8. String to Integer](../../leetcode_questions/8_string_to_integer.md)

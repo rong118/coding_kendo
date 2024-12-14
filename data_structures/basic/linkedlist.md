@@ -219,7 +219,7 @@ ll.display()  # Output: 10 -> 30 -> 40 -> 50 -> None
 - Traversing the entire list: The runtime complexity for traversing the entire list is O(n), where n is the number of nodes in the list.
 - Searching for a specific node: The runtime complexity for searching for a specific node within the list is O(n), where n is the number of nodes in the list.
 
-## Leetcode question
+## Leetcode Question
 ### 反转
 - [206 Reverse Linked List](../../leetcode_questions/206_reverse_linked_list.md)
 - [92 Reverse Linked List II](../../leetcode_questions/92_reverse_linked_list_II.md)
