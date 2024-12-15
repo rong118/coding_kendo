@@ -89,6 +89,20 @@ func main() {
 }
 ```
 
+```python
+def preorder_traversal(self):
+    """Perform a preorder traversal of the BST."""
+    result = []
+    self._preorder_traversal(self.root, result)
+    return result
+
+def _preorder_traversal(self, current, result):
+    if current is not None:
+        result.append(current.key)  # Visit the root
+        self._preorder_traversal(current.left, result)  # Traverse left subtree
+        self._preorder_traversal(current.right, result)  # Traverse right subtree
+```
+
 ## II. In-order traversal
 Traverse the left subtree, then visit the current node, and finally traverse the right subtree.
 
@@ -178,6 +192,20 @@ func main() {
 }
 ```
 
+```python
+def inorder_traversal(self):
+    """Perform an in-order traversal of the BST."""
+    result = []
+    self._inorder_traversal(self.root, result)
+    return result
+
+def _inorder_traversal(self, current, result):
+    if current is not None:
+        self._inorder_traversal(current.left, result)  # Traverse left subtree
+        result.append(current.key)  # Visit the root
+        self._inorder_traversal(current.right, result)  # Traverse right subtree
+```
+
 ## III. Post-order traversal
 Traverse the left subtree, then traverse the right subtree, and finally visit the current node.
 
@@ -265,6 +293,20 @@ func main() {
     // Perform post-order traversal
     postorder(root)
 }
+```
+
+```python
+def postorder_traversal(self):
+    """Perform a post-order traversal of the BST."""
+    result = []
+    self._postorder_traversal(self.root, result)
+    return result
+
+def _postorder_traversal(self, current, result):
+    if current is not None:
+        self._postorder_traversal(current.left, result)  # Traverse left subtree
+        self._postorder_traversal(current.right, result)  # Traverse right subtree
+        result.append(current.key)  # Visit the root
 ```
 
 ## IV. Runtime Complexity

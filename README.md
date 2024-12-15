@@ -23,13 +23,13 @@ A data structure is a specialized format for organizing, processing, retrieving,
   - [Binary Tree & Binary Search Tree](./data_structures/tree/binary_tree.md) ✅
   - [AVL Tree](./data_structures/tree/avl_tree.md) ✅
   - [B-Tree](./data_structures/tree/b_tree.md) ✅
-- [Tree Traversal](./data_structures/tree/tree_traversal.md) ✅
-  - [Pre-order Traversal](./data_structures/tree/tree_traversal.md#i-pre-order-traversal) ✅
-  - [In-order Traversal](./data_structures/tree/tree_traversal.md#ii-in-order-traversal) ✅
-  - [Post-order Traversal](./data_structures/tree/tree_traversal.md#iii-post-order-traversal) ✅
 - [Tree Search](./data_structures/tree/tree_search.md) ✅
   - [Depth First Search](./data_structures/tree/tree_search.md#depth-first-search-dfs) ✅
   - [Breadth First Search](./data_structures/tree/tree_search.md#breadth-first-search-bfs) ✅
+- [Tree Traversal (DFS)](./data_structures/tree/tree_traversal.md) ✅
+  - [Pre-order Traversal](./data_structures/tree/tree_traversal.md#i-pre-order-traversal) ✅
+  - [In-order Traversal](./data_structures/tree/tree_traversal.md#ii-in-order-traversal) ✅
+  - [Post-order Traversal](./data_structures/tree/tree_traversal.md#iii-post-order-traversal) ✅
 
 ### Graph Data Structures & Algorithms
 - [Graph](./data_structures/graph/graph.md) ✅

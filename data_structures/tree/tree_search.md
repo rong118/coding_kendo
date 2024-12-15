@@ -210,6 +210,112 @@ func main() {
 }
 ```
 
+```python
+from collections import deque
+
+class Node:
+    """A node in the binary tree."""
+    def __init__(self, key):
+        self.key = key
+        self.left = None
+        self.right = None
+
+
+class BinaryTree:
+    """A binary tree implementation."""
+    def __init__(self):
+        self.root = None
+
+    def insert(self, key):
+        """Insert a new key into the tree (level-order insertion for simplicity)."""
+        if self.root is None:
+            self.root = Node(key)
+        else:
+            queue = deque([self.root])
+            while queue:
+                current = queue.popleft()
+                if current.left is None:
+                    current.left = Node(key)
+                    break
+                else:
+                    queue.append(current.left)
+                if current.right is None:
+                    current.right = Node(key)
+                    break
+                else:
+                    queue.append(current.right)
+
+    def bfs(self):
+        """Perform a Breadth-First Search (level-order traversal)."""
+        if not self.root:
+            return []
+
+        result = []
+        queue = deque([self.root])
+        while queue:
+            current = queue.popleft()
+            result.append(current.key)
+            if current.left:
+                queue.append(current.left)
+            if current.right:
+                queue.append(current.right)
+        return result
+
+    def dfs_preorder(self):
+        """Perform a Depth-First Search (pre-order traversal)."""
+        result = []
+        self._dfs_preorder(self.root, result)
+        return result
+
+    def _dfs_preorder(self, current, result):
+        if current:
+            result.append(current.key)  # Visit the root
+            self._dfs_preorder(current.left, result)  # Traverse left subtree
+            self._dfs_preorder(current.right, result)  # Traverse right subtree
+
+    def dfs_inorder(self):
+        """Perform a Depth-First Search (in-order traversal)."""
+        result = []
+        self._dfs_inorder(self.root, result)
+        return result
+
+    def _dfs_inorder(self, current, result):
+        if current:
+            self._dfs_inorder(current.left, result)  # Traverse left subtree
+            result.append(current.key)  # Visit the root
+            self._dfs_inorder(current.right, result)  # Traverse right subtree
+
+    def dfs_postorder(self):
+        """Perform a Depth-First Search (post-order traversal)."""
+        result = []
+        self._dfs_postorder(self.root, result)
+        return result
+
+    def _dfs_postorder(self, current, result):
+        if current:
+            self._dfs_postorder(current.left, result)  # Traverse left subtree
+            self._dfs_postorder(current.right, result)  # Traverse right subtree
+            result.append(current.key)  # Visit the root
+
+
+# Example Usage
+bt = BinaryTree()
+bt.insert(1)
+bt.insert(2)
+bt.insert(3)
+bt.insert(4)
+bt.insert(5)
+bt.insert(6)
+bt.insert(7)
+
+# Perform BFS and DFS traversals
+print("BFS:", bt.bfs())  # Outputs: [1, 2, 3, 4, 5, 6, 7]
+print("DFS Pre-Order:", bt.dfs_preorder())  # Outputs: [1, 2, 4, 5, 3, 6, 7]
+print("DFS In-Order:", bt.dfs_inorder())  # Outputs: [4, 2, 5, 1, 6, 3, 7]
+print("DFS Post-Order:", bt.dfs_postorder())  # Outputs: [4, 5, 2, 6, 7, 3, 1]
+```
+
+
 ## Leetcode Questions
 1. Path (传递) => DFS (recursive)
 - [257 Binary Tree Paths](../../leetcode_questions/257_binary_tree_paths.md)

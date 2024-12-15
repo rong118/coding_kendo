@@ -6,9 +6,9 @@ Each node in the tree can be connected to many children (depending on the type o
 - Each child can be treated like the root node of its own subtree.
 
 ## Types of Trees:
-- Binary Tree: Each node has at most two child nodes (left and right).
-- B-Tree: A self-balancing tree used in databases to manage disk storage.
-- AVL Tree: A self-balancing binary search tree that ensures the height of the left and right subtrees differs by at most one.
+- **Binary Tree**: Each node has at most two child nodes (left and right).
+- **B-Tree**: A self-balancing tree used in databases to manage disk storage.
+- **AVL Tree**: A self-balancing binary search tree that ensures the height of the left and right subtrees differs by at most one.
 
 ## Balancing
 
@@ -20,11 +20,13 @@ In the context of trees, balancing refers to a process that maintains the struct
 - Deletion: O(log n) to O(n), depending on the type of tree and the deletion algorithm used.
 - Traversal: O(n), where n is the number of nodes in the tree. This is because traversing a tree involves visiting each node, which takes constant time per node.
 
+## Search on the Tree
+- Breadth First Search (BFS)
+- Depth First Search (DFS)
+
 ## Tree's Traversal
 - Preorder  (root-left-right)
 - Inorder   (left-root-right) 
 - Postorder (let-right-root)
 
-## Search on the Tree
-- Breadth First Search (BFS)
-- Depth First Search (DFS)
+

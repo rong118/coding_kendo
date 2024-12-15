@@ -23,7 +23,6 @@ A perfect tree is a tree data structure where every internal node has two child 
 - All leaf nodes (also called external nodes) are at the same depth.
 - The number of nodes at each level increases by a factor of 2.
 
-
 ## Binary Search Tree (BST)
 A binary search tree is a type of binary tree that satisfies the following conditions:
 - All elements in the left subtree are less than the parent node: In a BST, all nodes to the left of a given node have values less than the value of that node.
@@ -140,62 +139,84 @@ type BinarySearchTree struct {
 }
 ```
 
-### Javascript Implementation
-```javascript
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.left = null;
-    this.right = null;
-  }
-}
+### Python Implementation
+```python
+class Node:
+    """A node in the binary search tree."""
+    def __init__(self, key):
+        self.key = key
+        self.left = None
+        self.right = None
 
-class BinarySearchTree {
-  constructor() {
-    this.root = null;
-  }
 
-  insert(value) {
-    const newNode = new Node(value);
-    if (this.root === null || value < this.root.value) {
-      // If the tree is empty or the new node's value is less than the root's, insert to the left
-      if (this.root === null) {
-        this.root = newNode;
-      } else {
-        let current = this.root;
-        while (current.left !== null && value < current.value) {
-          current = current.left;
-        }
-        current.left = newNode;
-      }
-    } else {
-      // If the new node's value is greater than or equal to the root's, insert to the right
-      let current = this.root;
-      while (current.right !== null && value >= current.value) {
-        current = current.right;
-      }
-      current.right = newNode;
-    }
-  }
+class BinarySearchTree:
+    """A binary search tree (BST) implementation."""
+    def __init__(self):
+        self.root = None
 
-  search(value) {
-    let current = this.root;
-    while (current !== null) {
-      if (value < current.value) {
-        current = current.left;
-      } else if (value > current.value) {
-        current = current.right;
-      } else {
-        return true; // Found the node
-      }
-    }
-    return false; // Not found
-  }
-}
+    def insert(self, key):
+        """Insert a new key into the BST."""
+        if self.root is None:
+            self.root = Node(key)
+        else:
+            self._insert(self.root, key)
+
+    def _insert(self, current, key):
+        if key < current.key:
+            if current.left is None:
+                current.left = Node(key)
+            else:
+                self._insert(current.left, key)
+        elif key > current.key:
+            if current.right is None:
+                current.right = Node(key)
+            else:
+                self._insert(current.right, key)
+
+    def search(self, key):
+        """Search for a key in the BST. Returns True if found, otherwise False."""
+        return self._search(self.root, key)
+
+    def _search(self, current, key):
+        if current is None:
+            return False
+        if key == current.key:
+            return True
+        elif key < current.key:
+            return self._search(current.left, key)
+        else:
+            return self._search(current.right, key)
+
+    def inorder_traversal(self):
+        """Perform an inorder traversal of the BST."""
+        result = []
+        self._inorder_traversal(self.root, result)
+        return result
+
+    def _inorder_traversal(self, current, result):
+        if current is not None:
+            self._inorder_traversal(current.left, result)
+            result.append(current.key)
+            self._inorder_traversal(current.right, result)
+
+
+# Example usage:
+bst = BinarySearchTree()
+bst.insert(50)
+bst.insert(30)
+bst.insert(70)
+bst.insert(20)
+bst.insert(40)
+bst.insert(60)
+bst.insert(80)
+
+print("Inorder Traversal:", bst.inorder_traversal())  # Outputs: [20, 30, 40, 50, 60, 70, 80]
+print("Search 40:", bst.search(40))  # Outputs: True
+print("Search 25:", bst.search(25))  # Outputs: False
 ```
 
-## Leetcode questions
-1. BST
+## Leetcode Questions
+1. Binary Search Tree
 - [270 Closest Binary Search Tree Value](../leetcode_questions/270_closest_binary_search_tree_value.md)
 - [450 Delete Node in BST](../leetcode_questions/450_delete_node_in_BST.md)
 - [98 Validate Binary Search Tree](../leetcode_questions/98_validate_binary_search_tree.md)
@@ -205,9 +226,9 @@ class BinarySearchTree {
 - [1382 Balance a Binary Search Tree](../leetcode_questions/1382_balance_a_binary_search_tree.md)
 - [96 Unique Binary Search Trees](../leetcode_questions/96_unique_binary_search_trees.md)
 - [95 Unique Binary Search Trees II](../leetcode_questions/95_unique_binary_search_trees_ii.md)
-- [Leetcode 450]()
+- [450 Delete Node in a BST](../leetcode_questions/450_delete_node_in_BST.md)
 
-4. LCA
+2. Lowest Common Ancestor
 - [235 Lowest Common Ancestor of a Binary Search Tree](../leetcode_questions/235_lowest_common_ancestor_of_a_binary_search_tree.md)
 - [236 Lowest Common Ancestor of a Binary Tree](../leetcode_questions/236_lowest_common_ancestor_of_a_binary_tree.md)
 - [1644 Lowest Common Ancestor of a Binary Tree II](../leetcode_questions/1644_lowest_common_ancestor_of_a_binary_tree_ii.md)
