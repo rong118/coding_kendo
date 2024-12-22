@@ -108,38 +108,59 @@ func main() {
     g.printGraph()
 }
 ```
-#### - Javascript
-```javascript
-class Graph {
-    constructor(numNodes) {
-        this.numNodes = numNodes;
-        this.adjacencyMatrix = Array.from({ length: numNodes }, () => new Array(numNodes).fill(0));
-    }
+#### - Python
+```python
+class Graph:
+    def __init__(self, num_vertices):
+        self.num_vertices = num_vertices
+        
+        # Initialize a num_vertices x num_vertices matrix with all zeros
+        self.adj_matrix = [[0] * num_vertices for _ in range(num_vertices)]
 
-    addEdge(node1, node2) {
-        this.adjacencyMatrix[node1][node2] = 1; // Directed edge from node1 to node2
-        if (node2 !== node1) { // Undirected edge
-            this.adjacencyMatrix[node2][node1] = 1;
-        }
-    }
+    def add_edge(self, src, dest, weight=1):
+        """Add an edge to the graph."""
+        if src < 0 or src >= self.num_vertices or dest < 0 or dest >= self.num_vertices:
+            print("Error: Invalid vertex number")
+            return
+        self.adj_matrix[src][dest] = weight
+        self.adj_matrix[dest][src] = weight  # For undirected graphs
 
-    printGraph() {
-        for (let i = 0; i < this.numNodes; i++) {
-            for (let j = 0; j < this.numNodes; j++) {
-                console.log(this.adjacencyMatrix[i][j], ' ');
-            }
-            console.log();
-        }
-    }
-}
+    def remove_edge(self, src, dest):
+        """Remove an edge from the graph."""
+        if src < 0 or src >= self.num_vertices or dest < 0 or dest >= self.num_vertices:
+            print("Error: Invalid vertex number")
+            return
+        self.adj_matrix[src][dest] = 0
+        self.adj_matrix[dest][src] = 0  # For undirected graphs
 
-const graph = new Graph(4);
-graph.addEdge(0, 1);
-graph.addEdge(0, 2);
-graph.addEdge(1, 3);
-graph.addEdge(2, 3);
+    def display(self):
+        """Display the adjacency matrix."""
+        for row in self.adj_matrix:
+            print(row)
 
-graph.printGraph();
+# Example usage:
+if __name__ == "__main__":
+    num_vertices = 5
+    graph = Graph(num_vertices)
+
+    # Add some edges
+    graph.add_edge(0, 1)
+    graph.add_edge(0, 4, 2)
+    graph.add_edge(1, 2)
+    graph.add_edge(1, 3)
+    graph.add_edge(3, 4)
+
+    # Display the adjacency matrix
+    print("Adjacency Matrix:")
+    graph.display()
+
+    # Remove an edge
+    print("\nRemoving edge between vertex 1 and vertex 3...")
+    graph.remove_edge(1, 3)
+
+    # Display the updated adjacency matrix
+    print("Updated Adjacency Matrix:")
+    graph.display()
 ```
 ### Adjacency List
 #### - C++
@@ -226,41 +247,56 @@ func main() {
 }
 ```
 
-#### - Javascript
-```javascript
-class Graph {
-    constructor(numNodes) {
-        this.numNodes = numNodes;
-        this.adjacencyList = Array.from({ length: numNodes }, () => []);
+#### - Python
+```python
+class Graph:
+    def __init__(self):
+        self.adj_list = {}
 
-    }
+    def add_edge(self, src, dest, weight=1, directed=False):
+        """Add an edge to the graph."""
+        if src not in self.adj_list:
+            self.adj_list[src] = []
+        if dest not in self.adj_list:
+            self.adj_list[dest] = []
+        
+        # Add the edge
+        self.adj_list[src].append((dest, weight))
+        if not directed:
+            self.adj_list[dest].append((src, weight))
 
-    addEdge(node1, node2) {
-        this.adjacencyList[node1].push(node2); // Directed edge from node1 to node2
-        if (node2 !== node1) { // Undirected edge
-            this.adjacencyList[node2].push(node1);
-        }
-    }
+    def remove_edge(self, src, dest, directed=False):
+        """Remove an edge from the graph."""
+        if src in self.adj_list:
+            self.adj_list[src] = [(d, w) for d, w in self.adj_list[src] if d != dest]
+        if not directed and dest in self.adj_list:
+            self.adj_list[dest] = [(s, w) for s, w in self.adj_list[dest] if s != src]
 
-    printGraph() {
-        for (let i = 0; i < this.numNodes; i++) {
-            console.log(`Node ${i}: `);
+    def display(self):
+        """Display the adjacency list."""
+        for vertex, edges in self.adj_list.items():
+            print(f"{vertex}: {edges}")
 
-            for (let j of this.adjacencyList[i]) {
-                console.log(j, ' ');
-            }
-            console.log();
-        }
-    }
-}
+# Example usage:
+if __name__ == "__main__":
+    graph = Graph()
 
-const graph = new Graph(4);
-graph.addEdge(0, 1);
-graph.addEdge(0, 2);
-graph.addEdge(1, 3);
-graph.addEdge(2, 3);
+    # Add some edges
+    graph.add_edge(0, 1)
+    graph.add_edge(0, 3, 2)
+    graph.add_edge(1, 2)
 
-graph.printGraph();
+    # Display the adjacency list
+    print("Adjacency List:")
+    graph.display()
+
+    # Remove an edge
+    print("\nRemoving edge between vertex 1 and vertex 3...")
+    graph.remove_edge(1, 2)
+
+    # Display the updated adjacency list
+    print("Updated Adjacency List:")
+    graph.display()
 ```
 ## Adjacency Matrices vs Adjacency List
 

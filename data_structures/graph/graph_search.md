@@ -126,7 +126,51 @@ func main() {
     // Run BFS from node 0
     BFS(nodes[0], nodes)
 }
+```
 
+### Python Implementation
+```python
+class Node:
+    def __init__(self, val):
+        self.val = val
+        self.neighbors = []
+
+def bfs(start):
+    # Initialize the queue with the starting node
+    queue = [start]
+
+    # Initialize the visited set
+    visited = set()
+    visited.add(start)
+
+    # Loop until the queue is empty
+    while queue:
+        # Dequeue a node from the front of the queue
+        node = queue.pop(0)
+
+        # Process the current node
+        print(node.val)
+
+        # Enqueue all unvisited neighbors
+        for neighbor in node.neighbors:
+            if neighbor not in visited:
+                queue.append(neighbor)
+                visited.add(neighbor)
+
+# Main code
+if __name__ == "__main__":
+    # Create nodes
+    num_nodes = 6
+    nodes = [Node(i) for i in range(num_nodes)]
+
+    # Define neighbors
+    nodes[0].neighbors.extend([nodes[1], nodes[2]])
+    nodes[1].neighbors.extend([nodes[3]])
+    nodes[2].neighbors.extend([nodes[4]])
+    nodes[4].neighbors.extend([nodes[5]])
+
+    # Run BFS from node 0
+    bfs(nodes[0])
 ```
 
 ## II. Depth-First Search (DFS)
@@ -248,6 +292,49 @@ func main() {
 	DFS(nodes[0], nodes)
 }
 ```
+
+### Python Implementation
+```python
+class Node:
+    def __init__(self, val):
+        self.val = val
+        self.neighbors = []
+
+def dfs(start, num_nodes):
+    # Initialize the stack and visited list
+    stack = [start]
+    visited = [False] * num_nodes
+
+    visited[start.val] = True
+
+    while stack:
+        # Pop a node from the stack
+        node = stack.pop()
+
+        # Process the current node
+        print(node.val, end=" ")
+
+        # Visit all unvisited neighbors
+        for neighbor in node.neighbors:
+            if not visited[neighbor.val]:
+                stack.append(neighbor)
+                visited[neighbor.val] = True
+
+# Main code
+if __name__ == "__main__":
+    num_nodes = 6
+    nodes = [Node(i) for i in range(num_nodes)]
+
+    # Define neighbors
+    nodes[0].neighbors.extend([nodes[1], nodes[2]])
+    nodes[1].neighbors.extend([nodes[3]])
+    nodes[2].neighbors.extend([nodes[4]])
+    nodes[4].neighbors.extend([nodes[5]])
+
+    # Run DFS from node 0
+    dfs(nodes[0], num_nodes)
+```
+
 ## III. Runtime Complexity
 ### Using an Adjacency List
 
