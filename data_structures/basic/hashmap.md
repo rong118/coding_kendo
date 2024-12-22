@@ -5,46 +5,6 @@ In computing, hash map is a data structure that implements an associative array 
 A hash map typically uses a single array or linked list to store values.
 
 ## Implementation
-### C++ using std::unordered_map
-```c++
-#include <iostream>
-#include <string>
-#include <unordered_map>
-
-int main() {
-    std::unordered_map<std::string, int> myMap;
-
-    // Insert some key-value pairs
-    myMap["foo"] = 1;
-    myMap["bar"] = 2;
-    myMap["baz"] = 3;
-
-    // Look up a value
-    if (myMap.find("foo") != myMap.end()) {
-        std::cout << "Value for 'foo' is: " << myMap["foo"] << std::endl;
-    }
-
-    return 0;
-}
-```
-### Golang using map
-```go
-package main
-
-import (
-    "fmt"
-)
-
-func main() {
-    m := map[string]int{"foo": 1, "bar": 2, "baz": 3}
-
-    // Look up a value
-    if val, ok := m["foo"]; ok {
-        fmt.Println("Value for 'foo' is:", val)
-    }
-}
-```
-
 ### python using dictionary
 ```python
 # Creating a hashmap (dictionary)

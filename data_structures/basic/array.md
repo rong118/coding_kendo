@@ -3,45 +3,6 @@
 Array is a fundamental data structure that stores elements of the same data type in contiguous memory locations, allowing efficient random access to its elements by index.
 
 ## Implementation
-### C++ Implementation
-```c++
-#include <iostream>
-using namespace std;
-
-int main() {
-    // Declaring and initializing an array of integers in C++
-    int arr[5] = {1, 2, 3, 4, 5};
-
-    // Accessing and printing array elements
-    cout << "Array elements in C++: ";
-    for (int i = 0; i < 5; ++i) {
-        cout << arr[i] << " ";
-    }
-    cout << endl;
-
-    return 0;
-}
-```
-
-### Golang Implementation
-```golang
-package main
-
-import "fmt"
-
-func main() {
-    // Declaring and initializing an array of integers in Go
-    arr := [5]int{1, 2, 3, 4, 5}
-
-    // Accessing and printing array elements
-    fmt.Print("Array elements in Go: ")
-    for _, v := range arr {
-        fmt.Printf("%d ", v)
-    }
-    fmt.Println()
-}
-```
-
 ### Python Example
 ```python
 # Creating an Array (List)
@@ -91,56 +52,6 @@ Unlike static arrays, which have a fixed size determined at compile time, dynami
 The key feature of dynamic arrays is their ability to automatically resize themselves when the number of elements exceeds the current capacity. When a dynamic array is full and a new element needs to be added, it typically allocates a larger chunk of memory, copies the existing elements to the new memory location, and then adds the new element.
 
 ## Implementation
-### C++ Example using std::vector:
-```c++
-#include <iostream>
-#include <vector>
-using namespace std;
-
-int main() {
-    // Creating a dynamic array using std::vector in C++
-    vector<int> dynamicArray;
-
-    // Adding elements to the dynamic array
-    dynamicArray.push_back(1);
-    dynamicArray.push_back(2);
-    dynamicArray.push_back(3);
-
-    // Accessing and printing elements of the dynamic array
-    cout << "Dynamic array elements in C++: ";
-    for (int i = 0; i < dynamicArray.size(); ++i) {
-        cout << dynamicArray[i] << " ";
-    }
-    cout << endl;
-
-    return 0;
-}
-```
-
-### Go Example using Slices:
-```golang
-package main
-
-import "fmt"
-
-func main() {
-    // Creating a dynamic array using slices in Go
-    dynamicArray := []int{}
-
-    // Adding elements to the dynamic array
-    dynamicArray = append(dynamicArray, 1)
-    dynamicArray = append(dynamicArray, 2)
-    dynamicArray = append(dynamicArray, 3)
-
-    // Accessing and printing elements of the dynamic array
-    fmt.Print("Dynamic array elements in Go: ")
-    for _, v := range dynamicArray {
-        fmt.Printf("%d ", v)
-    }
-    fmt.Println()
-}
-```
-
 ### Python Example using List:
 ```python
 # Creating a dynamic array using Python's list

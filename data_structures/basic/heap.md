@@ -135,130 +135,6 @@ Operations:
 - peek()  => return top element
 
 ## Implementation
-### C++ Implementation with heap
-```c++
-class priority_queue {
-public:
-    vector<int> queue;
-    int pq_size;
-
-    priority_queue(int n){
-        this->queue.resize(n);
-    }
-
-    bool offer(int num){
-        queue[pq_size] = num;
-        siftUp(pq_size);
-        pq_size++
-        return true;
-    }
-
-    int poll() {
-        int v = queue[0];
-        queue[0] = queue[pq_size - 1];
-        pq_size--;
-        if(pq_size > 0) siftDown();
-        return 
-    }
-
-    int peek() {
-        if(pq_size == 0) return INT_MIN;
-        return queue[0];
-    }
-
-private:
-    void siftdown(int nodeIndex) {
-        int smllest = nodeIndex;
-        int left = 2 * nodeIndex + 1;
-        int right = 2 * nodeIndex + 2;
-        if (left < pq_size && queue[left] < queue[smallest]){
-            smallest = left;
-        }
-
-        if (right < pq_size && queue[right] < queue[smallest]){
-            smallest = right;
-        }
-
-        if(smallest != nodeIndex){
-            swap(nodeIndex, smallest);
-            siftDown(smallest);
-        }
-    }
-
-    void siftUp(int nodeIndex) {
-        if(nodeIndex != 0){
-            int parentIndex = (nodeIndex - 1) / 2;
-            if(queue[parentIndex] > queue[nodeIndex]){
-                swap(parentIndex, nodeIndex);
-            }
-        }
-    }
-
-    void swap(int i, int j){
-        int tmp = queue[i];
-        queue[i] = queue[j];
-        queue[j] = tmp;
-    }
-}
-```
-
-### C++ stl::queue
-```c++
-#include <queue>
-#include <iostream>
-
-int main() {
-    // Create a max-heap priority queue (highest priority first)
-    std::priority_queue<int, std::vector<int>, std::greater<int>> pq;
-
-    // Insert some elements with priorities
-    pq.push(3);
-    pq.push(1);
-    pq.push(5);
-    pq.push(2);
-
-    // Retrieve the highest-priority element (max-heap property)
-    while (!pq.empty()) {
-        std::cout << "Priority: " << pq.top() << std::endl;
-        pq.pop();
-    }
-
-    return 0;
-}
-```
-
-### Golang Implementation
-```golang
-package main
-
-import "fmt"
-
-type PQElement struct {
-    value int
-    prio  int // priority
-}
-
-func (e *PQElement) Less(other *PQElement) bool {
-    return e.prio < other.prio
-}
-
-func main() {
-    // Create a new priority queue
-    pq := []PQElement{}
-
-    // Enqueue some elements with priorities
-    pq = append(pq, PQElement{value: 1, prio: 3})
-    pq = append(pq, PQElement{value: 2, prio: 2})
-    pq = append(pq, PQElement{value: 3, prio: 1})
-
-    // Dequeue and print the highest-priority element
-    for len(pq) > 0 {
-        fmt.Println("Highest priority:", pq[0].value)
-        pq = pq[1:]
-    }
-}
-```
-
 ### Python: Using queue.PriorityQueue
 ```python
 # Using queue.PriorityQueue
@@ -278,7 +154,7 @@ while not pq.empty():
 
 ```
 
-# Python: Using queue.PriorityQueue with Custom Comparison
+### Python: Using queue.PriorityQueue with Custom Comparison
 ```python
 class Task:
     def __init__(self, priority, deadline, description):
