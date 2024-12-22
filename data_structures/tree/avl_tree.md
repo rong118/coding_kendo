@@ -11,139 +11,111 @@ In an AVL tree:
 - This balance ensures that the tree's height remains relatively small, making search, insertion, and deletion operations efficient.
 
 ## Implementation
-### C++
-```c++
-#include <iostream>
-using namespace std;
+### Python
+```python
+class Node:
+    def __init__(self, key):
+        self.key = key
+        self.left = None
+        self.right = None
 
-// Define Node structure
-struct Node {
-    int key;
-    Node* left, *right;
+class AVLTree:
+    def __init__(self):
+        self.root = None
 
-    // Constructor for creating a new node
-    Node(int k) : key(k), left(nullptr), right(nullptr) {}
-};
+    # Insert a node with the given key
+    def insert_node(self, key):
+        if self.root is None:
+            self.root = Node(key)
+        else:
+            self.root = self._insert(self.root, key)
 
-// AVL Tree class
-class AVLTree {
-public:
-    Node* root;  // Root of the tree
+    # Recursive function to insert a node in the AVL Tree
+    def _insert(self, node, key):
+        if node is None:
+            return Node(key)
+        
+        if key < node.key:
+            node.left = self._insert(node.left, key)
+        else:
+            node.right = self._insert(node.right, key)
 
-    AVLTree() : root(nullptr) {}
+        # Balance the tree after insertion
+        return self.balance(node)
 
-    // Insert a node with given key
-    void insertNode(int key);
+    # Balance the AVL Tree and perform rotations if needed
+    def balance(self, node):
+        balance_factor = self.get_height(node.left) - self.get_height(node.right)
 
-    // Print the tree in inorder traversal
-    void printInorder();
+        # Left heavy
+        if balance_factor > 1:
+            if self.get_height(node.left.left) >= self.get_height(node.left.right):
+                return self.right_rotate(node)
+            else:
+                node.left = self.left_rotate(node.left)
+                return self.right_rotate(node)
 
-private:
-    // Helper function to balance the tree after insertion or deletion
-    Node* balance(Node* node);
+        # Right heavy
+        if balance_factor < -1:
+            if self.get_height(node.right.right) >= self.get_height(node.right.left):
+                return self.left_rotate(node)
+            else:
+                node.right = self.right_rotate(node.right)
+                return self.left_rotate(node)
 
-    // Helper function to rotate right subtree
-    Node* rightRotate(Node* node);
+        return node  # No balancing needed
 
-    // Helper function to rotate left subtree
-    Node* leftRotate(Node* node);
-};
+    # Perform a right rotation
+    def right_rotate(self, y):
+        x = y.left
+        T2 = x.right
 
-// Implement insertion and balancing logic
-void AVLTree::insertNode(int key) {
-    Node* newNode = new Node(key);
+        # Perform rotation
+        x.right = y
+        y.left = T2
 
-    if (root == nullptr || root->key != key) {
-        if (root == nullptr) {
-            root = newNode;
-        } else {
-            Node* current = root;
+        return x
 
-            while (true) {
-                if (newNode->key < current->key) {
-                    if (current->left == nullptr) {
-                        current->left = newNode;
-                        break;
-                    }
-                    current = current->left;
-                } else {
-                    if (current->right == nullptr) {
-                        current->right = newNode;
-                        break;
-                    }
-                    current = current->right;
-                }
-            }
+    # Perform a left rotation
+    def left_rotate(self, x):
+        y = x.right
+        T2 = y.left
 
-            // Balance the tree after insertion
-            root = balance(root);
-        }
-    }
-}
+        # Perform rotation
+        y.left = x
+        x.right = T2
 
-// Implement balancing logic for AVL Tree
-Node* AVLTree::balance(Node* node) {
-    int heightDiff = getHeight(node->left) - getHeight(node->right);
+        return y
 
-    if (heightDiff > 1) {  // Left-heavy subtree, need to balance right
-        if (getHeight(node->left->left) >= getHeight(node->left->right)) {
-            return rightRotate(node);
-        } else {
-            node->left = leftRotate(node->left);
-            return rightRotate(node);
-        }
-    }
+    # Get the height of a node
+    def get_height(self, node):
+        if node is None:
+            return 0
+        return 1 + max(self.get_height(node.left), self.get_height(node.right))
 
-    if (heightDiff < -1) {  // Right-heavy subtree, need to balance left
-        if (getHeight(node->right->left) >= getHeight(node->right->right)) {
-            return leftRotate(node);
-        } else {
-            node->right = rightRotate(node->right);
-            return leftRotate(node);
-        }
-    }
+    # Print the tree using inorder traversal
+    def print_inorder(self):
+        self._inorder(self.root)
 
-    return node;  // Tree is already balanced, no need to balance
-}
+    # Helper function for inorder traversal
+    def _inorder(self, node):
+        if node:
+            self._inorder(node.left)
+            print(node.key, end=" ")
+            self._inorder(node.right)
 
-// Helper function to get the height of a subtree
-int AVLTree::getHeight(Node* node) {
-    if (node == nullptr) {
-        return 0;
-    }
-    return 1 + max(getHeight(node->left), getHeight(node->right));
-}
 
-// Implement rotation logic for AVL Tree
-Node* AVLTree::rightRotate(Node* node) {
-    Node* temp = node->left;
-    node->left = temp->right;
-    temp->right = node;
+# Example usage
+tree = AVLTree()
 
-    return temp;
-}
+# Insert nodes with keys 5, 3, and 2
+tree.insert_node(5)
+tree.insert_node(3)
+tree.insert_node(2)
 
-Node* AVLTree::leftRotate(Node* node) {
-    Node* temp = node->right;
-    node->right = temp->left;
-    temp->left = node;
+# Print the inorder traversal of the AVL tree
+tree.print_inorder()
 
-    return temp;
-}
-
-int main() {
-    AVLTree tree;
-
-    // Insert nodes with keys 5, 3, and 2
-    tree.insertNode(5);
-    tree.insertNode(3);
-    tree.insertNode(2);
-
-    // Print the inorder traversal of the AVL tree
-    tree.printInorder();
-
-    return 0;
-}
 ```
 
 This example demonstrates basic operations on an AVL tree:

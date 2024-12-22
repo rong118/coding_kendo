@@ -30,115 +30,6 @@ A binary search tree is a type of binary tree that satisfies the following condi
 - Each node has at most two child nodes: Like any binary tree, a BST has no more than two child nodes per node.
 
 ## Implementation
-### C++ Implementation
-```c++
-// Node structure for the BST
-struct Node {
-    int value;
-    Node* left;
-    Node* right;
-};
-
-class BinarySearchTree {
-public:
-    // Constructor to create an empty BST
-    BinarySearchTree() : root(nullptr) {}
-
-    // Method to insert a new node into the BST
-    void insert(int value) {
-        Node* newNode = new Node();
-        newNode->value = value;
-        newNode->left = nullptr;
-        newNode->right = nullptr;
-
-        if (root == nullptr || value < root->value) {
-            // If the tree is empty or the new node's value is less than the root's, insert to the left
-            if (root == nullptr) {
-                root = newNode;
-            } else {
-                Node* current = root;
-                while (current->left != nullptr && value < current->value) {
-                    current = current->left;
-                }
-                current->left = newNode;
-            }
-        } else {
-            // If the new node's value is greater than or equal to the root's, insert to the right
-            Node* current = root;
-            while (current->right != nullptr && value >= current->value) {
-                current = current->right;
-            }
-            current->right = newNode;
-        }
-    }
-
-    // Method to search for a node with a given value in the BST
-    bool search(int value) {
-        Node* current = root;
-        while (current != nullptr) {
-            if (value < current->value) {
-                current = current->left;
-            } else if (value > current->value) {
-                current = current->right;
-            } else {
-                return true; // Found the node
-            }
-        }
-        return false; // Not found
-    }
-
-private:
-    Node* root;
-};
-```
-
-### Golang Implementation
-```Golang
-// Node structure for the BST
-type Node struct {
-    value int
-    left *Node
-    right *Node
-}
-
-func (bst *BinarySearchTree) insert(value int) {
-    node := &Node{value: value, left: nil, right: nil}
-    if bst.root == nil || value < bst.root.value {
-        // If the tree is empty or the new node's value is less than the root's, insert to the left
-        if bst.root == nil {
-            bst.root = node
-        } else {
-            current := &bst.root
-            for ; current.left != nil && value < current.value; current = current.left {}
-            current.left = node
-        }
-    } else {
-        // If the new node's value is greater than or equal to the root's, insert to the right
-        current := &bst.root
-        for ; current.right != nil && value >= current.value; current = current.right {}
-        current.right = node
-    }
-}
-
-func (bst *BinarySearchTree) search(value int) bool {
-    current := &bst.root
-    for ; current != nil; {
-        if value < current.value {
-            current = &current.left
-        } else if value > current.value {
-            current = &current.right
-        } else {
-            return true // Found the node
-        }
-    }
-    return false // Not found
-}
-
-type BinarySearchTree struct {
-    root *Node
-}
-```
-
 ### Python Implementation
 ```python
 class Node:
@@ -147,7 +38,6 @@ class Node:
         self.key = key
         self.left = None
         self.right = None
-
 
 class BinarySearchTree:
     """A binary search tree (BST) implementation."""
@@ -198,7 +88,6 @@ class BinarySearchTree:
             self._inorder_traversal(current.left, result)
             result.append(current.key)
             self._inorder_traversal(current.right, result)
-
 
 # Example usage:
 bst = BinarySearchTree()
