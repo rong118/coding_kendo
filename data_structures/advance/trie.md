@@ -9,140 +9,64 @@ A Trie (also known as a prefix tree) is a type of search tree used to store a dy
 - A node is said to be complete if all possible characters are present at each position in the string represented by that node.
 
 ## Implementation
-### C++ Implementation
-```c++
-#include <iostream>
-#include <string>
+### python Implementation
+```python
+class Trie:
+    class Node:
+        def __init__(self):
+            self.is_end_of_word = False
+            self.children = {}
 
-using namespace std;
+    def __init__(self):
+        self.root = self.Node()
 
-class Trie {
-public:
-    struct Node {
-        bool isEndOfWord;
-        map<char, Node*> children;
-    };
+    def insert(self, word):
+        current = self.root
+        for c in word:
+            if c not in current.children:
+                current.children[c] = self.Node()
+            current = current.children[c]
+        current.is_end_of_word = True
 
-    Trie() : root(new Node()) {}
+    def search(self, word):
+        current = self.root
+        for c in word:
+            if c not in current.children:
+                return False
+            current = current.children[c]
+        return current.is_end_of_word
 
-    void insert(const string& word) {
-        Node* current = root;
-        for (char c : word) {
-            if (!current->children.count(c)) {
-                current->children[c] = new Node();
-            }
-            current = current->children[c];
-        }
-        current->isEndOfWord = true;
-    }
+    def prefix_search(self, prefix):
+        current = self.root
+        for c in prefix:
+            if c not in current.children:
+                return []  # prefix not found
+            current = current.children[c]
+        
+        results = []
+        self._search(current, prefix, results)
+        return results
 
-    bool search(const string& word) {
-        Node* current = root;
-        for (char c : word) {
-            if (!current->children.count(c)) {
-                return false;
-            }
-            current = current->children[c];
-        }
-        return current->isEndOfWord;
-    }
+    def _search(self, node, prefix, results):
+        if node.is_end_of_word:
+            results.append(prefix)
+        for c, child in node.children.items():
+            self._search(child, prefix + c, results)
 
-    vector<string> prefix_search(const string& prefix) {
-        Node* current = &root;
-        for (char c : prefix) {
-            if (!current->children.count(c)) {
-                return {}; // prefix not found
-            }
-            current = current->children[c];
-        }
-        vector<string> results;
-        _Search(current, prefix, results);
-        return results;
-    }
+# Example usage
+trie = Trie()
 
-private:
-    Node* root;
+trie.insert("apple")
+trie.insert("banana")
+trie.insert("app")
 
-    void _Search(Node* node, const string& prefix, vector<string>& results) {
-        if (node->isEndOfWord) {
-            results.push_back(prefix);
-        }
-        for (const auto& pair : node->children) {
-            _Search(pair.second, prefix + pair.first, results);
-        }
-    }
-};
+print(f"Is 'apple' in the trie? {'Yes' if trie.search('apple') else 'No'}")
+print(f"Is 'bananas' in the trie? {'Yes' if trie.search('bananas') else 'No'}")
+print(f"Is 'apples' in the trie? {'Yes' if trie.search('apples') else 'No'}")
 
-int main() {
-    Trie trie;
-
-    trie.insert("apple");
-    trie.insert("banana");
-    trie.insert("app");
-
-    cout << "Is 'apple' in the trie? " << (trie.search("apple") ? "Yes" : "No") << endl;
-    cout << "Is 'bananas' in the trie? " << (trie.search("bananas") ? "Yes" : "No") << endl;
-    cout << "Is 'apples' in the trie? " << (trie.search("apples") ? "Yes" : "No") << endl;
-
-    vector<string> results = trie.prefix_earch("a"); // returns ["apple", "app"]
-    for (const auto& result : results) {
-        cout << result << endl;
-    }
-
-    return 0;
-}
-```
-
-### Golang Implementation
-```golang
-package main
-
-import (
-    "fmt"
-)
-
-type TrieNode struct {
-    IsEndOfWord bool
-    Children map[rune]*TrieNode
-}
-
-func NewTrie() *TrieNode {
-    return &TrieNode{nil, make(map[rune]*TrieNode))}
-}
-
-func (n *TrieNode) Insert(word string) {
-    current := n
-    for _, c := range word {
-        if _, ok := current.Children[c]; !ok {
-            current.Children[c] = NewTrie()
-        }
-        current = current.Children[c]
-    }
-    current.IsEndOfWord = true
-}
-
-func (n *TrieNode) Search(word string) bool {
-    current := n
-    for _, c := range word {
-        if _, ok := current.Children[c]; !ok {
-            return false
-        }
-        current = current.Children[c]
-    }
-    return current.IsEndOfWord
-}
-
-func main() {
-    trie := NewTrie()
-
-    trie.Insert("apple")
-    trie.Insert("banana")
-    trie.Insert("app")
-
-    fmt.Println("Is 'apple' in the trie? ", trie.Search("apple"))
-    fmt.Println("Is 'bananas' in the trie? ", trie.Search("bananas"))
-    fmt.Println("Is 'apples' in the trie? ", trie.Search("apples"))
-}
+results = trie.prefix_search("a")  # returns ["apple", "app"]
+for result in results:
+    print(result)
 ```
 
 ## Runtime Complexity

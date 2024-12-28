@@ -13,78 +13,37 @@ A Union-Find data structure represents a set of elements, where each element bel
 - **Union**: Joins two subsets into a single subset.
 
 ## Implmentation
-### C++
-```c++
-class DSU {
-public:
-    vector<int> parent;
-    DSU(int N){
-        parent.resize(N);
+```python
+class DSU:
+    def __init__(self, N):
+        # Initialize the parent list where each node is its own parent
+        self.parent = list(range(N))
 
-        for(int i = 0; i < parent.size(); i++){
-            parent[i] = i;
-        }
-    }
+    def _find(self, x):
+        # Path compression: Make the parent of x point directly to the root
+        if self.parent[x] != x:
+            self.parent[x] = self._find(self.parent[x])
+        return self.parent[x]
 
-    int _find(int x){
-        if(parent[x] != x) parent[x] = _find(parent[x]);
-        return parent[x];
-    }
-    
-    void _union(int x, int y){
-        parent[_find(x)] = _find(y);
-        return;
-    }
-}
-```
+    def _union(self, x, y):
+        # Union by making the root of one tree point to the root of another
+        self.parent[self._find(x)] = self._find(y)
 
-### Golang
-```golang
-package main
+if __name__ == "__main__":
+    dsu = DSU(5)  # Create a DSU with 5 elements (0 to 4)
 
-import (
-    "fmt"
-)
+    # Union some sets
+    dsu._union(0, 1)
+    dsu._union(1, 2)
 
-type UnionFind struct {
-    parent []int
-    n      int
-}
+    # Find roots
+    print(dsu._find(0))  # Should output the root of the set containing 0
+    print(dsu._find(2))  # Should output the same root as 0's set
+    print(dsu._find(3))  # Should output 3, as it is its own root
 
-func NewUnionFind(n int) *UnionFind {
-    return &UnionFind{n, make([]int, n)}
-}
-
-func (uf *UnionFind) Find(x int) int {
-    if uf.parent[x] != x {
-        uf.parent[x] = uf.Find(uf.parent[x])
-    }
-    return uf.parent[x]
-}
-
-func (uf *UnionFind) UnionSet(x, y int) {
-    rootX := uf.Find(x)
-    rootY := uf.Find(y)
-
-    if rootX != rootY {
-        uf.parent[rootX] = rootY
-    }
-}
-
-func main() {
-    uf := NewUnionFind(5) // Create a Union-Find data structure for 5 elements
-
-    uf.UnionSet(1, 2)
-    uf.UnionSet(2, 3)
-    uf.UnionSet(4, 5)
-
-    fmt.Println("Root of set containing 1:", uf.Find(1))
-    fmt.Println("Root of set containing 2:", uf.Find(2))
-    fmt.Println("Root of set containing 3:", uf.Find(3))
-    fmt.Println("Root of set containing 4:", uf.Find(4))
-    fmt.Println("Root of set containing 5:", uf.Find(5))
-
-}
+    # Check if two elements are in the same set
+    print(dsu._find(0) == dsu._find(2))  # True
+    print(dsu._find(0) == dsu._find(3))  # False
 ```
 
 ## Optimize Implementation
@@ -94,38 +53,33 @@ The most efficient implementation uses two techniques:
 - **Union by Rank/Size**
 
 ### Union by Size Example
-```c++
-class DSU {
-public:
-    vector<int> parent;
-    vector<int> size;
-    DSU(int N){
-        parent.resize(N);
-        size.resize(N, 1);
+```python
+class DSU:
+    def __init__(self, N):
+        # Initialize parent and size arrays
+        self.parent = list(range(N))  # Each element is initially its own parent
+        self.size = [1] * N  # Size of each set is initially 1
 
-        for(int i = 0; i < parent.size(); i++){
-            parent[i] = i;
-        }
-    }
+    def _find(self, x):
+        # Path compression: Make the parent of x point directly to the root
+        if self.parent[x] != x:
+            self.parent[x] = self._find(self.parent[x])
+        return self.parent[x]
 
-    int _find(int x){
-        if(parent[x] != x) parent[x] = _find(parent[x]);
-        return parent[x];
-    }
-    
-    void _union(int x, int y){
-        int rootx = _find(x);
-        int rooty = _find(y);
-        if(size[rootx] <= size[rooty]){
-            parent[rootx] = rooty;
-            size[rooty] += rootx;
-        }else{
-            parent[rooty] = rootx;
-            size[rootx] += rooty;
-        }
-        return;
-    }
-}
+    def _union(self, x, y):
+        # Find the roots of the sets containing x and y
+        rootx = self._find(x)
+        rooty = self._find(y)
+
+        if rootx != rooty:
+            # Union by size: attach smaller tree under the larger tree
+            if self.size[rootx] <= self.size[rooty]:
+                self.parent[rootx] = rooty
+                self.size[rooty] += self.size[rootx]
+            else:
+                self.parent[rooty] = rootx
+                self.size[rootx] += self.size[rooty]
+
 ```
 
 ## Runtime Complexity

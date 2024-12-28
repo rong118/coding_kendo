@@ -15,76 +15,59 @@ A Segment Tree is a data structure that allows for efficient querying and updati
   Update all elements in a specific range.
 
 ## Implementation
-```c++
-#include <iostream>
-#include <vector>
+```python
+class Node:
+    def __init__(self, sum=0, left=None, right=None):
+        self.sum = sum  # Sum of elements in this node's range
+        self.left = left  # Left child
+        self.right = right  # Right child
 
-using namespace std;
+# Function to build the segment tree
+def build_segment_tree(arr, start, end):
+    if start == end:
+        # Leaf node: just store the value
+        return Node(sum=arr[start])
 
-// Node structure for the segment tree
-struct Node {
-    int sum;  // Sum of elements in this node's range
-    Node* left;
-    Node* right;
-};
+    mid = (start + end) // 2
 
-// Function to build the segment tree
-Node* buildSegmentTree(vector<int>& arr, int start, int end) {
-    if (start == end) {
-        // Leaf node: just store the value
-        Node* node = new Node();
-        node->sum = arr[start];
-        return node;
-    }
+    # Internal node: build left and right subtrees
+    left_child = build_segment_tree(arr, start, mid)
+    right_child = build_segment_tree(arr, mid + 1, end)
 
-    int mid = (start + end) / 2;
+    # Calculate the sum for this node's range
+    node = Node(sum=left_child.sum + right_child.sum, left=left_child, right=right_child)
 
-    // Internal node: build left and right subtrees
-    Node* node = new Node();
-    node->left = buildSegmentTree(arr, start, mid);
-    node->right = buildSegmentTree(arr, mid + 1, end);
+    return node
 
-    // Calculate the sum for this node's range
-    node->sum = node->left->sum + node->right->sum;
+# Function to query the segment tree: find the sum of a range [L, R]
+def query_segment_tree(root, start, end, L, R):
+    if R < start or L > end:
+        # Out-of-range query: return 0
+        return 0
 
-    return node;
-}
+    if start >= L and end <= R:
+        # Exact match: return the sum for this node's range
+        return root.sum
 
-// Function to query the segment tree: find the sum of a range [L, R]
-int querySegmentTree(Node* root, int start, int end, int L, int R) {
-    if (R < start || L > end) {
-        // Out-of-range query: return 0
-        return 0;
-    }
+    mid = (start + end) // 2
 
-    if (start >= L && end <= R) {
-        // Exact match: return the sum for this node's range
-        return root->sum;
-    }
+    # Recursively query left and right subtrees
+    left_sum = query_segment_tree(root.left, start, mid, L, min(R, mid))
+    right_sum = query_segment_tree(root.right, mid + 1, end, max(L, mid + 1), R)
 
-    int mid = (start + end) / 2;
+    return left_sum + right_sum
 
-    // Recursively query left and right subtrees
-    int leftSum = querySegmentTree(root->left, start, mid, L, min(R, mid));
-    int rightSum = querySegmentTree(root->right, mid + 1, end, max(L, mid), R);
+# Example usage
+if __name__ == "__main__":
+    arr = [1, 3, 5, 7, 9, 11]
+    N = len(arr)
 
-    return leftSum + rightSum;
-}
+    # Build the segment tree
+    root = build_segment_tree(arr, 0, N - 1)
 
-// Example usage:
-int main() {
-    vector<int> arr = {1, 3, 5, 7, 9, 11};
-    int N = arr.size();
-
-    // Build the segment tree
-    Node* root = buildSegmentTree(arr, 0, N - 1);
-
-    // Query examples:
-    cout << "Sum of [2, 4]: " << querySegmentTree(root, 0, N - 1, 2, 4) << endl;
-    cout << "Sum of [5, 7]: " << querySegmentTree(root, 0, N - 1, 5, 7) << endl;
-
-    return 0;
-}
+    # Query examples:
+    print("Sum of [2, 4]:", query_segment_tree(root, 0, N - 1, 2, 4))
+    print("Sum of [5, 5]:", query_segment_tree(root, 0, N - 1, 5, 5))
 ```
 
 ## Runtime Complexity

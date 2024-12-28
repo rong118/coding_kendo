@@ -11,87 +11,32 @@ A Binary Indexed Tree (BIT) is a data structure used to efficiently calculate pr
 - **Query**: To compute the cumulative sum from start to end, traverse the BIT from BIT[start-1] to BIT[end]. The key insight is that you can skip certain nodes by using binary indexing (bit manipulation) to determine whether a node should be included in the sum or not.
 
 ## Implementation
-### C++ Implementation
-```c++
-#include <iostream>
-#include <vector>
+```python
+class BIT:
+    def __init__(self, n):
+        self.bit = [0] * (n + 1)
 
-class BIT {
-public:
-    std::vector<int> bit;
+    def update(self, i, val):
+        while i < len(self.bit):
+            self.bit[i] += val
+            i += i & -i
 
-    BIT(int n) : bit(n + 1, 0) {}
+    def query(self, i):
+        total = 0
+        while i > 0:
+            total += self.bit[i]
+            i -= i & -i
+        return total
 
-    void update(int i, int val) {
-        for (; i < (int)bit.size(); i += (i & -i)) {
-            bit[i] += val;
-        }
-    }
+# Main code
+bit = BIT(10)  # Initialize a BIT of size 10
 
-    int query(int i) {
-        int sum = 0;
-        for (; i > 0; i -= (i & -i)) {
-            sum += bit[i];
-        }
-        return sum;
-    }
-};
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]  # Example array
 
-int main() {
-    BIT bit(10); // Initialize a BIT of size 10
+for i in range(len(arr)):
+    bit.update(i + 1, arr[i])  # Update the BIT with the values from the array (1-based index)
 
-    std::vector<int> arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}; // Example array
-
-    for (int i = 0; i < arr.size(); i++) {
-        bit.update(i, arr[i]); // Update the BIT with the values from the array
-    }
-
-    std::cout << "Cumulative sum from index 2 to 5: " << bit.query(4) << std::endl; // Calculate the cumulative sum for the range [2, 5]
-
-    return 0;
-}
-```
-
-### Golang Implementation
-```golang
-package main
-
-import (
-    "fmt"
-)
-
-type BIT struct {
-    bit []int
-}
-
-func NewBIT(n int) *BIT {
-    return &BIT{make([]int, n+1, 0)}
-}
-
-func (bit *BIT) Update(i int, val int) {
-    for ; i < len(bit.bit); i += i & -i {
-        bit.bit[i] += val
-    }
-}
-
-func (bit *BIT) Query(i int) int {
-    sum := 0
-    for ; i > 0; i -= i & -i {
-        sum += bit.bit[i]
-    }
-    return sum
-}
-
-func main() {
-    bit := NewBIT(10)
-    arr := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10} // Example array
-
-    for i, v := range arr {
-        bit.Update(i, v) // Update the BIT with the values from the array
-    }
-
-    fmt.Println("Cumulative sum from index 2 to 5:", bit.Query(4)) // Calculate the cumulative sum for the range [2, 5]
-}
+print("Cumulative sum from index 2 to 5:", bit.query(5) - bit.query(1))  # Calculate the cumulative sum for the range [2, 5]
 ```
 
 ### Binary searching by i & -i
