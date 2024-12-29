@@ -17,33 +17,23 @@ There are many types of search algorithms, including:
 Linear search is a simple and straightforward search algorithm that iterates through each element in the dataset until it finds the target. It works by:
 
 ### Linear Search Example
-```c++
-#include  <iostream>
+```python
+def linear_search(arr, target):
+    for i in range(len(arr)):
+        if arr[i] == target:
+            return i  # Found! Return the index.
+    return -1  # Not found!
 
-int linearSearch(int arr[], int n, int target) {
-    for (int i = 0; i < n; i++) {
-        if (arr[i] == target) {
-            return i; // found! Return the index.
-        }
-    }
-    return -1; // not found!
-}
+if __name__ == "__main__":
+    arr = [2, 3, 4, 10, 40]
+    target = 10
 
-int main() {
-    int arr[] = {2, 3, 4, 10, 40};
-    int n = sizeof(arr) / sizeof(arr[0]);
-    int target = 10;
+    result = linear_search(arr, target)
 
-    int result = linearSearch(arr, n, target);
-
-    if (result != -1) {
-        std::cout << "Element found at index " << result;
-    } else {
-        std::cout << "Element not found!";
-    }
-
-    return 0;
-}
+    if result != -1:
+        print(f"Element found at index {result}")
+    else:
+        print("Element not found!")
 ```
 
 ### Runtime Complexity
@@ -55,44 +45,33 @@ Linear search has a time complexity of **O(n)**, where n is the size of the data
 Binary search is a fast and efficient search algorithm used to find an element in a sorted array or list. It's based on the principle of repeatedly dividing the search space in half until you find the target element.
 
 ### Binary Search Example
-```c++
-#include <iostream>
-#include <algorithm>
+```python
+def binary_search(arr, target):
+    low = 0
+    high = len(arr) - 1
 
-int binarySearch(int arr[], int n, int target) {
-    int low = 0;
-    int high = n - 1;
+    while low <= high:
+        mid = (low + high) // 2
 
-    while (low <= high) {
-        int mid = (low + high) / 2;
+        if arr[mid] == target:
+            return mid  # Found!
+        elif arr[mid] < target:
+            low = mid + 1  # Target is in the right half
+        else:
+            high = mid - 1  # Target is in the left half
 
-        if (arr[mid] == target)
-            return mid; // found!
+    return -1  # Not found!
 
-        else if (arr[mid] < target)
-            low = mid + 1; // target is in the right half
+if __name__ == "__main__":
+    arr = [2, 3, 4, 10, 40]
+    target = 10
 
-        else
-            high = mid - 1; // target is in the left half
-    }
+    result = binary_search(arr, target)
 
-    return -1; // not found!
-}
-
-int main() {
-    int arr[] = {2, 3, 4, 10, 40};
-    int n = sizeof(arr) / sizeof(arr[0]);
-    int target = 10;
-
-    int result = binarySearch(arr, n, target);
-
-    if (result != -1)
-        std::cout << "Element found at index " << result;
-    else
-        std::cout << "Element not found!";
-
-    return 0;
-}
+    if result != -1:
+        print(f"Element found at index {result}")
+    else:
+        print("Element not found!")
 ```
 
 ### Runtime Complexity

@@ -45,99 +45,76 @@ Stop when the MST contains V−1 edges.
 
   The edges added during the iteration that form the MST
 
-### C++ Implementation
-```c++
-#include <iostream>
-#include <vector>
-#include <algorithm>
+### Implementation
+```python
+from typing import List, Tuple
 
-using namespace std;
+class Edge:
+    def __init__(self, src: int, dest: int, weight: int):
+        self.src = src
+        self.dest = dest
+        self.weight = weight
 
-class Edge {
-public:
-    int src, dest, weight;
-    Edge(int s, int d, int w) : src(s), dest(d), weight(w) {}
-};
+    def __lt__(self, other):
+        return self.weight < other.weight
 
-// Comparator to sort edges by weight
-bool compareEdges(Edge a, Edge b) {
-    return a.weight < b.weight;
-}
+class DisjointSet:
+    def __init__(self, n: int):
+        self.parent = list(range(n))
+        self.rank = [0] * n
 
-class DisjointSet {
-    vector<int> parent, rank;
-public:
-    DisjointSet(int n) {
-        parent.resize(n);
-        rank.resize(n, 0);
-        for (int i = 0; i < n; ++i) {
-            parent[i] = i;
-        }
-    }
+    def find(self, u: int) -> int:
+        if self.parent[u] != u:
+            self.parent[u] = self.find(self.parent[u])  # Path compression
+        return self.parent[u]
 
-    int find(int u) {
-        if (parent[u] != u) {
-            parent[u] = find(parent[u]); // Path compression
-        }
-        return parent[u];
-    }
+    def union(self, u: int, v: int):
+        root_u = self.find(u)
+        root_v = self.find(v)
 
-    void unionSets(int u, int v) {
-        int rootU = find(u);
-        int rootV = find(v);
-        if (rootU != rootV) {
-            if (rank[rootU] < rank[rootV]) {
-                parent[rootU] = rootV;
-            } else if (rank[rootU] > rank[rootV]) {
-                parent[rootV] = rootU;
-            } else {
-                parent[rootV] = rootU;
-                rank[rootU]++;
-            }
-        }
-    }
-};
+        if root_u != root_v:
+            if self.rank[root_u] < self.rank[root_v]:
+                self.parent[root_u] = root_v
+            elif self.rank[root_u] > self.rank[root_v]:
+                self.parent[root_v] = root_u
+            else:
+                self.parent[root_v] = root_u
+                self.rank[root_u] += 1
 
-vector<Edge> kruskalMST(vector<Edge>& edges, int V) {
-    vector<Edge> mst;
-    DisjointSet ds(V);
-    
-    // Sort edges by weight
-    sort(edges.begin(), edges.end(), compareEdges);
+def kruskal_mst(edges: List[Edge], V: int) -> List[Edge]:
+    mst = []  # Resulting MST edges
+    disjoint_set = DisjointSet(V)
 
-    for (Edge& edge : edges) {
-        int u = edge.src;
-        int v = edge.dest;
-        int weight = edge.weight;
+    # Sort edges by weight
+    edges.sort()
 
-        // Check if the current edge forms a cycle
-        if (ds.find(u) != ds.find(v)) {
-            mst.push_back(edge);
-            ds.unionSets(u, v);
-        }
-    }
+    for edge in edges:
+        u = edge.src
+        v = edge.dest
 
-    return mst;
-}
+        # Check if the current edge forms a cycle
+        if disjoint_set.find(u) != disjoint_set.find(v):
+            mst.append(edge)
+            disjoint_set.union(u, v)
 
-int main() {
-    int V = 4; // Number of vertices
-    vector<Edge> edges;
-    edges.push_back(Edge(0, 1, 1));
-    edges.push_back(Edge(0, 2, 3));
-    edges.push_back(Edge(1, 2, 3));
-    edges.push_back(Edge(1, 3, 6));
-    edges.push_back(Edge(2, 3, 4));
+    return mst
 
-    vector<Edge> mst = kruskalMST(edges, V);
+if __name__ == "__main__":
+    V = 4  # Number of vertices
+    edges = [
+        Edge(0, 1, 1),
+        Edge(0, 2, 3),
+        Edge(1, 2, 3),
+        Edge(1, 3, 6),
+        Edge(2, 3, 4),
+    ]
 
-    cout << "Edges in the Minimum Spanning Tree:" << endl;
-    for (Edge& edge : mst) {
-        cout << edge.src << " - " << edge.dest << " : " << edge.weight << endl;
-    }
+    mst = kruskal_mst(edges, V)
 
-    return 0;
-}
+    print("Edges in the Minimum Spanning Tree:")
+    for edge in mst:
+        print(f"{edge.src} - {edge.dest} : {edge.weight}")
+
 ```
 
 ## Prim's Algorithm:
@@ -167,75 +144,59 @@ Repeat until all vertices are included in the MST.
 
   The edges added during the iteration form the MST
 
-### C++ Implementation
-```c++
-#include <iostream>
-#include <vector>
-#include <queue>
-#include <utility>
-#include <functional>
+### Implementation
+```python
+import heapq
+from typing import List, Tuple
 
-using namespace std;
+Edge = Tuple[int, int]  # First: weight, Second: destination vertex
 
-typedef pair<int, int> Edge; // first: weight, second: destination vertex
+def prim_mst(graph: List[List[Edge]], V: int) -> List[Edge]:
+    mst = []  # Resulting MST edges
+    in_mst = [False] * V  # Track vertices included in MST
+    pq = []  # Min-heap priority queue
 
-vector<Edge> primMST(vector<vector<Edge>>& graph, int V) {
-    vector<Edge> mst;  // Resulting MST edges
-    vector<bool> inMST(V, false);  // Track vertices included in MST
-    priority_queue<Edge, vector<Edge>, greater<Edge>> pq;  // Min-heap priority queue
-    
-    // Start with the first vertex (0)
-    inMST[0] = true;
-    for (auto& edge : graph[0]) {
-        pq.push(edge);
-    }
+    # Start with the first vertex (0)
+    in_mst[0] = True
+    for edge in graph[0]:
+        heapq.heappush(pq, edge)
 
-    while (!pq.empty()) {
-        Edge edge = pq.top();
-        pq.pop();
-        int weight = edge.first;
-        int v = edge.second;
-        
-        if (inMST[v]) continue;
-        
-        inMST[v] = true;
-        mst.push_back(edge);
+    while pq:
+        weight, v = heapq.heappop(pq)
 
-        for (auto& nextEdge : graph[v]) {
-            if (!inMST[nextEdge.second]) {
-                pq.push(nextEdge);
-            }
-        }
-    }
+        if in_mst[v]:
+            continue
 
-    return mst;
-}
+        in_mst[v] = True
+        mst.append((weight, v))
 
-int main() {
-    int V = 4; // Number of vertices
-    vector<vector<Edge>> graph(V);
+        for next_edge in graph[v]:
+            if not in_mst[next_edge[1]]:
+                heapq.heappush(pq, next_edge)
 
-    // Add edges to the graph
-    graph[0].push_back({1, 1});
-    graph[0].push_back({3, 2});
-    graph[1].push_back({1, 0});
-    graph[1].push_back({3, 2});
-    graph[1].push_back({6, 3});
-    graph[2].push_back({3, 0});
-    graph[2].push_back({3, 1});
-    graph[2].push_back({4, 3});
-    graph[3].push_back({6, 1});
-    graph[3].push_back({4, 2});
+    return mst
 
-    vector<Edge> mst = primMST(graph, V);
+if __name__ == "__main__":
+    V = 4  # Number of vertices
+    graph = [[] for _ in range(V)]
 
-    cout << "Edges in the Minimum Spanning Tree:" << endl;
-    for (Edge& edge : mst) {
-        cout << edge.second << " with weight " << edge.first << endl;
-    }
+    # Add edges to the graph
+    graph[0].append((1, 1))
+    graph[0].append((3, 2))
+    graph[1].append((1, 0))
+    graph[1].append((3, 2))
+    graph[1].append((6, 3))
+    graph[2].append((3, 0))
+    graph[2].append((3, 1))
+    graph[2].append((4, 3))
+    graph[3].append((6, 1))
+    graph[3].append((4, 2))
 
-    return 0;
-}
+    mst = prim_mst(graph, V)
+
+    print("Edges in the Minimum Spanning Tree:")
+    for weight, vertex in mst:
+        print(f"Vertex {vertex} with weight {weight}")
 ```
 
 ## Prim's Algorithm VS. Kruskal's Algorithm

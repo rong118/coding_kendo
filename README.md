@@ -18,7 +18,7 @@ A data structure is a specialized format for organizing, processing, retrieving,
   - [HashSet](./data_structures/basic/hashset.md) ✅
 - [TreeMap & TreeSet](./data_structures/basic/treemap.md) ✅
 
-### Tree Data Structures & Algorithms
+### Tree
 - [Tree](./data_structures/tree/tree.md) ✅
   - [Binary Tree & Binary Search Tree](./data_structures/tree/binary_tree.md) ✅
   - [AVL Tree](./data_structures/tree/avl_tree.md) ✅
@@ -31,7 +31,7 @@ A data structure is a specialized format for organizing, processing, retrieving,
   - [In-order Traversal](./data_structures/tree/tree_traversal.md#ii-in-order-traversal) ✅
   - [Post-order Traversal](./data_structures/tree/tree_traversal.md#iii-post-order-traversal) ✅
 
-### Graph Data Structures & Algorithms
+### Graph
 - [Graph](./data_structures/graph/graph.md) ✅
 - [Graph Search](./data_structures/graph/graph_search.md#graph_search.md) ✅
   - [Breadth First Search](./data_structures/graph/graph_search.md#i-breadth-first-search-bfs) ✅
@@ -45,7 +45,7 @@ A data structure is a specialized format for organizing, processing, retrieving,
   - [Prim's Algorithm](./data_structures/graph/minimum_spanning_tree.md#prims-algorithm) ✅
   - [Kruskal's Algorithm](./data_structures/graph/minimum_spanning_tree.md#kruskals-algorithm) ✅
 
-### Advance Data Structures
+### Other Data Structures
 - [Trie (Prefix Tree)](./data_structures/advance/trie.md)  ✅
 - [Disjoint-set (Union Find)](./data_structures/advance/union_find.md) ✅
 - [Binary Index Tree (Fenwick Tree)](./data_structures/advance/binary_index_tree.md) ✅
