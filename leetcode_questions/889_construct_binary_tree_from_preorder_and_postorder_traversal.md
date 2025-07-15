@@ -30,7 +30,7 @@ Constraints:
 - All the values of postorder are unique.
 - It is guaranteed that preorder and postorder are the preorder traversal and postorder traversal of the same binary tree.
 
-## 分类 && 解题思路
+## Tags
 - tree
 
 ## Code Implementation

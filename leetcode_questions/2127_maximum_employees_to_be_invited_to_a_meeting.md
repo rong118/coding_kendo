@@ -71,7 +71,7 @@ Constraints:
 - 0 <= favorite[i] <= n - 1
 - favorite[i] != i
 
-## 分类 && 解题思路
+## Tags
 - graph
 - topologic sort
 

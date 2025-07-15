@@ -21,7 +21,7 @@ Example:
 >1   3
 > Output: 4
 
-## 分类 && 解题思路
+## Tags
 - tree
 - bst
 

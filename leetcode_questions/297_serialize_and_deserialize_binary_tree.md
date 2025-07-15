@@ -41,7 +41,7 @@ Constraints:
 - The number of nodes in the tree is in the range [0, 10n<sup>4</sup> ].
 - -1000 <= Node.val <= 1000
 
-## 分类 && 解题思路
+## Tags
 - tree
 
 ## Code Implementation

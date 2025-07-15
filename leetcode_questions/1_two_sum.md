@@ -31,7 +31,7 @@ Constraints:
 * -10^9 <= target <= 10^9
 * Only one valid answer exists.
 
-## 分类
+## Tags
 - array
 - sort
 - hashMap

@@ -23,7 +23,7 @@ Example 2:
 Constraints:
 - 1 <= n <= 8
 
-## 分类 && 解题思路
+## Tags
 - tree
 - dfs
 

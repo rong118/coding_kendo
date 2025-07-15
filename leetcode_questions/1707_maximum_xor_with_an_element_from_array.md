@@ -32,7 +32,7 @@ Constraints:
 - queries[i].length == 2
 - 0 <= nums[j], xi, mi <= 10<sup>9</sup>
 
-## 分类 && 解题思路
+## Tags
 - trie
 - bitwise
 

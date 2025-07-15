@@ -32,7 +32,7 @@ Constraints:
 - The given linked list will contain between 1 and 1000 nodes.
 - Each node in the linked list has -1000 <= node.val <= 1000.
 
-## 分类
+## Tags
 - linkedlist
 - prefix
 

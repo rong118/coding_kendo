@@ -36,7 +36,7 @@ Constraints:
 - 0 <= Node.val <= 1000
 - 1 <= k <= sz
 
-## 分类 && 解题思路
+## Tags
 -linkedlist
 
 ## Code Implementation

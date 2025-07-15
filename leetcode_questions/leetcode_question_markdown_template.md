@@ -18,7 +18,7 @@ List
 - item3
 
 n<sup>power</sup> 
-## 分类 && 解题思路
+## Tags
 
 ## Code Implementation
 ```c++

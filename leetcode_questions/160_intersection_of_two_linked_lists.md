@@ -61,7 +61,7 @@ a + c + b = a + b + c
 
 <img src="../assets/abc.png" width="400" />
 
-## 分类 && 解题思路
+## Tags
 - linkedlist
 
 ## Code Implementation

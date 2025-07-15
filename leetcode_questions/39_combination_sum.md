@@ -45,7 +45,7 @@ Constraints:
 * All elements of candidates are distinct.
 * 1 <= target <= 40
 
-## 分类
+## Tags
 - array
 - dfs
 - backtracking

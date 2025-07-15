@@ -40,7 +40,7 @@ Example 3:
 >  [7]
 > ]
 
-## 分类 && 解题思路
+## Tags
 - tree
 - treemap
 

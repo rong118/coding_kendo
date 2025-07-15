@@ -26,7 +26,7 @@ Constraints:
 - 0 <= Node.val <= 100
 - 1 <= n <= sz
  
-## 分类 && 解题思路
+## Tags
 - linkedlist
 
 ## Code Implementation

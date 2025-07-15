@@ -36,7 +36,7 @@ Constraints:
 - word and prefix consist only of lowercase English letters.
 - At most 3 * 10<sup>4</sup> calls in total will be made to insert, search, and startsWith.
 
-## 分类 && 解题思路
+## Tags
 - Trie
 
 ## Code

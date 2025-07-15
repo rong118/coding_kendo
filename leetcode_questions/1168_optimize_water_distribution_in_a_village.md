@@ -32,7 +32,7 @@ Constraints:
 
 <br/>
 
-## 分类 && 解题思路
+## Tags
 - graph
 - mst
 

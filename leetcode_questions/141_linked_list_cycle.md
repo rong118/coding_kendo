@@ -38,7 +38,7 @@ Constraints:
 - -105 <= Node.val <= 105
 - pos is -1 or a valid index in the linked-list.
 
-## 分类 && 解题思路
+## Tags
 - linkedlist
 
 ## Code Implementation

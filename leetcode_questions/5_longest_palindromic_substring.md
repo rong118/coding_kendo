@@ -32,7 +32,7 @@ Constraints:
 * 1 <= s.length <= 1000
 * s consist of only digits and English letters.
 
-## 分类
+## Tags
 - string
 - dynamic programming
 

@@ -53,7 +53,7 @@ Constraints:
 - -100 <= nums[i] <= 100
 - nums is sorted in non-decreasing order.
 
-## 分类
+## Tags
 - array
 
 

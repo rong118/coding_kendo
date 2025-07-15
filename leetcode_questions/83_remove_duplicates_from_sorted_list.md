@@ -21,7 +21,7 @@ Constraints:
 - -100 <= Node.val <= 100
 - The list is guaranteed to be sorted in ascending order.
 
-## 分类 && 解题思路
+## Tags
 -linkedlist
 
 ## Code Implementation

@@ -32,7 +32,7 @@ Constraints:
 
 Follow up: A solution using O(n) space is pretty straight-forward. Could you devise a constant O(1) space solution?
 
-## 分类 && 解题思路
+## Tags
 - tree
 - bst
 

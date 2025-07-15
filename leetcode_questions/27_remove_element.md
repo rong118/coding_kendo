@@ -40,7 +40,7 @@ Constraints:
 - 0 <= nums[i] <= 50
 - 0 <= val <= 100
 
-## 分类 && 解题思路
+## Tags
 - array
 
 

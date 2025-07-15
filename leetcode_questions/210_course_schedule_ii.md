@@ -40,7 +40,7 @@ Constraints:
 - ai != bi
 - All the pairs [ai, bi] are distinct.
 
-## 分类 && 解题思路
+## Tags
 - graph
 - topologic sort
 

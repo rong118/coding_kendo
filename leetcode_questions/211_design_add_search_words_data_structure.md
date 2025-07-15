@@ -37,7 +37,7 @@ Constraints:
 - word in search consist of  '.' or lower-case English letters.
 - At most 50000 calls will be made to addWord and search.
 
-## 分类 && 解题思路
+## Tags
 - Trie
 - DFS
 - backtracking

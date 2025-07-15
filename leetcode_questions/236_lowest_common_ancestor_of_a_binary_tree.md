@@ -41,7 +41,7 @@ Constraints:
 - p != q
 - p and q will exist in the tree.
 
-## 分类 && 解题思路
+## Tags
 - tree
 - bst
 

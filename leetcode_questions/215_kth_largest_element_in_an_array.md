@@ -20,7 +20,7 @@ Constraints:
 1 <= k <= nums.length <= 10<sup>4</sup> 
 -10<sup>4</sup>  <= nums[i] <= 10<sup>4</sup> 
 
-## 分类 && 解题思路
+## Tags
 
 ## Code Implementation
 ```c++

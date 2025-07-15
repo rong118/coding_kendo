@@ -30,7 +30,7 @@ Note:
 - Number of operations won't exceed 10000.
 - The last four operations won't be called when stack is empty.
 
-## 分类 && 解题思路
+## Tags
 stack
 
 ## Code Implementation

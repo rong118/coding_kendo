@@ -42,7 +42,7 @@ Constraints:
 - p != q
 - p and q exist in the tree.
 
-## 分类 && 解题思路
+## Tags
 - tree
 - linkedlist
 

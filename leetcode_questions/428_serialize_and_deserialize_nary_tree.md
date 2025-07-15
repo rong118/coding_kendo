@@ -21,7 +21,7 @@ List
 - N is in the range of [1, 1000].
 - Do not use class member/global/static variables to store states. Your serialize and deserialize algorithms should be stateless.
 
-## 分类 && 解题思路
+## Tags
 - tree
 
 ## Code Implementation

@@ -51,7 +51,7 @@ Note:
 
 <br/>
 
-## 分类 && 解题思路
+## Tags
 - graph
 - topologic sort
 

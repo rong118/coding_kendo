@@ -28,7 +28,7 @@ Constraints:
 * 1 <= s.length <= 2000
 * s consists of lowercase and/or uppercase English letters only.
 
-## 分类
+## Tags
 - string
 - hashMap
 

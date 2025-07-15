@@ -12,7 +12,7 @@ Givenn = 5andedges = [[0, 1], [1, 2], [2, 3], [1, 3], [1, 4]], return false.
 
 Note: you can assume that no duplicate edges will appear inedges. Since all edges are undirected,[0, 1]is the same as[1, 0]and thus will not appear together inedges.
 
-## 分类 && 解题思路
+## Tags
 - graph
 - dfs
 - union find

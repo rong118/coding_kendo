@@ -41,7 +41,7 @@ Constraints:
 - The number of nodes in the tree is in the range [1, 5 * 10<sup>4</sup>].
 - 1 <= Node.val <= 100
 
-## 分类 && 解题思路
+## Tags
 - tree
 - dfs
 

@@ -36,7 +36,7 @@ Constraints:
 - -10<sup>6</sup> <= xi, yi <= 10<sup>6</sup>
 - All pairs (xi, yi) are distinct.
 
-## 分类 && 解题思路
+## Tags
 - graph
 - mst
 

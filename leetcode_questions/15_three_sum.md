@@ -47,7 +47,7 @@ Constraints:
 * 3 <= nums.length <= 3000
 * -10^5 <= nums[i] <= 10^5
 
-## 分类
+## Tags
 - array
 - sort
 - two pointers

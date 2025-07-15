@@ -27,7 +27,7 @@ Constraints:
 - 0 <= Node.val <= 10<sup>4</sup>
 - The input tree is guaranteed to be a binary search tree.
 
-## 分类 && 解题思路
+## Tags
 - tree
 
 ## Code Implementation

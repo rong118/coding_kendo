@@ -24,7 +24,7 @@ Constraints:
 - 0 <= nums.length <= 10<sup>5</sup>
 - -10<sup>9</sup> <= nums[i] <= 10<sup>9</sup>
 
-## 分类 && 解题思路
+## Tags
 - hashset
 - unionfind
 

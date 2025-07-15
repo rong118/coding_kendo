@@ -31,7 +31,7 @@ Constraints:
 - 0 <= Node.val <= 9
 - It is guaranteed that the list represents a number that does not have leading zeros.
 
-## 分类 && 解题思路
+## Tags
 - linkedlist
 
 ## Code Implementation

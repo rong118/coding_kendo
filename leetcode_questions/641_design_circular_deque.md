@@ -42,7 +42,7 @@ Constraints:
 - 0 <= value <= 1000
 - At most 2000 calls will be made to insertFront, insertLast, deleteFront, deleteLast, getFront, getRear, isEmpty, isFull.
 
-## 分类 && 解题思路
+## Tags
 - queue
 - array point
 

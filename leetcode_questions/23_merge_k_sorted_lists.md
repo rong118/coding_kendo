@@ -36,7 +36,7 @@ Constraints:
 - lists[i] is sorted in ascending order.
 - The sum of lists[i].length won't exceed 10^<sup>4</sup>.
 
-## 分类 && 解题思路
+## Tags
 - heap
 - linkedlist
 

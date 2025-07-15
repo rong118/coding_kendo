@@ -24,7 +24,7 @@ Constraints:
 
 <b>Follow up</b>: A linked list can be reversed either iteratively or recursively. Could you implement both?
 
-## 分类 && 解题思路
+## Tags
 - linkdelist
 
 ## Code Implementation

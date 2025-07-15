@@ -40,7 +40,7 @@ Follow up: Can you find the LCA traversing the tree, without checking nodes exis
 
 <br/>
 
-## 分类 && 解题思路
+## Tags
 - tree
 - bst
 

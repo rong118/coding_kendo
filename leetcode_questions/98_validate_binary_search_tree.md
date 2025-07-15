@@ -31,7 +31,7 @@ Constraints:
 - The number of nodes in the tree is in the range [1, 10<sup>4</sup>].
 - -2<sup>31</sup> <= Node.val <= 2<sup>31</sup> - 1
 
-## 分类 && 解题思路
+## Tags
 - tree
 - bst
 

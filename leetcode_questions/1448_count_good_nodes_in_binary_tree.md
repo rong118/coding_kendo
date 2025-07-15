@@ -48,7 +48,7 @@ Constraints:
 - The number of nodes in the binary tree is in the range [1, 10^5].
 - Each node's value is between [-10^4, 10^4].
 
-## 分类 && 解题思路
+## Tags
 - tree
 - dfs
 

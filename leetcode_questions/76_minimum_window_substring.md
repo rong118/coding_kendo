@@ -43,7 +43,7 @@ Constraints:
 * s and t consist of uppercase and lowercase English letters.
 
 
-## 分类
+## Tags
 - string
 - sliding window
 

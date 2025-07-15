@@ -32,7 +32,7 @@ Example 4:
 >
 > Output: [1]
 
-## 分类 && 解题思路
+## Tags
 - linkedlist
 - tree
 

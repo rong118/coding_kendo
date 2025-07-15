@@ -46,7 +46,7 @@ Constraints:
 - 1 <= weighti <= 1000
 - All pairs (ai, bi) are distinct.
 
-## 分类 && 解题思路
+## Tags
 - graph
 - mst
 

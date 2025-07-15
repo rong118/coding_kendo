@@ -17,7 +17,7 @@ Example 1:
 Follow up:
 - Can you do it in time complexity O(k log mn), where k is the length of thepositions?
 
-## 分类 && 解题思路
+## Tags
 - dfs
 - unionfind
 

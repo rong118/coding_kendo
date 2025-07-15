@@ -42,7 +42,7 @@ Constraints:
 - 1 <= nums.length <= 2 * 10<sup>5</sup>
 - 0 <= nums[i] <= 2<sup>31</sup> - 1
 
-## 分类 && 解题思路
+## Tags
 - trie
 - bitwise
 - bitwise trie 存入数字后，再次遍历从最高位找相反的bit，则可以形成最大的XOR,因为XOR只有不同才能留下

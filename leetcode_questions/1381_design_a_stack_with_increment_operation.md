@@ -42,7 +42,7 @@ Constraints:
 - 0 <= val <= 100
 - At most 1000 calls will be made to each method of increment, push and pop each separately.
 
-## 分类 && 解题思路
+## Tags
 - stack
 
 ## Code Implementation

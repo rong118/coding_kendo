@@ -44,7 +44,7 @@ Constraints:
 - 0 <= value <= 1000
 -  At most 3000 calls will be made to enQueue, deQueue, Front, Rear, isEmpty, and isFull.
 
-## 分类 && 解题思路
+## Tags
 - queue
 - linkedlist
 

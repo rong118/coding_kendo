@@ -24,7 +24,7 @@ Constraints:
 
 Follow up: Could you do it in O(n) time and O(1) space?
 
-## 分类 && 解题思路
+## Tags
 - linkedlist
 
 ## Code Implementation

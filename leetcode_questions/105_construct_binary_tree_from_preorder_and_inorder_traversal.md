@@ -28,7 +28,7 @@ Constraints:
 - preorder is guaranteed to be the preorder traversal of the tree.
 - inorder is guaranteed to be the inorder traversal of the tree.
 
-## 分类 && 解题思路
+## Tags
 - tree
 
 ## Code Implementation

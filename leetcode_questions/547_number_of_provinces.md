@@ -32,7 +32,7 @@ Constraints:
 - isConnected[i][i] == 1
 - isConnected[i][j] == isConnected[j][i]
 
-## 分类 && 解题思路
+## Tags
 - graph
 - unionfind
 

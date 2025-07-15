@@ -34,7 +34,7 @@ Constraints:
 - newInterval.length == 2
 - 0 <= start <= end <= 105
 
-## 分类
+## Tags
 - Array
 - Sort
 

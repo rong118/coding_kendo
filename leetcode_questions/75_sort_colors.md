@@ -27,7 +27,7 @@ Constraints:
 - 1 <= n <= 300
 - nums[i] is either 0, 1, or 2.
 
-## 分类
+## Tags
 - Array
 - Sort
 

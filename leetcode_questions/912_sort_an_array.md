@@ -18,7 +18,7 @@ Constraints:
 1 <= nums.length <= 5 * 10<sup>4</sup> 
 -5 * 10<sup>4</sup>  <= nums[i] <= 5 * 10<sup>4</sup> 
 
-## 分类 && 解题思路
+## Tags
 - heap sort
 
 ## Code Implementation

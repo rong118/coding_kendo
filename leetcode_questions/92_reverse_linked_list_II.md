@@ -25,7 +25,7 @@ Constraints:
 - -500 <= Node.val <= 500
 - 1 <= left <= right <= n
 
-## 分类 && 解题思路
+## Tags
 - linkedlist
 
 ## Code Implementation

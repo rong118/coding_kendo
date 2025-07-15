@@ -23,7 +23,7 @@ Constraints:
 k is in the range [1, the number of unique elements in the array].
 It is guaranteed that the answer is unique.
 
-## 分类 && 解题思路
+## Tags
 - heap
 
 ## Code Implementation

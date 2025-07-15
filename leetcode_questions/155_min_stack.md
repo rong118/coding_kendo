@@ -37,7 +37,7 @@ Constraints:
 - Methods pop, top and getMin operations will always be called on non-empty stacks.
 - At most 3 * 10<sup>4</sup> calls will be made to push, pop, top, and getMin.
 
-## 分类 && 解题思路
+## Tags
 - stack
 
 ## Code Implementation

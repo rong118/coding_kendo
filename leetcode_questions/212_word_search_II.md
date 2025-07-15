@@ -34,7 +34,7 @@ Constraints:
 - words[i] consists of lowercase English letters.
 - All the strings of words are unique.
 
-## 分类 && 解题思路
+## Tags
 - dfs
 - tire (用在空间优化)
 - 从每一个位置暴力展开向4个方向，同时用Trie的searchPrefix来做减枝

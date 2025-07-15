@@ -35,7 +35,7 @@ Example 2:
 
 Note: All the values of tree nodes are in the range of [-1e7, 1e7].
 
-## 分类 && 解题思路
+## Tags
 - tree
 - dfs
 

@@ -31,7 +31,7 @@ Constraints:
 - 1 <= preorder[i] <= 1000
 - All the values of preorder are unique.
 
-## 分类 && 解题思路
+## Tags
 - tree
 
 ## Code Implementation

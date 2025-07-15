@@ -42,7 +42,7 @@ Constraints:
 - -10<sup>5</sup>  <= key <= 10<sup>5</sup> 
 
 Follow up: Could you solve it with time complexity O(height of tree)?
-## 分类 && 解题思路
+## Tags
 - tree
 - bst
 

@@ -53,7 +53,7 @@ Constraints:
 - -10000 <= Node.val <= 10000
 - Node.random is null or is pointing to some node in the linked list.
 
-## 分类 && 解题思路
+## Tags
 - linkedlist
 
 ## Code Implementation

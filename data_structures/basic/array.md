@@ -75,8 +75,6 @@ print("Dynamic array elements in Python:", " ".join(map(str, dynamic_array)))
 
 ## Leetcode Questions
 - [1. Two Sum](../../leetcode_questions/1_two_sum.md)
-- [4. Median of Two Sorted Arrays](../../leetcode_questions/4_median_of_two_sorted_arrays.md)
-- [11. Container With Most Water](../../leetcode_questions/11_container_with_most_water.md)
 - [15. 3Sum](../../leetcode_questions/15_three_sum.md)
 - [26. Remove Duplicates From Sorted Array](../../leetcode_questions/26_remove_duplicates_from_sorted_array.md)
 - [27. Remove Element](../../leetcode_questions/27_remove_element.md)

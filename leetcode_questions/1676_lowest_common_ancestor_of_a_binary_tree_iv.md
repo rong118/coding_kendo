@@ -40,7 +40,7 @@ Constraints:
 - All nodes[i] will exist in the tree.
 - All nodes[i] are distinct.
 
-## 分类 && 解题思路
+## Tags
 - tree
 
 ## Code Implementation

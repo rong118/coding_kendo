@@ -28,7 +28,7 @@ Constraints:
 - -100 <= Node.val <= 100
 - Both l1 and l2 are sorted in non-decreasing order.
 
-## 分类 && 解题思路
+## Tags
 - linkedlist
 
 ## Code Implementation

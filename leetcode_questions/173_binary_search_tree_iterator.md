@@ -57,7 +57,7 @@ Constraints:
 Follow up:
 Could you implement next() and hasNext() to run in average O(1) time and use O(h) memory, where h is the height of the tree?
 
-## 分类 && 解题思路
+## Tags
 - tree
 
 ## Code Implementation

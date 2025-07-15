@@ -28,7 +28,7 @@ Constraints:
 - intervals[i].length == 2
 - 0 <= starti <= endi <= 10^4
 
-## 分类
+## Tags
 - Array
 - Sort
 

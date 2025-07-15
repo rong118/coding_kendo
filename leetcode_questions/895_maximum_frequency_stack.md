@@ -38,7 +38,7 @@ Constraints:
 - At most 2 * 10<sup>4</sup> calls will be made to push and pop.
 - It is guaranteed that there will be at least one element in the stack before calling pop.
 
-## 分类 && 解题思路
+## Tags
 - stack
 
 ## Code Implementation

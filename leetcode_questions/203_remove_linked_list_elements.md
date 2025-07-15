@@ -28,7 +28,7 @@ Constraints:
 - 1 <= Node.val <= 50
 - 0 <= val <= 50
 
-## 分类 && 解题思路
+## Tags
 - linkedlit
 
 ## Code Implementation

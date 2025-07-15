@@ -35,7 +35,7 @@ Constraints:
 - ai != bi
 - There are no repeated connections.
 
-## 分类 && 解题思路
+## Tags
 - graph
 - tarjan
 
