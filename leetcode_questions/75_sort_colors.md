@@ -32,36 +32,21 @@ Constraints:
 - Sort
 
 ## Code Implementation
-```c++
-class Solution {
-public:
-    void sortColors(vector<int>& nums) {
-        int r = 0;
-        int w = 0;
-        int b = 0;
-        for(int i : nums){
-            if(i == 0){
-                r++;
-            }else if(i == 1){
-                w++;
-            }else{
-                b++;
-            }
-        }
-        
-        for(int i = 0; i < nums.size(); i++){
-            if(r-- > 0){
-                nums[i] = 0;
-            }else if(w-- > 0){
-                nums[i] = 1;
-            }else{
-                nums[i] = 2;
-            }
-        }
+```python
+# Dutch National Flag problem
+def sortColors(nums):
+    low, mid, high = 0, 0, len(nums) - 1
 
-        return;
-    }
-};
+    while mid <= high:
+        if nums[mid] == 0:
+            nums[low], nums[mid] = nums[mid], nums[low]
+            low += 1
+            mid += 1
+        elif nums[mid] == 1:
+            mid += 1
+        else:  # nums[mid] == 2
+            nums[mid], nums[high] = nums[high], nums[mid]
+            high -= 1
 ```
 
 ## Time Complexity Analysis

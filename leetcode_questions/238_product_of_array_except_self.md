@@ -34,26 +34,22 @@ Follow up: Can you solve the problem in O(1) extra space complexity? (The output
 - prefix
 
 ## Code Implementation
-```c++
-class Solution {
-public:
-    vector<int> productExceptSelf(vector<int>& nums) {
-        vector<int> ans(nums.size(),1);
-        int product = 1;
-        
-        for(int i = 0;i < ans.size()-1; i++){
-            product *= nums[i];
-            ans[i+1] *= product;
-        }
-        product = 1;
-        for(int i = ans.size() - 1;i > 0; i--){
-            product *= nums[i];
-            ans[i-1] *= product;
-        }
-        
-        return ans;
-    }
-};
+```python
+def productExceptSelf(nums):
+    n = len(nums)
+    result = [1] * n
+
+    # Left pass: product of all elements to the left of i
+    for i in range(1, n):
+        result[i] = result[i - 1] * nums[i - 1]
+
+    # Right pass: product of all elements to the right of i
+    right = 1
+    for i in reversed(range(n)):
+        result[i] *= right
+        right *= nums[i]
+
+    return result
 ```
 
 ## Time Complexity Analysis

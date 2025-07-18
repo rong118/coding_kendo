@@ -29,28 +29,23 @@ Constraints:
 - -10^9 <= nums[i] <= 10^9
 
 ## Tags
-- Array
-- Sort
-- HashMap
+- array
+- sort
+- hashing
 
 ## Code Implementation
-```c++
-class Solution {
-public:
-    bool containsDuplicate(vector<int>& nums) {
-        sort(nums.begin(), nums.end());
-        for(int i = 1; i < nums.size(); i++){
-            if(nums[i] == nums[i-1]){
-                return true;
-            }
-        }
+```python
+def containsDuplicate(nums):
+    seen = set()
+    for num in nums:
+        if num in seen:
+            return True
+        seen.add(num)
+    return False
 
-        return false;
-    }
-};
 ```
 
 ## Time Complexity Analysis
-> Time complexity  : O(nlogn)
+> Time complexity  : O(n)
 >
-> Space complexity : O(1)
+> Space complexity : O(n)

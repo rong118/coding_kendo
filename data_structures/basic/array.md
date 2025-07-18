@@ -78,14 +78,7 @@ print("Dynamic array elements in Python:", " ".join(map(str, dynamic_array)))
 - [15. 3Sum](../../leetcode_questions/15_three_sum.md)
 - [26. Remove Duplicates From Sorted Array](../../leetcode_questions/26_remove_duplicates_from_sorted_array.md)
 - [27. Remove Element](../../leetcode_questions/27_remove_element.md)
-- [39. Combination Sum](../../leetcode_questions/39_combination_sum.md)
-- [169. Majority Element](../../leetcode_questions/169_majority_element.md)
-
 - [75. Sort Colors](../../leetcode_questions/75_sort_colors.md)
+- [169. Majority Element](../../leetcode_questions/169_majority_element.md)
 - [217. Contains Duplicate](../../leetcode_questions/217_contain_duplicate.md)
 - [238. Product of Array Except Self](../../leetcode_questions/238_product_of_array_except_self.md)
-
-
-- [56. Merge Intervals](../../leetcode_questions/56_merge_intervals.md)
-- [57. Insert Interval](../../leetcode_questions/57_insert_interval.md)
-- [121. Best Time to Buy and Sell Stock](../../leetcode_questions/121_best_time_to_buy_and_sell_stock.md)
