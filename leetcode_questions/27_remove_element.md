@@ -42,21 +42,19 @@ Constraints:
 
 ## Tags
 - array
+- two pointers
 
 
 ## Code Implementation
-```c++
-class Solution {
-public:
-    int removeElement(vector<int>& A, int val) {
-        int count = 0;
-        for(int i = 0; i < A.size(); i++){
-            if(A[i] == val) count++;
-            else A[i - count] = A[i];
-        }
-        return A.size() - count;
-    }
-};
+```python
+def removeElement(A, val)
+    i = 0
+    foreach j in range(0, len(A)):
+        if A[j] != val:
+            A[i] = A[j]
+            i += 1
+
+    return i
 ```
 
 ## Time Complexity Analysis

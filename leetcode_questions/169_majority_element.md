@@ -29,29 +29,21 @@ Constraints:
 - -109 <= nums[i] <= 109
 
 ## Tags
-- Array
+- array
 
 ## Code Implementation
-```c++
-class Solution {
-public:
-    int majorityElement(vector<int>& nums) {
-        int n;
-        int c = 0;
-        
-        for(int num: nums){
-            if(n == num){
-                c++;
-            }else if(c == 0){
-                n = num;
-                c++;
-            }else
-                c--;
-        }
-        
-        return n;
-    }
-};
+```python
+# Boyer-Moore Voting Algorithm
+def majorityElement(nums):
+    count = 0
+    candidate = None
+
+    for num in nums:
+        if count == 0:
+            candidate = num
+        count += (1 if num == candidate else -1)
+
+    return candidate
 ```
 
 ## Time Complexity Analysis

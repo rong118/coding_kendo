@@ -55,21 +55,22 @@ Constraints:
 
 ## Tags
 - array
+- two pointers
 
 
 ## Code Implementation
-```c++
-class Solution {
-public:
-    int removeDuplicates(vector<int>& A) {
-        int count = 0;
-        for(int i = 1; i < A.size(); i++){
-            if(A[i] == A[i-1]) count++;
-            else A[i - count] = A[i];
-        }
-        return A.size() - count;
-    }
-};
+```python
+def removeDuplicates(nums):
+    if not nums:
+        return 0
+
+    i = 0  # pointer for the last unique element
+    for j in range(1, len(nums)):
+        if nums[j] != nums[i]:
+            i += 1
+            nums[i] = nums[j]
+    
+    return i + 1
 ```
 
 ## Time Complexity Analysis

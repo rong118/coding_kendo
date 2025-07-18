@@ -49,47 +49,43 @@ Constraints:
 
 ## Tags
 - array
-- sort
 - two pointers
 
 ## Code Implementation
-```c++
-class Solution {
-public:
-    vector<vector<int> > threeSum(vector<int> &num) {
-        vector<vector<int> > out;
-        sort(num.begin(), num.end());
-        int size = num.size();
-        
-        for(int i = 0;i < size;i++){
-            if(i == 0 || num[i] != num[i - 1]){
-                _twoSum(num, num[i], i, out);
-            }
-        }
-        
-        return out;
-    }
+```python
+def threeSum(nums):
+    nums.sort()
+    result = []
+    n = len(nums)
 
-    // two pointer
-    void _twoSum(vector<int> &numbers, int target, int start, vector<vector<int> > &out){
-        int left = start + 1;
-        int right = numbers.size() - 1;
-        
-        while(left < right){
-            if(numbers[left] + numbers[right] + target == 0){
-                out.push_back({target, numbers[left], numbers[right]});
-                while(left < right && numbers[left] == numbers[left + 1]) left++;
-                left++;
-                while(left < right && numbers[right] == numbers[right - 1]) right--;
-                right--;
-            }else if(numbers[left] + numbers[right] + target < 0){
-                left++;
-            }else{
-                right--;
-            }
-        }
-    }
-};
+    for i in range(n - 2):
+        # Skip duplicate values for the first number
+        if i > 0 and nums[i] == nums[i - 1]:
+            continue
+
+        left, right = i + 1, n - 1
+
+        while left < right:
+            total = nums[i] + nums[left] + nums[right]
+
+            if total < 0:
+                left += 1
+            elif total > 0:
+                right -= 1
+            else:
+                # Found a valid triplet
+                result.append([nums[i], nums[left], nums[right]])
+
+                # Skip duplicates for the second and third numbers
+                while left < right and nums[left] == nums[left + 1]:
+                    left += 1
+                while left < right and nums[right] == nums[right - 1]:
+                    right -= 1
+
+                left += 1
+                right -= 1
+
+    return result
 ```
 
 ## Time Complexity Analysis
