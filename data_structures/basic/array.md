@@ -5,77 +5,43 @@ Array is a fundamental data structure that stores elements of the same data type
 ## Implementation
 ### Python Example
 ```python
-# Creating an Array (List)
 numbers = [10, 20, 30, 40, 50]
-
-# Accessing Elements
-print(numbers[0])  # Output: 10
-print(numbers[-1]) # Output: 50
-
-# Modifying Elements
-numbers[2] = 35
-print(numbers)  # Output: [10, 20, 35, 40, 50]
-
-# Using a For Loop
-for num in numbers:
-    print(num)
+print(numbers[0], numbers[-1])  # Access
+numbers[2] = 35                 # Modify
+for num in numbers: print(num) # Iterate
 
 numbers = [3, 6, 1, 8, 2]
-
-# Sorting
-numbers.sort()
-print(numbers)  # Output: [1, 2, 3, 6, 8]
-
-# Reversing
-numbers.reverse()
-print(numbers)  # Output: [8, 6, 3, 2, 1]
-
-# Finding Maximum and Minimum
-print(max(numbers))  # Output: 8
-print(min(numbers))  # Output: 1
-
-# Summing Elements
-print(sum(numbers))  # Output: 20
+numbers.sort(); print(numbers)     # [1, 2, 3, 6, 8]
+numbers.reverse(); print(numbers) # [8, 6, 3, 2, 1]
+print(max(numbers), min(numbers), sum(numbers))
 ```
 
 ## Runtime Complexity
-- **Access Time**: Accessing an element by index in an array typically has constant time complexity, O(1), because it involves simple arithmetic to calculate the memory address of the desired element based on its index.
-
-- **Insertion/Deletion Time**: Insertion and deletion operations in arrays can have a higher time complexity, O(n), especially if they require shifting elements to maintain the array's contiguous structure. However, if the insertion/deletion happens at the end of the array, it can be done in constant time.
+- **Access**: O(1)
+- **Insert/Delete**: O(n) (O(1) at end)
 
 ## Dynamic Array
 
-A dynamic array, also known as a resizable array or a growable array, is a data structure that allows for **dynamic resizing** while maintaining the characteristics of an array, such as random access to elements and contiguous memory allocation.
+A **dynamic array** (or resizable/growable array) supports **runtime resizing** while retaining key features like **random access** and **contiguous memory**.
 
-Unlike static arrays, which have a fixed size determined at compile time, dynamic arrays can dynamically adjust their size during runtime to accommodate the number of elements being stored.
-
-The key feature of dynamic arrays is their ability to automatically resize themselves when the number of elements exceeds the current capacity. When a dynamic array is full and a new element needs to be added, it typically allocates a larger chunk of memory, copies the existing elements to the new memory location, and then adds the new element.
+Unlike static arrays, it adjusts size automatically when capacity is exceeded by allocating more memory and copying existing elements.
 
 ## Implementation
 ### Python Example using List:
 ```python
-# Creating a dynamic array using Python's list
 dynamic_array = []
-
-# Adding elements to the dynamic array
 dynamic_array.append(1)
 dynamic_array.append(2)
 dynamic_array.append(3)
-
-# Removing Elements
 dynamic_array.remove(2)
-print(dynamic_array)
 
-# Checking Length
-print(len(dynamic_array))  # Output: 2
-
-# Accessing and printing elements of the dynamic array
-print("Dynamic array elements in Python:", " ".join(map(str, dynamic_array)))
+print(len(dynamic_array))  # 2
+print(" ".join(map(str, dynamic_array)))
 ```
 
 ## Leetcode Questions
 - [1. Two Sum](../../leetcode_questions/1_two_sum.md)
-- [15. 3Sum](../../leetcode_questions/15_three_sum.md)
+- [15. Three Sum](../../leetcode_questions/15_three_sum.md)
 - [26. Remove Duplicates From Sorted Array](../../leetcode_questions/26_remove_duplicates_from_sorted_array.md)
 - [27. Remove Element](../../leetcode_questions/27_remove_element.md)
 - [75. Sort Colors](../../leetcode_questions/75_sort_colors.md)
