@@ -1,26 +1,92 @@
 # Hashtable
 
-A hashtable (also known as a hash table, hashmap, or dictionary) is a data structure that stores key-value pairs in an unordered manner. The main idea behind a hash table is to map keys to values using a hash function.
-It can be implemented as a **hash map** or a **hash set**.
+A **hashtable** (also called hashmap, dictionary, or hash set) stores key-value pairs using a **hash function** to compute indices. It enables fast, unordered data access.
 
-## Characteristics
-1. Key-Value Pairs: A hashtable is made up of key-value pairs, where each pair consists of a unique key and an associated value.
-2. Hash Function: When you add a new key-value pair to the hashtable, the hash function takes the key as input and generates a hash code, which represents the position of the corresponding value in the array.
+## Key Traits
+- **Key-Value Pairs**: Unique keys mapped to values.
+- **Hash Function**: Converts keys to array indices.
 
-## Hash Collision
-A hash collision occurs when two or more different keys hash to the same index in a hash table. This happens because the hash function is not perfect and cannot always guarantee unique indices for each key.
+## Hash Collisions
+When multiple keys hash to the same index:
+- **Chaining**: Store entries in a list at that index.
+- **Open Addressing**: Find alternate slots (linear, quadratic, or double hashing).
 
-### Hash Table Techniques to Overcome Hash Collisions
-- **Chaining**: Each bucket in the hash table's array holds a linked list (or another data structure) of key-value pairs that hash to the same index. When a collision occurs, the key-value pair is added to the linked list associated with the corresponding index. This way, multiple key-value pairs can coexist at the same index without overwriting each other.
-- **Open Addressing**: when a collision occurs, the hash table searches for an alternative location (probe sequence) to store the key-value pair. This can involve techniques such as linear probing (checking the next available slot), quadratic probing (checking slots with quadratic increments), or double hashing (using a secondary hash function to calculate the next index).
+## Time Complexity (Average Case)
+| Operation           | Time      |
+|---------------------|-----------|
+| Lookup / Insert / Delete | O(1) |
+| Iteration           | O(n)     |
+| Collision Resolution | O(1) ~ O(log n) |
 
-## Runtime Complexity
-There are some common operations and their average-case time complexities for a hash table:
-- Lookup: O(1) - This is the most common operation, where you look up a value by its key.
-- Insert: O(1) - When inserting a new key-value pair, the hash function generates the index, and the insertion takes constant time on average.
-- Delete: O(1) - Deleting a key-value pair also takes constant time on average.
-- Iteration (iterate over all entries): O(n) - When you need to iterate over all key-value pairs, the hash table must traverse the entire array, which takes linear time proportional to the number of elements n.
-- Collision resolution: O(1), O(k), or O(log n) - Hash tables use various techniques (e.g., chaining, open addressing) to handle collisions (when two keys hash to the same index). The specific collision resolution method affects the runtime complexity.
+---
+
+# Hash Map
+
+A **hash map** implements a key-value store using an array and a hash function.
+
+## Python Example
+```python
+# Create & update
+hashmap = {"apple": 5, "banana": 3}
+hashmap["orange"] = 8
+hashmap["banana"] = 10
+
+# Access & delete
+print(hashmap["apple"])
+del hashmap["banana"]
+
+# Check & iterate
+print("orange" in hashmap)
+for k, v in hashmap.items():
+    print(k, v)
+
+# Safe access, size, and clear
+print(hashmap.get("pear", "Not Found"))
+print(len(hashmap))
+hashmap.clear()
+```
+
+# HashSet
+
+A **HashSet** is an unordered collection of **unique** elements, implemented using a hash table. It allows efficient insertion, deletion, and membership testing.
+
+## Key Traits
+- Only unique elements are allowed (no duplicates).
+- Unordered storage.
+- Average-case time complexity: O(1) for add, remove, and lookup.
+
+## Python Example
+```python
+# Create a hashset
+hashset = set()
+
+# Add elements
+hashset.add(10)
+hashset.add(20)
+
+# Duplicate add (ignored)
+hashset.add(20)
+
+# Membership test
+print(20 in hashset)  # True
+print(50 in hashset)  # False
+
+# Remove elements
+hashset.remove(10)     # Raises error if not found
+hashset.discard(50)    # Safe remove (no error)
+
+# Print current elements
+print("HashSet:", hashset)
+
+# Iterate over elements
+for item in hashset:
+    print(item)
+
+# Size and clear
+print("Size:", len(hashset))
+hashset.clear()
+print("After clear:", hashset)
+```
 
 ## Leetcode Questions
 - [1. Two Sum](../../leetcode_questions/1_two_sum.md)
