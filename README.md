@@ -13,9 +13,7 @@ A data structure is a specialized format for organizing, processing, retrieving,
 - [Stack](./data_structures/basic/stack.md) ✅
 - [Queue](./data_structures/basic/queue.md) ✅
 - [Heap (PriorityQueue)](./data_structures/basic/heap.md) ✅
-- [HashTable](./data_structures/basic/hashtable.md) ✅
-  - [HashMap](./data_structures/basic/hashmap.md) ✅
-  - [HashSet](./data_structures/basic/hashset.md) ✅
+- [Hashing](./data_structures/basic/hashtable.md) ✅
 - [TreeMap & TreeSet](./data_structures/basic/treemap.md) ✅
 
 ### Tree
